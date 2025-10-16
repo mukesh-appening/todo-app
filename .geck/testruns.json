@@ -1,0 +1,823 @@
+[
+  {
+    "id": "test_1760619554399",
+    "status": "failed",
+    "progress": 25,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and go to the URL https://react-cool-todo-app.netlify.app",
+        "stepStatusReason": "Open a web browser and go to the URL https://react-cool-todo-app.netlify.app",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "No tasks available to verify input alignment."
+            }
+          ]
+        },
+        "runTime": 21091
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Identify an incomplete task displayed on the tasks list on the homepage",
+        "stepStatusReason": "Identify an incomplete task displayed on the tasks list on the homepage",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "No form inputs visible in the screenshot."
+            }
+          ]
+        },
+        "runTime": 11534,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "fail",
+        "stepDescription": "Mark the identified task as completed by interacting with the checkbox control",
+        "stepStatusReason": "Cannot find the checkbox control to mark the task as completed.",
+        "isScreenShotcaptured": false,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "No form inputs are visible in the screenshot."
+            }
+          ]
+        },
+        "summaryText": [
+          "Step failed: Cannot find the checkbox control to mark the task as completed."
+        ],
+        "runTime": 15724
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pending",
+        "stepDescription": "Confirm that the task visually appears marked as completed and is updated in the UI",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pending",
+        "stepDescription": "Review the progress bar to ensure it reflects the completed task accurately",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pending",
+        "stepDescription": "Check the application badge to verify that it shows the correct count of remaining tasks",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Scroll through the list to confirm that all updated task statuses and progress indicators are clearly visible",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Capture a final screenshot of the interface showing completed task, updated progress bar, and accurate badge count",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1760619846661,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619554399/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Test task completion workflow including marking tasks as done, verifying progress bar updates, and checking app badge functionality",
+    "url": "https://react-cool-todo-app.netlify.app/",
+    "testname": "Task Completion and Progress Tracking",
+    "finishedAt": 1760619895075,
+    "totalTimeElapsed": 48414,
+    "promptTokens": 4534,
+    "completionTokens": 1930,
+    "totalTokens": 6464,
+    "costEstimate": 0.0018381,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1760619601093",
+    "status": "failed",
+    "progress": 20,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to 'https://react-cool-todo-app.netlify.app/'",
+        "stepStatusReason": "Open a web browser and navigate to 'https://react-cool-todo-app.netlify.app/'",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button text could be clearer; the size feels small."
+            }
+          ]
+        },
+        "runTime": 16753
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Wait for the PWA installation prompt to appear on the screen",
+        "stepStatusReason": "Wait for the PWA installation prompt to appear on the screen",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 9,
+          "checks-failed": 0,
+          "checks-results": []
+        },
+        "runTime": 9884,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "fail",
+        "stepDescription": "Initiate the installation process by accepting the installation prompt",
+        "stepStatusReason": "Cannot find the installation prompt to accept.",
+        "isScreenShotcaptured": false,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Verify clear visual hierarchy (titles > subtitles > body)",
+              "status": "looks off",
+              "comment": "Subtitle is less visually distinct from the body text."
+            }
+          ]
+        },
+        "summaryText": ["Step failed: Cannot find the installation prompt to accept."],
+        "runTime": 10094
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the application is successfully installed as a PWA by checking for UI changes such as an app icon or a standalone window view",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pending",
+        "stepDescription": "Simulate offline mode by disabling network connectivity within the browser or using developer tools",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pending",
+        "stepDescription": "Create a new task in the to-do list while offline by entering a task description in the input field and submitting it",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the new task is added to the to-do list even while offline",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Check that the application badge count updates to reflect the newly added task",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Re-enable network connectivity and observe that the offline task synchronizes correctly if necessary",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 10,
+        "stepStatus": "pending",
+        "stepDescription": "Take a final screenshot of the application showing the updated badge count and the new task in the list",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1760620005382,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619601093/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Test PWA installation process, offline functionality, and app badge features including installation prompt, offline task creation, and badge count updates",
+    "url": "https://react-cool-todo-app.netlify.app/",
+    "testname": "PWA Installation and Offline Features",
+    "finishedAt": 1760620042125,
+    "totalTimeElapsed": 36743,
+    "promptTokens": 6073,
+    "completionTokens": 2333,
+    "totalTokens": 8406,
+    "costEstimate": 0.00231075,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1760619621486",
+    "status": "failed",
+    "progress": 22,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to https://react-cool-todo-app.netlify.app/",
+        "stepStatusReason": "Open a web browser and navigate to https://react-cool-todo-app.netlify.app/",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color contrast is low; text hard to read against background."
+            }
+          ]
+        },
+        "runTime": 17373
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Observe that the default light theme is correctly applied when the page loads.",
+        "stepStatusReason": "Verify that the page background color matches the default light theme color.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the page background color matches the default light theme color.",
+          "Completed: Verify that the page background color matches the default light theme color."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 9,
+          "checks-failed": 0,
+          "checks-results": []
+        },
+        "runTime": 29061
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "fail",
+        "stepDescription": "Locate and activate the dark mode toggle to switch the UI to dark mode.",
+        "stepStatusReason": "Cannot find the dark mode toggle element in the DOM.",
+        "isScreenShotcaptured": false,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Background color does not match dark theme."
+            }
+          ]
+        },
+        "summaryText": ["Step failed: Cannot find the dark mode toggle element in the DOM."],
+        "runTime": 10949
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the UI elements update their appearance to match the dark theme.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pending",
+        "stepDescription": "Open the color theme options and choose a different color theme.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pending",
+        "stepDescription": "Confirm that the selected color theme is accurately reflected across the interface.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Enable the glow effects using the theme settings provided.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Check that glow effects are activated on appropriate UI components as expected.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Capture a screenshot of the final state to validate that theme switching and glow effects work correctly.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1760620056540,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619621486/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Test theme switching functionality including light/dark mode toggle, color theme selection, and glow effects to ensure UI updates correctly",
+    "url": "https://react-cool-todo-app.netlify.app/",
+    "testname": "Theme and UI Customization",
+    "finishedAt": 1760620113939,
+    "totalTimeElapsed": 57399,
+    "promptTokens": 8250,
+    "completionTokens": 1409,
+    "totalTokens": 9659,
+    "costEstimate": 0.0020829,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1760619651914",
+    "status": "failed",
+    "progress": 18,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open the web browser and navigate to the transfer page at https://react-cool-todo-app.netlify.app/transfer",
+        "stepStatusReason": "Open the web browser and navigate to the transfer page at https://react-cool-todo-app.netlify.app/transfer",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 9,
+          "checks-failed": 0,
+          "checks-results": []
+        },
+        "runTime": 16235
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Wait for the transfer page to load completely and display the data import/export options",
+        "stepStatusReason": "Wait for the transfer page to load completely and display the data import/export options",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color contrast for readability is insufficient."
+            }
+          ]
+        },
+        "runTime": 10141,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "fail",
+        "stepDescription": "Select the JSON file upload option and choose a valid JSON file to upload for data import",
+        "stepStatusReason": "locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByLabel('Select JSON File')\n    - locator resolved to <input type=\"file\" accept=\".json\" class=\"css-9l0n25 emh2zrj1\"/>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <label tabindex=\"-1\" class=\"MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1ae9byl\">…</label> intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <label tabindex=\"-1\" class=\"MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1ae9byl\">…</label> intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    7 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <label tabindex=\"-1\" class=\"MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1ae9byl\">…</label> intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": ["Processing: Click the \"Select JSON File\" button."],
+        "runTime": 43505
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the imported data from the JSON file upload is displayed correctly on the page",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pending",
+        "stepDescription": "Perform a drag-and-drop action by dragging a JSON file into the designated area for file import",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pending",
+        "stepDescription": "Confirm that the data imported via the drag-and-drop method appears correctly in the application",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Copy valid JSON data to the clipboard and trigger the clipboard import functionality in the application",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Ensure that the application correctly processes and displays the data imported from the clipboard",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Click the export to JSON button to start the process of exporting data from the application",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 10,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the exported file contains valid JSON data and matches the expected format of the imported data",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 11,
+        "stepStatus": "pending",
+        "stepDescription": "Capture a screenshot of the completed data transfer workflow to document the successful test outcome",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1760620096465,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619651914/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Test data import and export functionality including JSON file upload, drag-and-drop import, clipboard import, and export to JSON with validation",
+    "url": "https://react-cool-todo-app.netlify.app/transfer",
+    "testname": "Data Import and Export",
+    "finishedAt": 1760620166357,
+    "totalTimeElapsed": 69892,
+    "promptTokens": 8933,
+    "completionTokens": 1755,
+    "totalTokens": 10688,
+    "costEstimate": 0.0023929499999999996,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1760619531718",
+    "status": "failed",
+    "progress": 25,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to the URL: https://react-cool-todo-app.netlify.app/add",
+        "stepStatusReason": "Open a web browser and navigate to the URL: https://react-cool-todo-app.netlify.app/add",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 7,
+          "checks-failed": 2,
+          "checks-results": [
+            {
+              "item": "Ensure consistent and appropriate typography",
+              "status": "looks off",
+              "comment": "Font sizes for title and inputs are inconsistent."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Spacing between form fields is uneven."
+            }
+          ]
+        },
+        "runTime": 22411
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Verify that the task creation page loads correctly and displays the form fields",
+        "stepStatusReason": "Verify that the \"Task Name\" field is visible on the page., Verify that the \"Task Description\" field is visible on the page., Verify that the \"Task Deadline\" field is visible on the page., Verify that the \"Category\" field is visible on the page.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the \"Task Name\" field is visible on the page.",
+          "Completed: Verify that the \"Task Name\" field is visible on the page.",
+          "Processing: Verify that the \"Task Description\" field is visible on the page.",
+          "Completed: Verify that the \"Task Description\" field is visible on the page.",
+          "Processing: Verify that the \"Task Deadline\" field is visible on the page.",
+          "Completed: Verify that the \"Task Deadline\" field is visible on the page.",
+          "Processing: Verify that the \"Category\" field is visible on the page.",
+          "Completed: Verify that the \"Category\" field is visible on the page."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 9,
+          "checks-failed": 0,
+          "checks-results": []
+        },
+        "runTime": 62165
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Attempt to submit the form without filling any details to trigger validation errors",
+        "stepStatusReason": "Click the \"Create Task\" button to attempt submitting the form.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Create Task\" button to attempt submitting the form.",
+          "Completed: Click the \"Create Task\" button to attempt submitting the form."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 7,
+          "checks-failed": 2,
+          "checks-results": [
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "Input fields and labels lack consistent alignment."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Some elements have inconsistent padding affecting visual balance."
+            }
+          ]
+        },
+        "runTime": 24863
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "fail",
+        "stepDescription": "Check that appropriate validation messages appear for missing required fields",
+        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: locator('div:has-text(\"Task Description is required\")')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for locator('div:has-text(\"Task Description is required\")')\n (1 sub-steps failed, 1 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": [
+          "Processing: Verify that a validation message is visible for the \"Task Name\" field.",
+          "Completed: Verify that a validation message is visible for the \"Task Name\" field.",
+          "Processing: Verify that a validation message is visible for the \"Task Description\" field."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent margins around task fields."
+            }
+          ]
+        },
+        "runTime": 63389
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pending",
+        "stepDescription": "Enter a task title or description in the designated text input field",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pending",
+        "stepDescription": "Select an emoji using the emoji selection component to represent the task",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Choose a color from the color picker component to set the task color",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Set the deadline using the deadline picker or date input field provided",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Assign a category to the task by selecting from the available dropdown options",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 10,
+        "stepStatus": "pending",
+        "stepDescription": "Submit the form to create the new task",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 11,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the newly created task appears in the task list with all details correctly displayed",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 12,
+        "stepStatus": "pending",
+        "stepDescription": "Take a screenshot of the completed task creation process to confirm the final outcome",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1760620269761,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619531718/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Test the complete task creation workflow including form validation, emoji selection, color picker, deadline setting, and category assignment",
+    "url": "https://react-cool-todo-app.netlify.app/add",
+    "testname": "Task Creation Flow",
+    "finishedAt": 1760620442601,
+    "totalTimeElapsed": 172840,
+    "promptTokens": 8927,
+    "completionTokens": 1537,
+    "totalTokens": 10464,
+    "costEstimate": 0.00226125,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1760619576576",
+    "status": "failed",
+    "progress": 22,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to https://react-cool-todo-app.netlify.app/",
+        "stepStatusReason": "Open a web browser and navigate to https://react-cool-todo-app.netlify.app/",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "No form inputs visible in the screenshot."
+            }
+          ]
+        },
+        "runTime": 20081
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Verify the homepage loads by checking for the visibility of key application elements.",
+        "stepStatusReason": "Verify the visibility of the \"Add Task\" button on the homepage., Verify the visibility of the \"Sidebar\" button on the homepage.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify the visibility of the \"Add Task\" button on the homepage.",
+          "Completed: Verify the visibility of the \"Add Task\" button on the homepage.",
+          "Processing: Verify the visibility of the \"Sidebar\" button on the homepage.",
+          "Completed: Verify the visibility of the \"Sidebar\" button on the homepage."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "No form inputs visible in the screenshot."
+            }
+          ]
+        },
+        "runTime": 34879
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "fail",
+        "stepDescription": "Select an existing task or create a new task to use for testing the sharing functionality.",
+        "stepStatusReason": "locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'Add Task' })\n    - locator resolved to <button tabindex=\"0\" type=\"button\" aria-label=\"Add Task\" class=\"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary ef23urc1 css-1no6c1s\">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n      - waiting 100ms\n    7 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n      - waiting 500ms\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": ["Processing: Click the \"Add Task\" button to create a new task."],
+        "runTime": 54805
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pending",
+        "stepDescription": "Access the sharing options by clicking the share icon or button associated with the task.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pending",
+        "stepDescription": "Generate a shareable link for the selected task by choosing the appropriate option.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pending",
+        "stepDescription": "Generate a QR code for the task share by selecting the QR code option available.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Copy the shareable link and use it in a new browser session to simulate another device accessing the task.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the task is successfully imported on the new device by reviewing the displayed task details.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Capture a screenshot of the final task view on the importing device to confirm the test completion.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1760621350547,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619576576/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Test task sharing functionality including generating shareable links, QR codes, and verifying the shared task can be imported on another device",
+    "url": "https://react-cool-todo-app.netlify.app/",
+    "testname": "Task Sharing and Import",
+    "finishedAt": 1760621460615,
+    "totalTimeElapsed": 110068,
+    "promptTokens": 9085,
+    "completionTokens": 1283,
+    "totalTokens": 10368,
+    "costEstimate": 0.00213255,
+    "isGeneratingReport": false
+  }
+]

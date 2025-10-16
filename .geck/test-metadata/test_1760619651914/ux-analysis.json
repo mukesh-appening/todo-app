@@ -1,0 +1,130 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Task Creation Flow",
+        "stepStatus": "failed",
+        "details": [
+          "User lands directly on /add page. Form fields render but basic visual checks flag inconsistent typography, label alignment, and padding.",
+          "User clicks “Create Task” with empty form expecting inline validation. No error text appears; automation times-out looking for “Task Name * is required”.",
+          "Flow aborts – remaining steps (entering data, emoji, color, etc.) never executed."
+        ]
+      },
+      {
+        "title": "Task Completion & Progress Tracking",
+        "stepStatus": "failed",
+        "details": [
+          "User opens home page; UI loads but again shows minor alignment issues.",
+          "User tries to tick a task checkbox – locator not found. Either checkbox is missing from DOM or visually hidden/too small.",
+          "Because task cannot be marked complete, progress-bar, badge count and confirmation screenshot steps remain untested."
+        ]
+      },
+      {
+        "title": "Task Sharing & Import",
+        "stepStatus": "failed",
+        "details": [
+          "Home page opens; typography & spacing still flagged.",
+          "Script verifies ‘Add Task’ button and greeting, but fails to locate tagline “Stay focused, stay productive.” – suggests conditional rendering or copy drift.",
+          "Flow stops before any share-link or QR-code actions."
+        ]
+      },
+      {
+        "title": "PWA Installation & Offline Features",
+        "stepStatus": "failed",
+        "details": [
+          "Landing page renders; minor button style issue noted.",
+          "Automation waits for the browser-native “Install” prompt. None appears, so it cannot be clicked.",
+          "All offline-mode and badge-count scenarios left untested."
+        ]
+      },
+      {
+        "title": "Theme & UI Customisation",
+        "stepStatus": "failed",
+        "details": [
+          "Default light theme detected correctly.",
+          "Automation looks for Dark-mode toggle; element not found in DOM or obscured.",
+          "Colour-theme picker and glow-effect checks never reached."
+        ]
+      },
+      {
+        "title": "Data Import & Export",
+        "stepStatus": "failed",
+        "details": [
+          "Transfer page loads; colour-contrast issue flagged.",
+          "Attempt to click ‘Select JSON File’ fails – overlaying label intercepts pointer events; input can’t be activated.",
+          "Drag-and-drop, clipboard import and JSON export steps remain pending."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "The journey starts with mild confidence (pages load quickly) but quickly turns to frustration as core interactions—form validation, completing tasks, theme toggling, installing the PWA, and importing data—consistently fail. Visual inconsistencies (spacing, typography, colour contrast) add a low-level sense of polish deficit. By the third failure the user’s trust erodes; by the last test they likely abandon the attempt altogether.",
+  "qualitative_opportunities": [
+    {
+      "area": "Form validation & error messaging",
+      "why_it_matters": "Without clear, immediate feedback users can’t understand what’s wrong or how to proceed, blocking task creation—the app’s primary job.",
+      "next_actions": [
+        "Ensure required-field helper text is actually rendered and mapped to ARIA-live regions.",
+        "Add positive/negative visual cues (border colour, icons).",
+        "Write unit tests for empty-submit edge cases."
+      ]
+    },
+    {
+      "area": "Interactive control discoverability (checkboxes, dark-mode toggle, PWA prompt, file input)",
+      "why_it_matters": "If controls are not in the DOM, obscured, or too small to hit, users perceive the feature as broken or missing.",
+      "next_actions": [
+        "Audit DOM to confirm elements exist; if conditional, expose them earlier or guide the user.",
+        "Increase checkbox/toggle hit-area ≥ 44 px.",
+        "Remove overlapping labels or set pointer-events:none on decorative layers.",
+        "Provide an in-app ‘Install App’ button as fallback when browser prompt doesn’t appear."
+      ]
+    },
+    {
+      "area": "Visual consistency (typography, spacing, button styling)",
+      "why_it_matters": "Inconsistent visuals reduce perceived quality and make scanning harder, especially for accessibility needs.",
+      "next_actions": [
+        "Create design tokens / style guide for font sizes, weights, padding, margin.",
+        "Run automated visual regression against the guide.",
+        "Adjust button text size and ensure primary action stands out."
+      ]
+    },
+    {
+      "area": "Colour contrast & theming",
+      "why_it_matters": "Low contrast affects readability and fails WCAG AA; missing dark mode toggle blocks promised feature.",
+      "next_actions": [
+        "Run a11y audit; tweak colour palette to reach 4.5:1 for text.",
+        "Make dark-mode switch persistent and place it in a predictable spot (e.g., header).",
+        "Provide theme preview swatches so users understand choices."
+      ]
+    },
+    {
+      "area": "Empty-state & feedback copy",
+      "why_it_matters": "When no tasks exist the interface looks sparse; alignment tests fail because inputs aren’t rendered.",
+      "next_actions": [
+        "Add cheerful empty-state illustration + CTA (‘Add your first task’).",
+        "Use skeleton loaders or placeholder cards to keep layout consistent for automated checks and real users alike."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix hidden/overlapped interactive elements (checkbox, file input, dark-mode toggle) so core actions are clickable."
+    },
+    {
+      "rank": 2,
+      "description": "Implement and surface inline validation/error messages on the task-creation form."
+    },
+    {
+      "rank": 3,
+      "description": "Standardise typography, spacing, and button styling via a shared CSS/Theme file for immediate polish uplift."
+    },
+    {
+      "rank": 4,
+      "description": "Improve colour contrast and add always-visible dark-mode toggle to meet accessibility and feature expectations."
+    },
+    {
+      "rank": 5,
+      "description": "Insert informative empty-state screens to guide first-time users and stabilise layout for tests."
+    }
+  ]
+}

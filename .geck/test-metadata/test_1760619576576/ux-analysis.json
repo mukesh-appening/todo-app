@@ -1,0 +1,130 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Task Completion & Progress Tracking",
+        "stepStatus": "fail",
+        "details": [
+          "User lands on home page successfully.",
+          "Tries to mark a task complete – checkbox cannot be located (Step 3 ❌).",
+          "Down-stream checks for progress bar, badge, screenshots never run (Steps 4-8 🛑)."
+        ]
+      },
+      {
+        "title": "PWA Installation & Offline Use",
+        "stepStatus": "fail",
+        "details": [
+          "Homepage opens and the script waits for install banner.",
+          "Banner never surfaces; tester cannot accept it (Step 3 ❌).",
+          "All later offline-mode steps are skipped."
+        ]
+      },
+      {
+        "title": "Theme & UI Customisation",
+        "stepStatus": "fail",
+        "details": [
+          "Light theme loads correctly.",
+          "User looks for Dark-mode toggle – element not found (Step 3 ❌).",
+          "All subsequent theme/glow checks are abandoned."
+        ]
+      },
+      {
+        "title": "Data Import & Export",
+        "stepStatus": "fail",
+        "details": [
+          "Transfer page renders.",
+          "User attempts to click “Select JSON file” – click repeatedly intercepted by overlay label (Step 3 ❌).",
+          "Entire import/export journey is blocked."
+        ]
+      },
+      {
+        "title": "Task Creation Flow",
+        "stepStatus": "fail",
+        "details": [
+          "Add-task screen opens; form fields visible.",
+          "User submits empty form – expects inline errors.",
+          "Validation appears for Task-Name but NOT for Task-Description (Step 4 ❌).",
+          "Rest of creation flow never executed."
+        ]
+      },
+      {
+        "title": "Task Sharing & Import",
+        "stepStatus": "fail",
+        "details": [
+          "Home + primary buttons visible.",
+          "Attempting to click “Add Task” to create a sharable item – button is unstable/not clickable (Step 3 ❌).",
+          "Share, QR & import steps skipped."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts hopeful—core pages load quickly. Confidence dips each time an expected control (checkbox, install prompt, dark-mode toggle, upload button, Add-task click) is missing or unresponsive. Repeated dead-ends create mounting frustration and distrust in reliability. By the final scenario the shopper would likely abandon or assume the app is broken.",
+  "qualitative_opportunities": [
+    {
+      "area": "Control discoverability & state",
+      "why_it_matters": "Users cannot complete primary jobs (complete task, toggle theme, start import, share) if controls are hidden, mislabeled or overlapped.",
+      "next_actions": [
+        "Audit DOM & CSS for hidden/overlapping elements (e.g., checkbox, Add-Task, JSON upload).",
+        "Add explicit labels/ARIA roles and larger hit areas.",
+        "Provide empty-state hints (e.g., “No tasks yet – create one to try completion”)."
+      ]
+    },
+    {
+      "area": "Visual hierarchy & readability (contrast, typography, spacing)",
+      "why_it_matters": "Low contrast and inconsistent fonts/padding hamper legibility and perceived polish.",
+      "next_actions": [
+        "Run automatic a11y/contrast checks; adopt WCAG-compliant palette.",
+        "Define a type scale and spacing tokens in the design system; apply across pages.",
+        "Re-test with real content and longer labels."
+      ]
+    },
+    {
+      "area": "Validation & feedback clarity",
+      "why_it_matters": "Missing or partial error messages leave users confused about what is required.",
+      "next_actions": [
+        "Ensure every required field returns a visible, consistent error on submit.",
+        "Keep error copy concise and contextual (e.g., ‘Description is required’).",
+        "Unit-test form edge cases (blank, invalid formats)."
+      ]
+    },
+    {
+      "area": "Progressive Web App prompts & install path",
+      "why_it_matters": "If install banner never triggers, users won’t know PWA is available; hurts engagement.",
+      "next_actions": [
+        "Validate service-worker registration and correct ‘beforeinstallprompt’ handling.",
+        "Offer an in-app ‘Install App’ button as backup."
+      ]
+    },
+    {
+      "area": "File import interactions",
+      "why_it_matters": "Primary productivity feature; click interception stops flow.",
+      "next_actions": [
+        "Fix overlay/label intercepting file-input clicks.",
+        "Support drag-and-drop & clipboard equally, with empty-state guidance.",
+        "Show spinner + success toast after import."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix element overlap/instability that blocks clicks on Checkbox, Add-Task and File-Upload – immediate unblock of core actions."
+    },
+    {
+      "rank": 2,
+      "description": "Implement comprehensive, visible validation messages for all form fields."
+    },
+    {
+      "rank": 3,
+      "description": "Improve color contrast & font sizing to meet WCAG AA – quick CSS pass boosts readability and trust."
+    },
+    {
+      "rank": 4,
+      "description": "Add explicit ‘Install App’ button; validate PWA prompt firing."
+    },
+    {
+      "rank": 5,
+      "description": "Introduce empty-state messages that guide first-time users (e.g., no tasks, no imports)."
+    }
+  ]
+}

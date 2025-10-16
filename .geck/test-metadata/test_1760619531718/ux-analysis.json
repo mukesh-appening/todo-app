@@ -1,0 +1,152 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch app – navigate to https://react-cool-todo-app.netlify.app (multiple flows)",
+        "stepStatus": "pass",
+        "details": [
+          "Pages load but several UI-review checks already flag minor visual issues (typography, padding, colour contrast)."
+        ]
+      },
+      {
+        "title": "Locate an existing task on the homepage",
+        "stepStatus": "pass",
+        "details": ["User can see task list but alignment of inputs/labels flagged as “looks off”."]
+      },
+      {
+        "title": "Mark task as completed (Task Completion flow)",
+        "stepStatus": "fail",
+        "details": [
+          "Checkbox control not found, blocking completion, progress-bar and badge verification steps remain pending."
+        ]
+      },
+      {
+        "title": "Verify key homepage text for sharing flow",
+        "stepStatus": "fail",
+        "details": [
+          "‘Stay focused, stay productive.’ tagline not found; test times out. Subsequent share-feature steps never run."
+        ]
+      },
+      {
+        "title": "Wait for PWA install prompt",
+        "stepStatus": "pass",
+        "details": ["Prompt expected but small UI issues noted (button size, hierarchy)."]
+      },
+      {
+        "title": "Accept PWA install prompt",
+        "stepStatus": "fail",
+        "details": ["Prompt element cannot be found; all offline-mode checks skipped."]
+      },
+      {
+        "title": "Observe default light theme",
+        "stepStatus": "pass",
+        "details": ["Loads as expected, colour contrast already flagged as low."]
+      },
+      {
+        "title": "Toggle dark mode",
+        "stepStatus": "fail",
+        "details": [
+          "Dark-mode switch not discoverable; all later theme-customisation steps skipped."
+        ]
+      },
+      {
+        "title": "Open Transfer page for data import/export",
+        "stepStatus": "pass",
+        "details": ["Page loads, minor colour-contrast issue flagged."]
+      },
+      {
+        "title": "Click “Select JSON File” for import",
+        "stepStatus": "fail",
+        "details": [
+          "Click intercepted by overlapping label; user cannot upload file via standard control. Remaining transfer-workflow steps pending."
+        ]
+      },
+      {
+        "title": "Open Add-Task page",
+        "stepStatus": "pass",
+        "details": ["Form fields visible but typography and spacing inconsistent."]
+      },
+      {
+        "title": "Submit empty form to trigger validation",
+        "stepStatus": "pass",
+        "details": ["Form submits, but visual alignment issues flagged."]
+      },
+      {
+        "title": "View validation messages",
+        "stepStatus": "fail",
+        "details": [
+          "Expected ‘Task Description is required’ message not rendered, undermining form guidance. Subsequent task-creation steps skipped."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Initial curiosity and confidence drop quickly to frustration as core controls (checkbox, dark-mode toggle, install prompt, file-upload button) fail to appear or respond. Each new feature exploration starts with hope but stalls at a missing or invisible UI element, compounding disappointment. Visual inconsistencies (spacing, contrast) subtly erode trust throughout. Overall feeling: increasing frustration, low confidence in reliability.",
+  "qualitative_opportunities": [
+    {
+      "area": "Missing / undiscoverable primary controls (checkbox, dark-mode toggle, share text, install prompt, file-upload)",
+      "why_it_matters": "If essential actions are not rendered, users cannot complete key tasks, causing abandonment and negative perception.",
+      "next_actions": [
+        "Audit DOM for conditional rendering logic; ensure elements mount for all viewport sizes and render states.",
+        "Add automated tests for presence of primary interactive elements.",
+        "Provide fallback text or alternative actions if advanced features are unsupported (e.g., PWA prompt)."
+      ]
+    },
+    {
+      "area": "Click interception & hit-area issues (file-upload label overlaps input, small buttons)",
+      "why_it_matters": "Pointer interception or tiny tappable areas block progression, especially on touch devices.",
+      "next_actions": [
+        "Increase clickable area padding; use pointer-events CSS only when necessary.",
+        "Run accessibility tooling to highlight overlapped elements.",
+        "Add visual focus states to show what is actually clickable."
+      ]
+    },
+    {
+      "area": "Visual consistency – typography, spacing, colour contrast",
+      "why_it_matters": "Inconsistent hierarchy and low contrast reduce readability and perceived polish, particularly for accessibility.",
+      "next_actions": [
+        "Establish design tokens / style-guide and apply via global classes.",
+        "Run automated contrast checks; adjust palette to meet WCAG 2.1 AA.",
+        "Standardise spacing scale for forms and lists."
+      ]
+    },
+    {
+      "area": "Form validation feedback",
+      "why_it_matters": "Missing or inconsistent error messages leave users unsure how to proceed, blocking conversion.",
+      "next_actions": [
+        "Ensure all required fields surface inline error messages on blur/submit.",
+        "Add ARIA-live regions so assistive tech announces errors.",
+        "Include overview summary of missing fields above the form."
+      ]
+    },
+    {
+      "area": "Progress & status visibility (progress bar, badge counts)",
+      "why_it_matters": "Users rely on immediate feedback to confirm actions like task completion or offline sync.",
+      "next_actions": [
+        "Update progress indicators via state management observable to avoid stale UI.",
+        "Introduce skeleton states or subtle animations to signal change."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Guarantee rendering and visibility of primary interactive elements (checkbox, dark-mode toggle, share tagline, install prompt, upload button)."
+    },
+    {
+      "rank": 2,
+      "description": "Fix click interception and enlarge hit-areas for all buttons/inputs to ensure reliable interaction."
+    },
+    {
+      "rank": 3,
+      "description": "Implement consistent, accessible error messaging for all form validations (task creation, imports)."
+    },
+    {
+      "rank": 4,
+      "description": "Improve colour contrast and typography using a shared design token system for quick visual uplift."
+    },
+    {
+      "rank": 5,
+      "description": "Add real-time UI feedback for progress indicators and badge counts once core interactions are reliable."
+    }
+  ]
+}

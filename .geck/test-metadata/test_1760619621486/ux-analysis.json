@@ -1,0 +1,126 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Task Creation Flow – open form page",
+        "stepStatus": "pass",
+        "details": [
+          "User lands on /add page; form fields visible, but typography & spacing already feel inconsistent."
+        ]
+      },
+      {
+        "title": "Task Creation Flow – submit empty form",
+        "stepStatus": "fail",
+        "details": [
+          "Clicking “Create Task” shows no validation copy; test times-out looking for helper text ‘Task Name * is required’. Journey blocked."
+        ]
+      },
+      {
+        "title": "Task Completion – view home list",
+        "stepStatus": "pass",
+        "details": ["Homepage loads, but alignment issues noted."]
+      },
+      {
+        "title": "Task Completion – mark task done",
+        "stepStatus": "fail",
+        "details": [
+          "Checkbox to complete a task is not found; user can’t mark item complete, so progress-bar and badge steps never exercised."
+        ]
+      },
+      {
+        "title": "Task Sharing – verify key hero copy",
+        "stepStatus": "fail",
+        "details": [
+          "Expected tagline (“Stay focused, stay productive.”) not rendered, causing uncertainty about page load integrity; rest of share flow never reached."
+        ]
+      },
+      {
+        "title": "PWA Install – wait for prompt",
+        "stepStatus": "fail",
+        "details": [
+          "App loads but install prompt doesn’t appear; user can’t proceed with install or offline checks."
+        ]
+      },
+      {
+        "title": "Theme Switching – look for dark-mode toggle",
+        "stepStatus": "fail",
+        "details": ["UI lacks obvious dark-mode control; theme customisation stops here."]
+      },
+      {
+        "title": "Data Import / Export – land on transfer page",
+        "stepStatus": "pass",
+        "details": [
+          "Transfer page opens, but rest of import/export flow still pending in running test."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Initial curiosity and optimism on page load → mild visual unease (inconsistent spacing/typography) → growing confusion when basic actions (validation errors, checkbox, dark-mode toggle) don’t appear → repeated blockers create frustration and loss of confidence; user abandons advanced features (sharing, PWA, theme, data transfer) before completion.",
+  "qualitative_opportunities": [
+    {
+      "area": "Validation feedback",
+      "why_it_matters": "Without inline error messages, users don’t know why a form submission fails and may assume the app is broken.",
+      "next_actions": [
+        "Show required-field helper text immediately on blur or submit.",
+        "Ensure ARIA attributes for screen-reader feedback.",
+        "Unit-test for presence of helper text strings."
+      ]
+    },
+    {
+      "area": "Discoverability of interactive controls (checkbox, dark-mode toggle, PWA prompt)",
+      "why_it_matters": "Key tasks—completing items, switching themes, installing the app—are impossible if controls are hidden or conditionally rendered without cues.",
+      "next_actions": [
+        "Keep completion checkbox always visible; enlarge hit-area.",
+        "Place dark-mode toggle in persistent header or settings icon with label.",
+        "Provide fallback ‘Install App’ button if browser suppresses automatic PWA prompt."
+      ]
+    },
+    {
+      "area": "Visual hierarchy & spacing",
+      "why_it_matters": "Inconsistent typography and margins make the product feel unfinished and reduce scannability.",
+      "next_actions": [
+        "Adopt a type scale (e.g., 16/20/24/32) and apply via design tokens.",
+        "Use consistent 8-pt spacing grid; audit with automated linting.",
+        "Update CSS to align labels with inputs."
+      ]
+    },
+    {
+      "area": "Color contrast & button styling",
+      "why_it_matters": "Low contrast hurts accessibility; unclear buttons reduce click confidence.",
+      "next_actions": [
+        "Run WCAG contrast audit; adjust palette.",
+        "Standardize button sizes, corner radius, and states (hover, focus)."
+      ]
+    },
+    {
+      "area": "Empty-state & page-load cues",
+      "why_it_matters": "Missing slogan copy caused test failure and user doubt that the page fully loaded.",
+      "next_actions": [
+        "Ensure skeleton loaders or explicit empty-state components render regardless of data.",
+        "Add tests to confirm hero copy renders."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Implement and test required-field validation messages on the task-creation form."
+    },
+    {
+      "rank": 2,
+      "description": "Expose completion checkbox visually at all breakpoints; confirm it’s keyboard-focusable."
+    },
+    {
+      "rank": 3,
+      "description": "Add explicit ‘Install App’ button & surface dark-mode toggle in header for discoverability."
+    },
+    {
+      "rank": 4,
+      "description": "Apply global typography & 8-pt spacing tokens to fix immediate visual inconsistency."
+    },
+    {
+      "rank": 5,
+      "description": "Run quick WCAG contrast fixes on text/background pairs to clear accessibility blockers."
+    }
+  ]
+}

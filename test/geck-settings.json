@@ -1,0 +1,12 @@
+[
+  {
+    "frameworkContext": {
+      "cssFramework": "auto",
+      "domainType": "custom",
+      "uiLibrary": "none",
+      "applicationContext": "",
+      "technicalNotes": "",
+      "enableOptimizations": true
+    }
+  }
+]
