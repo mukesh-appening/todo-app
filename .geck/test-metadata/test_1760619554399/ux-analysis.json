@@ -2,139 +2,131 @@
   "narrative": {
     "steps": [
       {
-        "title": "Task Creation Flow – Step 1: Open task-creation URL",
+        "title": "Launch site (all tests)",
         "stepStatus": "pass",
         "details": [
-          "Page loads, but UI review flags inconsistent typography, label alignment and padding."
+          "App loads at / and feature pages (/add, /transfer).",
+          "1 visual UI check failed on most landings: small buttons / low-contrast text."
         ]
       },
       {
-        "title": "Task Creation Flow – Step 2: Form fields visible",
-        "stepStatus": "pass",
-        "details": [
-          "All expected inputs (Task Name, Description, Deadline, Category) are present.",
-          "UI still shows spacing / button-style inconsistencies."
-        ]
-      },
-      {
-        "title": "Task Creation Flow – Step 3: Submit empty form",
+        "title": "PWA installation flow",
         "stepStatus": "fail",
         "details": [
-          "Automated test times out waiting for required-field error ‘Task Name * is required’.",
-          "No helper-text element found → validation errors not rendered."
+          "Waited for browser’s install prompt – never appeared.",
+          "All downstream PWA/offline steps skipped."
         ]
       },
       {
-        "title": "Task Creation Flow – Steps 4-12",
-        "stepStatus": "pending",
-        "details": [
-          "Remainder of journey blocked because validation did not fire; user cannot continue to add emoji, colour, deadline, category or save task."
-        ]
-      },
-      {
-        "title": "Task Completion & Progress Tracking – Step 1: Open homepage",
-        "stepStatus": "pass",
-        "details": ["Home loads, minor alignment issue noted (no tasks present to fully assess)."]
-      },
-      {
-        "title": "Task Completion & Progress Tracking – Step 2: Identify incomplete task",
-        "stepStatus": "pass",
-        "details": ["Screenshot captured, but still no forms visible; likely empty-state."]
-      },
-      {
-        "title": "Task Completion & Progress Tracking – Step 3: Tick checkbox to mark task complete",
+        "title": "Theme / UI-customisation flow",
         "stepStatus": "fail",
         "details": [
-          "Automation cannot find checkbox control → element either missing from DOM or not discoverable.",
-          "Stops flow; progress-bar and badge checks never executed."
+          "Light theme visible.",
+          "Dark-mode toggle could not be located; colour-theme & glow steps skipped."
         ]
       },
       {
-        "title": "Task Completion & Progress Tracking – Steps 4-8",
-        "stepStatus": "pending",
-        "details": ["Blocked due to missing checkbox."]
-      },
-      {
-        "title": "Task Sharing & Import – Step 1: Open homepage",
-        "stepStatus": "pass",
-        "details": ["Page loads with typography and margin inconsistencies noted."]
-      },
-      {
-        "title": "Task Sharing & Import – Steps 2-9",
-        "stepStatus": "pending",
+        "title": "Data import / export flow",
+        "stepStatus": "fail",
         "details": [
-          "Flow still running; no failures yet but dependent on earlier ability to create/select a task."
+          "Transfer page displays.",
+          "‘Select JSON file’ button repeatedly intercepted by overlaying label – click never lands.",
+          "Entire import/export sequence aborted."
+        ]
+      },
+      {
+        "title": "Task sharing flow",
+        "stepStatus": "fail",
+        "details": [
+          "Homepage loads; ‘Add Task’ button visually present but unstable – click never fires.",
+          "Unable to create/select task → share steps skipped."
+        ]
+      },
+      {
+        "title": "Task creation flow (running)",
+        "stepStatus": "mixed",
+        "details": [
+          "Form opens; multiple passes selecting emoji/colour.",
+          "Validation state not surfaced; later steps (deadline, category, submit) still pending.",
+          "Several UI checks flag inconsistent typography, padding, button styling."
+        ]
+      },
+      {
+        "title": "Task completion & progress tracking flow",
+        "stepStatus": "pass",
+        "details": [
+          "User adds ‘Test Task’, marks it done, sees progress bar & badge update.",
+          "Minor visual issues noted (spacing, progress-bar clarity)."
         ]
       }
     ]
   },
-  "emotional_arc": "Initial curiosity turns into mild visual unease (inconsistent spacing/typography). Confidence drops sharply when the form shows no validation feedback and the user is blocked from proceeding. Visiting the homepage feels barren (empty-state) and frustrating when the checkbox to complete a task is invisible. Overall sentiment shifts from hopeful to confused, then to frustrated and mistrustful of the app’s reliability.",
+  "emotional_arc": "Initial curiosity ⇒ mild concern (small / low-contrast UI). Rapid frustration when key features (install prompt, dark mode toggle, file-upload, Add-Task click) fail. Confidence briefly recovers during successful task-completion flow, but overall impression ends mixed-negative: app feels unreliable and visually unpolished.",
   "qualitative_opportunities": [
     {
-      "area": "Validation feedback & error handling",
-      "why_it_matters": "Users rely on immediate, clear guidance to correct mistakes. Silent failures make the product feel broken and prevent task completion.",
+      "area": "Critical controls not found or unclickable (install prompt, dark-mode toggle, Add-Task, JSON upload)",
+      "why_it_matters": "Blocks users from core functions; leads to abandonment.",
       "next_actions": [
-        "Render helper-text elements for all required fields; ensure aria-describedby ties inputs to messages for accessibility.",
-        "Add unit tests for presence of error text on empty submit.",
-        "Use consistent wording and styling (e.g. red text, icon) across all errors."
+        "Verify elements are rendered and in DOM on all viewports.",
+        "Remove overlapping labels/divs that intercept clicks.",
+        "Increase click target sizes & stability (avoid animations on mount).",
+        "Provide fallback in-app buttons when browser PWA prompt is absent."
       ]
     },
     {
-      "area": "Control discoverability (checkbox, share icons, buttons)",
-      "why_it_matters": "If interactive elements are not visible or affordances are weak, users cannot complete core flows (mark done, share).",
+      "area": "Visual hierarchy & readability (colour contrast, typography, button size)",
+      "why_it_matters": "Poor legibility and unclear hierarchy reduce usability and perceived quality, especially accessibility.",
       "next_actions": [
-        "Verify that task items render a checkbox input with clear hit-area on all breakpoints.",
-        "Add hover / focus states and label text to reinforce purpose.",
-        "Include share icon in the task card with tooltip text; ensure it is present in DOM."
+        "Audit colour palette against WCAG AA; adjust foreground/background contrast.",
+        "Standardise font sizes, weights, heading styles via design tokens.",
+        "Adopt consistent button component with adequate padding/min width."
       ]
     },
     {
-      "area": "Empty-state & first-run experience",
-      "why_it_matters": "Landing on an empty list without guidance leaves users uncertain what to do next and hides key UI that tests later expect.",
+      "area": "Layout spacing & alignment",
+      "why_it_matters": "Inconsistent padding/margins make interface feel cluttered and unprofessional.",
       "next_actions": [
-        "Design an empty-state illustration plus copy explaining how to add a task.",
-        "Surface the ‘Add Task’ CTA prominently even when list is empty."
+        "Set global spacing scale and apply via reusable CSS classes.",
+        "Add layout QA in CI (storybook/a11y)."
       ]
     },
     {
-      "area": "Visual consistency (typography, spacing, buttons)",
-      "why_it_matters": "Inconsistent visuals reduce perceived quality and can imply broken functionality.",
+      "area": "Validation & feedback",
+      "why_it_matters": "Users submitting forms need immediate, clear guidance when fields are missing.",
       "next_actions": [
-        "Establish design tokens for font sizes, weights, spacing and reuse via CSS/Theme.",
-        "Audit margins/padding in form vs. list views; adjust to 8-pt grid.",
-        "Standardise button styles (height, border-radius, colour) in shared component library."
+        "Ensure required fields surface inline error messages and disable submit until valid.",
+        "Add toast/snackbar confirmations for actions like import/export/share."
       ]
     },
     {
-      "area": "Progress & feedback after actions",
-      "why_it_matters": "Users need immediate reassurance that their action (task completed, task shared) succeeded.",
+      "area": "Progress indicators & badges",
+      "why_it_matters": "Accurate status builds trust; current progress bar/badge occasionally out of sync.",
       "next_actions": [
-        "Ensure progress bar increments visually on task completion; update badge counter in real time.",
-        "Add subtle toast notification confirming ‘Task marked as done’ or ‘Link copied’.",
-        "Write automated UI tests for these state changes."
+        "Recalculate progress after state change; add unit tests.",
+        "Make progress bar and badge visually prominent and contrast-compliant."
       ]
     }
   ],
   "first_tackles": [
     {
       "rank": 1,
-      "description": "Fix required-field validation so error messages render instantly on empty submit."
+      "description": "Fix click-blocking overlays for ‘Select JSON File’ & ‘Add Task’ buttons (CSS pointer-events / z-index)."
     },
     {
       "rank": 2,
-      "description": "Make task checkbox element visible & accessible on all list items (key blocker to completion flow)."
+      "description": "Surface dark-mode toggle & ensure it is discoverable (header or settings modal)."
     },
     {
       "rank": 3,
-      "description": "Provide an informative empty-state with a clear ‘Add Task’ button to guide new users."
+      "description": "Increase text/background contrast to meet WCAG AA across app (quick stylesheet tweak)."
     },
     {
       "rank": 4,
-      "description": "Apply a quick CSS pass to normalise typography sizes and 8-pt spacing; low effort but high perceived polish."
+      "description": "Add in-app PWA install button as fallback when browser prompt fails."
     },
     {
       "rank": 5,
-      "description": "Add real-time feedback (toast or badge update) when a task state changes to reinforce success."
+      "description": "Standardise button/label typography and spacing using a shared component library."
     }
   ]
 }
