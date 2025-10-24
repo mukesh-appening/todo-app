@@ -1,0 +1,131 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch & Land on Dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "All five scenarios begin by loading http://localhost:5173 successfully."
+        ]
+      },
+      {
+        "title": "Open “Add Task” modal",
+        "stepStatus": "pass",
+        "details": [
+          "User clicks the Add Task FAB / button and the modal appears in every run. Minor UI nits (button styling, spacing) flagged but flow continues."
+        ]
+      },
+      {
+        "title": "Fill in core task fields",
+        "stepStatus": "pass",
+        "details": [
+          "Task Name, Description and Deadline are entered without functional errors across runs. Repeated visual problems: mis-aligned labels, uneven padding, typography inconsistencies."
+        ]
+      },
+      {
+        "title": "Select Categories",
+        "stepStatus": "pass",
+        "details": [
+          "User opens category combobox and chooses ‘Work’ (and sometimes ‘Coding’).  Works, but after selection the category menu stays open and later intercepts clicks (see failures below)."
+        ]
+      },
+      {
+        "title": "Pick a color  (HARD FAILURE #1)",
+        "stepStatus": "fail",
+        "details": [
+          "Add New Task & Mark Task as done flows: step cannot find Color section/picker → flow aborted at 54 % and 41 %."
+        ]
+      },
+      {
+        "title": "Click “Create Task”  (HARD FAILURE #2)",
+        "stepStatus": "fail",
+        "details": [
+          "In three different tests (Mark Task as Not Done, Drag & Move Task, Pin a Task) Playwright times out trying to click the “Create Task” button.",
+          "Root cause logged: open Category dropdown menu (MuiPopover) remains on top and intercepts pointer events, blocking the button."
+        ]
+      },
+      {
+        "title": "All downstream actions (emoji picker, task completion, pin/move, etc.)",
+        "stepStatus": "pending",
+        "details": [
+          "Because task creation never succeeds, every scenario’s subsequent steps remain unexecuted (progress stops around 40–54 %)."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Initial confidence (app loads) → mild concern (visual mis-alignments) → optimism (fields accept input) → confusion (color picker missing) → mounting frustration (cannot click Create Task) → abandonment (no tasks ever created, all later goals impossible).",
+  "qualitative_opportunities": [
+    {
+      "area": "Modal layout: label/input alignment, spacing & padding",
+      "why_it_matters": "Messy forms reduce readability and perceived quality; users doubt correctness.",
+      "next_actions": [
+        "Adopt a grid / flex layout with consistent gutters (8-pt scale).",
+        "Pair each label with its input using Material-UI FormControl/Label components.",
+        "Add visual QA in Storybook or Chromatic to catch regressions."
+      ]
+    },
+    {
+      "area": "Button styling & hierarchy",
+      "why_it_matters": "Inconsistent primary actions lower brand cohesion and make it hard to identify the next step.",
+      "next_actions": [
+        "Define primary/secondary button tokens in design system; apply across FAB, modal buttons, menu items.",
+        "Audit sizes (height, border-radius) and colors vs brand guidelines."
+      ]
+    },
+    {
+      "area": "Color picker visibility",
+      "why_it_matters": "Missing or hidden UI blocks the happy path and confuses users expecting to set a color.",
+      "next_actions": [
+        "If feature not ready, hide the prompt entirely or provide a default color.",
+        "Add explicit label & affordance (swatch or ‘Pick Color’ button) inside modal."
+      ]
+    },
+    {
+      "area": "Category dropdown does not close after selection",
+      "why_it_matters": "Open popover overlaps other controls and, as logs show, blocks the “Create Task” button—hard-stopping the flow.",
+      "next_actions": [
+        "OnSelect: automatically close the MuiMenu (setMenuOpen(false)).",
+        "Add click-away listener to dismiss on outside click.",
+        "Regression test: ensure Create Task remains clickable after category choice."
+      ]
+    },
+    {
+      "area": "Typography & visual hierarchy",
+      "why_it_matters": "Uneven font sizes make it harder to scan forms and distinguish headings.",
+      "next_actions": [
+        "Apply design-system typography scale (e.g., h6 for modal title, body-1 for labels).",
+        "Run accessibility audit for minimum size/contrast."
+      ]
+    },
+    {
+      "area": "Color contrast & brand compliance",
+      "why_it_matters": "Low contrast impairs accessibility; mismatched hues weaken brand.",
+      "next_actions": [
+        "Use accessible palette (WCAG AA).",
+        "Codify colors in theme.ts and replace hard-coded values."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Auto-close Category dropdown after selection to unblock Create Task button."
+    },
+    {
+      "rank": 2,
+      "description": "Ensure Create Task button is always on top (z-index) and test clickability after each form interaction."
+    },
+    {
+      "rank": 3,
+      "description": "Temporarily hide or properly expose Color picker; remove test dependency until UI is implemented."
+    },
+    {
+      "rank": 4,
+      "description": "Quick CSS pass to align labels/inputs and add consistent 16 px horizontal padding in modal."
+    },
+    {
+      "rank": 5,
+      "description": "Standardize primary button style (color, size) via theme token to raise immediate visual credibility."
+    }
+  ]
+}

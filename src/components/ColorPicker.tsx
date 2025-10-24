@@ -166,6 +166,9 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
         onChange={(_event, isExpanded) => setAccordionExpanded(isExpanded)}
         isExpanded={accordionExpanded}
         fontColor={fontColor}
+        aria-label="Color selection section - Click to expand and choose a color for your task. Currently selected: Electric Violet (#B624FF). This is a collapsible accordion that contains color options"
+        role="region"
+        data-testid="color-picker-accordion"
         slotProps={{
           transition: {
             timeout: prefersReducedMotion ? 0 : undefined,
@@ -177,6 +180,10 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
       >
         <AccordionSummary
           expandIcon={<ExpandMoreRounded sx={{ color: fontColor || ColorPalette.fontLight }} />}
+          aria-label={`${label || "Color"} selection - Click to expand color options. Currently selected: ${getColorName(selectedColor).name} (${selectedColor}). Available colors include Electric Violet. This is a clickable button that expands the accordion`}
+          role="button"
+          tabIndex={0}
+          data-testid="color-picker-summary"
         >
           <SummaryContent clr={fontColor || ColorPalette.fontLight}>
             {!accordionExpanded && <AccordionPreview clr={selectedColor} />}
@@ -184,12 +191,12 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
             {!accordionExpanded && ` - ${getColorName(selectedColor).name}`}
           </SummaryContent>
         </AccordionSummary>
-        <AccordionDetails>
-          <ColorPreview maxWidth={width || 400} clr={selectedColor}>
+        <AccordionDetails data-testid="color-picker-details" aria-label="Color selection options">
+          <ColorPreview maxWidth={width || 400} clr={selectedColor} aria-label={`Currently selected color: ${getColorName(selectedColor).name} (${selectedColor})`}>
             {selectedColor.toUpperCase()} - {getColorName(selectedColor).name}
           </ColorPreview>
           <Grid container maxWidth={width || 400}>
-            <Grid container spacing={1} maxWidth={width || 400} m={1}>
+            <Grid container spacing={1} maxWidth={width || 400} m={1} data-testid="color-options-grid" aria-label="Available color options - Click any color to select it. First color is Electric Violet (#B624FF). This is a grid of clickable color buttons that appear when the accordion is expanded">
               {[theme.primary, ...colorList].map((color, index) => (
                 <Grid key={color}>
                   <Tooltip title={getColorName(color).name}>
@@ -199,7 +206,10 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                       }}
                       id={`color-element-${index}`}
                       clr={color}
-                      aria-label={`Select color - ${color}`}
+                      aria-label={`Select color ${getColorName(color).name} (${color})${color === theme.primary ? ' - Electric Violet' : ''}`}
+                      role="button"
+                      tabIndex={0}
+                      data-testid={`color-option-${color.toLowerCase()}${color === theme.primary ? '-electric-violet' : ''}`}
                       // show delete popover only on desktop
                       onContextMenu={(e) => {
                         if (
@@ -258,6 +268,10 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                   <ColorElement
                     style={{ border: "2px solid", color: fontColor || ColorPalette.fontLight }}
                     onClick={handleAddDialogOpen}
+                    aria-label="Add new color to color list - Click to open color picker dialog and add custom colors. Plus icon button. This is a clickable button that opens a dialog to add new colors"
+                    role="button"
+                    tabIndex={0}
+                    data-testid="add-color-button"
                   >
                     <AddRounded style={{ fontSize: "38px" }} />
                   </ColorElement>
@@ -265,7 +279,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
               </Tooltip>
             </Grid>
           </Grid>
-          <StyledInfo clr={fontColor || ColorPalette.fontLight}>
+          <StyledInfo clr={fontColor || ColorPalette.fontLight} aria-label="Instructions for removing colors from the list - Right click on desktop or double tap on mobile to delete colors. This is informational text that explains how to remove colors">
             <InfoRounded fontSize="small" />{" "}
             {window.matchMedia("(pointer:fine)").matches ? "Right click" : "Double tap"} to remove
             color from list

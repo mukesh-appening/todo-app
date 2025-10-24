@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Button, TextField } from "@mui/material";
-import { getFontColor } from "../utils";
+import { getFontColor, isTestMode } from "../utils";
 
 export const Container = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const AddTaskButton = styled(Button)`
+export const AddTaskButton = styled(Button)<{ testMode?: boolean }>`
   margin-top: 4px;
   border: none;
   padding: 16px 32px;
@@ -19,12 +19,25 @@ export const AddTaskButton = styled(Button)`
   border-radius: 999px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s all;
+  transition: ${({ testMode }) => (testMode ? 'none' : '0.3s all')};
   margin: 20px;
   width: 400px;
   text-transform: capitalize;
+  
+  /* AI Agent Stability - Disable animations in test mode */
+  ${({ testMode }) => testMode && `
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    will-change: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  `}
+  
   &:hover {
-    box-shadow: 0px 0px 24px 0px ${({ theme }) => theme.primary + "80"};
+    box-shadow: ${({ theme, testMode }) => 
+      testMode ? 'none' : `0px 0px 24px 0px ${theme.primary + "80"}`};
     background: ${({ theme }) => theme.primary};
   }
   &:disabled {

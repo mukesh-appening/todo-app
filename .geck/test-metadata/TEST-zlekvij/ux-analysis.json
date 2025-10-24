@@ -1,0 +1,138 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch & land on Dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "All 5 tests open http://localhost:5173 successfully, but screenshots already show style inconsistencies (button styling, typography, spacing)."
+        ]
+      },
+      {
+        "title": "Open “Add Task” modal",
+        "stepStatus": "pass",
+        "details": [
+          "User clicks the Add Task FAB/ button. Modal appears in every run. Early UI-review flags: mis-aligned labels, cramped spacing, uneven padding."
+        ]
+      },
+      {
+        "title": "Fill in Task details",
+        "stepStatus": "pass",
+        "details": [
+          "Typing Task Name, Description, Deadline, Categories generally works.",
+          "Repeated visual issues: labels mis-aligned, missing 'Select Categories' label, inconsistent font sizes, low colour contrast."
+        ]
+      },
+      {
+        "title": "Choose Colour",
+        "stepStatus": "fail",
+        "details": [
+          "In 2 runs (Add New Task, Mark Task as done) the flow halts because the Colour section / picker cannot be located."
+        ]
+      },
+      {
+        "title": "Submit via “Create Task” button",
+        "stepStatus": "fail",
+        "details": [
+          "3 runs (Drag & Move Task, Pin a Task, Mark Task as Not Done) time-out trying to click Create Task.",
+          "Root cause surfaced in logs: category dropdown pop-over is left open and intercepts the pointer, blocking the button."
+        ]
+      },
+      {
+        "title": "Post-creation actions (emoji, pin, drag, mark done/not-done)",
+        "stepStatus": "not reached",
+        "details": [
+          "Because the task is never created, all subsequent steps stay in ‘pending’."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts confident (dashboard loads quickly) → mild annoyance (layout looks slightly “off”) → rising frustration (modal feels cluttered / labels mis-aligned) → blocked & confused (can’t find Colour picker) → outright frustration / mistrust (Create Task button unresponsive) → abandonment (user gives up before any advanced task-management features).",
+  "qualitative_opportunities": [
+    {
+      "area": "Global spacing & alignment",
+      "why_it_matters": "Crowded or mis-aligned forms feel sloppy and hurt scannability, slowing data entry.",
+      "next_actions": [
+        "Add a base 8-pt spacing scale and apply through theme / CSS vars.",
+        "Audit flex/grid layouts in the modal – align labels and inputs in consistent columns.",
+        "Add automatic visual regression tests for spacing."
+      ]
+    },
+    {
+      "area": "Label visibility & hierarchy",
+      "why_it_matters": "Missing or mis-placed labels (“Select Categories”, “Task Deadline”) force users to guess what a field is for; accessibility suffers.",
+      "next_actions": [
+        "Ensure every input has an explicit <label> element linked via for / id.",
+        "Use consistent typography tokens for titles, labels, helper text.",
+        "Run an a11y checker (axe, Lighthouse) on the modal."
+      ]
+    },
+    {
+      "area": "Button style & interaction consistency",
+      "why_it_matters": "Inconsistent sizes and styles damage brand trust and make CTAs harder to spot.",
+      "next_actions": [
+        "Define primary / secondary button variants in the design system; replace ad-hoc class names.",
+        "Add hover / focus states that meet WCAG contrast.",
+        "Include buttons in a component snapshot test."
+      ]
+    },
+    {
+      "area": "Colour picker & colour usage",
+      "why_it_matters": "Flow blocks completely when Colour section is missing; inconsistent colours violate brand guidelines.",
+      "next_actions": [
+        "Make Colour picker a required, always-rendered component (or gracefully hide step).",
+        "Provide default colour if user skips picker.",
+        "Validate brand palette in CSS variables."
+      ]
+    },
+    {
+      "area": "Modal overlay & focus management",
+      "why_it_matters": "Open dropdown menu intercepts clicks on “Create Task”, causing timeouts and user confusion.",
+      "next_actions": [
+        "Close category menu on selection or on outside click.",
+        "Trap focus within modal; pressing ‘Esc’ should close sub-menus first.",
+        "Write e2e test: select category then click Create Task → should succeed."
+      ]
+    },
+    {
+      "area": "Typography consistency",
+      "why_it_matters": "Uneven font sizes/weights make hierarchy unclear and impair readability.",
+      "next_actions": [
+        "Adopt type scale (e.g., 14 / 16 / 20 / 24).",
+        "Set base line-height and apply via theme.",
+        "Run design QA checklist before merge."
+      ]
+    },
+    {
+      "area": "Colour contrast & accessibility",
+      "why_it_matters": "Low contrast text fails WCAG AA, impacting users with low vision.",
+      "next_actions": [
+        "Run automated contrast linting.",
+        "Adjust palette to achieve 4.5:1 for normal text, 3:1 for large text.",
+        "Offer dark-mode toggle only when colours are fixed."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix dropdown pop-over intercepting “Create Task” clicks – auto-close menu on selection or outside-click."
+    },
+    {
+      "rank": 2,
+      "description": "Re-enable / surface Colour picker section so flow can complete (or make it optional)."
+    },
+    {
+      "rank": 3,
+      "description": "Standardise spacing & label alignment in the Add Task modal via a simple CSS grid / stack component."
+    },
+    {
+      "rank": 4,
+      "description": "Create shared button component with brand-approved styles and apply to Add Task & Create Task buttons."
+    },
+    {
+      "rank": 5,
+      "description": "Add automated a11y & visual regression tests (axe + chromatic) to catch label, contrast and spacing issues before shipping."
+    }
+  ]
+}

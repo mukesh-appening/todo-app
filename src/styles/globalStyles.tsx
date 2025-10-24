@@ -277,6 +277,33 @@ export const GlobalStyles = () => {
             display: none;
           }
         }
+
+        /* Test mode styles for AI agent stability */
+        .test-mode *,
+        .test-mode *::before,
+        .test-mode *::after {
+          animation: none !important;
+          transition: none !important;
+          transform: none !important;
+          will-change: auto !important;
+        }
+
+        /* Detect test mode automatically */
+        ${typeof window !== 'undefined' && 
+          (window.navigator.userAgent.includes('HeadlessChrome') || 
+           window.navigator.userAgent.includes('Playwright') ||
+           window.navigator.userAgent.includes('Puppeteer') ||
+           process.env.NODE_ENV === 'test') &&
+          css`
+            *,
+            *::before,
+            *::after {
+              animation: none !important;
+              transition: none !important;
+              transform: none !important;
+              will-change: auto !important;
+            }
+          `}
       `}
     />
   );

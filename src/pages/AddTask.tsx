@@ -9,7 +9,7 @@ import { ColorPicker, TopBar, CustomEmojiPicker } from "../components";
 import { UserContext } from "../contexts/UserContext";
 import { useStorageState } from "../hooks/useStorageState";
 import { useTheme } from "@emotion/react";
-import { generateUUID, getFontColor, isDark, showToast } from "../utils";
+import { generateUUID, getFontColor, isDark, showToast, isTestMode } from "../utils";
 import { ColorPalette } from "../theme/themeConfig";
 import InputThemeProvider from "../contexts/InputThemeProvider";
 import { CategorySelect } from "../components/CategorySelect";
@@ -237,6 +237,9 @@ const AddTask = () => {
           disabled={
             name.length > TASK_NAME_MAX_LENGTH || description.length > DESCRIPTION_MAX_LENGTH
           }
+          testMode={isTestMode()}
+          data-testid="create-task-button"
+          aria-label="Create Task"
         >
           Create Task
         </AddTaskButton>

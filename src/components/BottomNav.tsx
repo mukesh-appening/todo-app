@@ -20,6 +20,7 @@ import { UserContext } from "../contexts/UserContext";
 import { useResponsiveDisplay } from "../hooks/useResponsiveDisplay";
 import { pulseAnimation, slideInBottom } from "../styles";
 import { getFontColor } from "../utils";
+import { isTestMode } from "../utils/testMode";
 
 /**
  * Component for rendering the bottom navigation bar.
@@ -106,10 +107,12 @@ export const BottomNav = (): JSX.Element | null => {
           onClick={() => n("add")}
           showLabel={false}
           aria-label="Add"
+          data-testid="add-task-button-mobile"
           icon={
             <AddIconContainer
               clr={theme.palette.primary.main}
               animate={tasks.length === 0 && value !== 2}
+              testMode={isTestMode()}
             >
               <AddIcon clr={theme.palette.primary.main} fontSize="large" />
             </AddIconContainer>
@@ -130,7 +133,7 @@ export const BottomNav = (): JSX.Element | null => {
   );
 };
 
-const AddIconContainer = styled(Box)<{ clr: string; animate: boolean }>`
+const AddIconContainer = styled(Box)<{ clr: string; animate: boolean; testMode?: boolean }>`
   border-radius: 100px;
   padding: 0;
   margin: 0 !important;
@@ -138,7 +141,24 @@ const AddIconContainer = styled(Box)<{ clr: string; animate: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${({ animate, theme }) =>
+  
+  /* Disable animations in test mode for AI agent stability */
+  ${({ testMode }) =>
+    testMode &&
+    css`
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+      will-change: auto !important;
+      /* Ensure button is always visible and stable */
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    `}
+  
+  /* Only apply animations when not in test mode */
+  ${({ animate, theme, testMode }) =>
+    !testMode &&
     animate &&
     css`
       animation: ${pulseAnimation(theme.palette.primary.main, 10)} 1.2s infinite;

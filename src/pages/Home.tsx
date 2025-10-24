@@ -20,6 +20,7 @@ import { AddRounded, CloseRounded, TodayRounded, UndoRounded, WifiOff } from "@m
 import { UserContext } from "../contexts/UserContext";
 import { useResponsiveDisplay } from "../hooks/useResponsiveDisplay";
 import { useNavigate } from "react-router-dom";
+import { isTestMode } from "../utils/testMode";
 import { AnimatedGreeting } from "../components/AnimatedGreeting";
 import { showToast } from "../utils";
 
@@ -208,8 +209,10 @@ const Home = () => {
           <AddButton
             animate={tasks.length === 0}
             glow={settings.enableGlow}
+            testMode={isTestMode()}
             onClick={() => n("add")}
             aria-label="Add Task"
+            data-testid="add-task-button"
           >
             <AddRounded style={{ fontSize: "44px" }} />
           </AddButton>

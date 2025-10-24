@@ -1,0 +1,176 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "All tests begin by opening http://localhost:5173 successfully.",
+          "Early UI checks already flag inconsistent button styling and cramped layout."
+        ]
+      },
+      {
+        "title": "Click “Add Task” on dashboard",
+        "stepStatus": "mixed",
+        "details": [
+          "In three test runs the button is clicked without issue.",
+          "In the “Pin a Task” flow the element is reported “not stable” and the click times-out → HARD FAILURE (entire flow blocked)."
+        ]
+      },
+      {
+        "title": "Add-Task modal appears",
+        "stepStatus": "pass",
+        "details": [
+          "Modal opens when the click succeeds.",
+          "Automated visual checks repeatedly note mis-aligned labels, uneven spacing and missing ‘Select Categories’ label."
+        ]
+      },
+      {
+        "title": "Populate Task Name & Description",
+        "stepStatus": "pass",
+        "details": [
+          "Input works but label alignment and font-size inconsistencies persist."
+        ]
+      },
+      {
+        "title": "Set Deadline",
+        "stepStatus": "pass",
+        "details": [
+          "Date picker works, yet its label is sometimes missing or mis-aligned."
+        ]
+      },
+      {
+        "title": "Select Categories",
+        "stepStatus": "pass",
+        "details": [
+          "Category combobox works; spacing/padding still called out as cramped."
+        ]
+      },
+      {
+        "title": "Choose Task colour",
+        "stepStatus": "fail",
+        "details": [
+          "Both “Add a New Task” and “Mark Task as Done” flows cannot locate the colour picker/section → HARD FAILURE, test aborted.",
+          "UI checks simultaneously flag brand-inconsistent colours."
+        ]
+      },
+      {
+        "title": "Pick Emoji (skipped)",
+        "stepStatus": "skipped",
+        "details": [
+          "Because colour step fails, subsequent emoji and ‘Create Task’ actions never run."
+        ]
+      },
+      {
+        "title": "Create / Verify Task",
+        "stepStatus": "pending",
+        "details": [
+          "Success messages and list updates are untested due to earlier failures."
+        ]
+      },
+      {
+        "title": "Pin Task flow (blocked early)",
+        "stepStatus": "fail",
+        "details": [
+          "Add-Task button instability stops the scenario; pin-specific steps never execute."
+        ]
+      },
+      {
+        "title": "Mark Task as Done flow",
+        "stepStatus": "fail",
+        "details": [
+          "Process mirrors add flow but again halts when colour picker is missing."
+        ]
+      },
+      {
+        "title": "Mark Task as Not Done flow",
+        "stepStatus": "running",
+        "details": [
+          "Currently pending at description/deadline stage; earlier steps mirror same UI concerns."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "User starts confident seeing dashboard but quickly notices visual rough edges. Successfully opening the modal gives brief reassurance, yet mis-aligned fields feel sloppy. Repeated spacing issues erode trust. Hitting a brick wall when the colour picker is invisible—and an unstable Add-Task button in another flow—creates sharp frustration and prevents goal completion. Because success messages are never reached, the overall sentiment ends in disappointment and low confidence.",
+  "qualitative_opportunities": [
+    {
+      "area": "Missing / hidden Colour Picker",
+      "why_it_matters": "Blocks task creation in multiple flows; users cannot finish primary job.",
+      "next_actions": [
+        "Verify component is rendered and visible in modal for all screen sizes.",
+        "Add fallback or make colour optional until picker is fixed.",
+        "Include automated test to assert its presence."
+      ]
+    },
+    {
+      "area": "“Add Task” button stability",
+      "why_it_matters": "If the main CTA is hard to click, users are stuck at step 1.",
+      "next_actions": [
+        "Investigate re-render or animation causing element instability; debounce or remove unnecessary motion.",
+        "Increase clickable area and ensure pointer cursor appears."
+      ]
+    },
+    {
+      "area": "Label ↔ Input alignment & missing labels",
+      "why_it_matters": "Mis-aligned or absent labels hurt clarity and accessibility (screen readers, WCAG).",
+      "next_actions": [
+        "Adopt grid/flex layout with consistent gap tokens.",
+        "Audit all fields for required aria-labels and visible text."
+      ]
+    },
+    {
+      "area": "Spacing, padding, and cramped layout",
+      "why_it_matters": "Dense UI feels overwhelming and reduces readability on smaller screens.",
+      "next_actions": [
+        "Define spacing scale in design-tokens; apply via global theme or utility classes.",
+        "Run automated visual regression for spacing."
+      ]
+    },
+    {
+      "area": "Button style / visual hierarchy inconsistency",
+      "why_it_matters": "Inconsistent styles weaken brand trust and make CTAs less discoverable.",
+      "next_actions": [
+        "Create button component variants (primary, secondary, icon) in design system.",
+        "Refactor existing buttons to use these variants."
+      ]
+    },
+    {
+      "area": "Colour contrast & brand compliance",
+      "why_it_matters": "Low contrast impairs accessibility; off-brand colours appear unprofessional.",
+      "next_actions": [
+        "Run colour-contrast checks (e.g., WCAG AA).",
+        "Update palette tokens; verify in dark/light modes."
+      ]
+    },
+    {
+      "area": "Feedback after task creation / status change",
+      "why_it_matters": "Users need confirmation their action succeeded.",
+      "next_actions": [
+        "Ensure toast or inline success message appears and is announced to screen readers.",
+        "Add automated assertion for message visibility."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Restore / expose colour picker or temporarily remove it from required flow so users can finish creating tasks."
+    },
+    {
+      "rank": 2,
+      "description": "Fix ‘Add Task’ button instability—disable animation on mount, confirm stable DOM before click."
+    },
+    {
+      "rank": 3,
+      "description": "Standardise form layout: align all labels & inputs, add any missing labels, apply consistent spacing tokens."
+    },
+    {
+      "rank": 4,
+      "description": "Introduce a single button component style (primary/icon) across dashboard and modal for instant visual cohesion."
+    },
+    {
+      "rank": 5,
+      "description": "Run automated colour-contrast check and correct any values failing WCAG AA; quick SCSS/Theme token update."
+    }
+  ]
+}

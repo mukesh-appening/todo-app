@@ -1,53 +1,44 @@
 [
   {
-    "id": "test_1760619531718",
+    "id": "TEST-y04binn",
     "status": "failed",
-    "progress": 58,
+    "progress": 54,
     "stepResults": [
       {
         "stepNumber": 1,
         "stepStatus": "pass",
-        "stepStatusReason": "URL opened successfully as required.",
-        "stepDescription": "Open a web browser and navigate to the URL: https://react-cool-todo-app.netlify.app/add",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "runTime": 77706,
+        "stepDescription": "Open a web browser and navigate to http://localhost:5173",
+        "stepStatusReason": "Open a web browser and navigate to http://localhost:5173",
         "isScreenShotcaptured": true,
         "uiReviewResults": {
           "total-checks-performed": 9,
-          "checks-passed": 6,
-          "checks-failed": 3,
+          "checks-passed": 7,
+          "checks-failed": 2,
           "checks-results": [
-            {
-              "item": "Ensure consistent and appropriate typography",
-              "status": "looks off",
-              "comment": "Font size or style for labels may not match design specs."
-            },
             {
               "item": "Review button size, shape, and style consistency",
               "status": "looks off",
-              "comment": "Submit button does not match design guidelines."
+              "comment": "Button styling is inconsistent with brand guidelines."
             },
             {
-              "item": "Ensure consistent padding and margins throughout",
+              "item": "Check visibility and alignment of form inputs and labels",
               "status": "looks off",
-              "comment": "Some fields lack consistent padding."
+              "comment": "Form inputs are not shown in the screenshot."
             }
           ]
-        }
+        },
+        "runTime": 45949
       },
       {
         "stepNumber": 2,
         "stepStatus": "pass",
-        "stepStatusReason": "Page loaded and form fields implied by input actions.",
-        "stepDescription": "Verify that the task creation page loads correctly and displays the form fields",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "runTime": 118858,
+        "stepDescription": "Click the Add New Task button or icon on the dashboard",
+        "stepStatusReason": "Click the \"Add Task\" button with the aria-label \"Add Task\".",
         "isScreenShotcaptured": true,
-        "summaryText": ["Entering task name, scrolling up"],
+        "summaryText": [
+          "Processing: Click the \"Add Task\" button with the aria-label \"Add Task\".",
+          "Completed: Click the \"Add Task\" button with the aria-label \"Add Task\"."
+        ],
         "uiReviewResults": {
           "total-checks-performed": 9,
           "checks-passed": 8,
@@ -56,70 +47,53 @@
             {
               "item": "Check visibility and alignment of form inputs and labels",
               "status": "looks off",
-              "comment": "Labels for inputs appear misaligned or unclear."
+              "comment": "Labels are not clearly aligned with inputs, causing confusion."
             }
           ]
-        }
+        },
+        "runTime": 143787
       },
       {
         "stepNumber": 3,
         "stepStatus": "pass",
-        "stepStatusReason": "Form submitted empty to trigger validation errors.",
-        "stepDescription": "Attempt to submit the form without filling any details to trigger validation errors",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "runTime": 77706,
+        "stepDescription": "Wait for the Add New Task modal to appear",
+        "stepStatusReason": "Wait for the Add New Task modal to appear",
         "isScreenShotcaptured": true,
-        "summaryText": [
-          "Submitting form to trigger validation errors",
-          "Clicking \"Create Task\" to verify validation"
-        ],
         "uiReviewResults": {
           "total-checks-performed": 9,
           "checks-passed": 6,
           "checks-failed": 3,
           "checks-results": [
             {
-              "item": "Ensure consistent and appropriate typography",
+              "item": "Check alignment and spacing of all elements",
               "status": "looks off",
-              "comment": "Font sizes for different text elements appear inconsistent."
+              "comment": "Spacing between fields is inconsistent."
             },
             {
-              "item": "Review button size, shape, and style consistency",
+              "item": "Check visibility and alignment of form inputs and labels",
               "status": "looks off",
-              "comment": "Button style does not match overall visual theme."
+              "comment": "Labels don't align properly with their respective inputs."
             },
             {
               "item": "Ensure consistent padding and margins throughout",
               "status": "looks off",
-              "comment": "Inconsistent padding between form fields."
+              "comment": "Padding around elements is uneven."
             }
           ]
-        }
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepStatusReason": "No explicit validation messages observed yet.",
-        "stepDescription": "Check that appropriate validation messages appear for missing required fields",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "isScreenShotcaptured": false,
+        },
+        "runTime": 8001,
         "summaryText": []
       },
       {
-        "stepNumber": 5,
+        "stepNumber": 4,
         "stepStatus": "pass",
-        "stepStatusReason": "Task title entered as observed.",
-        "stepDescription": "Enter a task title or description in the designated text input field",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "runTime": 196564,
+        "stepDescription": "Enter 'Complete Project Report' in the Task Name field",
+        "stepStatusReason": "Fill the \"Task Name\" field with 'Complete Project Report'.",
         "isScreenShotcaptured": true,
-        "summaryText": [],
+        "summaryText": [
+          "Processing: Fill the \"Task Name\" field with 'Complete Project Report'.",
+          "Completed: Fill the \"Task Name\" field with 'Complete Project Report'."
+        ],
         "uiReviewResults": {
           "total-checks-performed": 9,
           "checks-passed": 7,
@@ -128,68 +102,26 @@
             {
               "item": "Check visibility and alignment of form inputs and labels",
               "status": "looks off",
-              "comment": "Labels are misaligned with the input fields."
+              "comment": "Labels not clearly aligned with inputs."
             },
             {
-              "item": "Ensure consistent padding and margins throughout",
+              "item": "Check for correct spelling and accurate content placement",
               "status": "looks off",
-              "comment": "Inconsistent padding observed around elements."
+              "comment": "The 'Select Categories' label is missing."
             }
           ]
-        }
+        },
+        "runTime": 20148
       },
       {
-        "stepNumber": 6,
+        "stepNumber": 5,
         "stepStatus": "pass",
-        "stepStatusReason": "Emoji selected by choosing smiling face option.",
-        "stepDescription": "Select an emoji using the emoji selection component to represent the task",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "runTime": 56660,
+        "stepDescription": "Enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field",
+        "stepStatusReason": "Fill the \"Task Description\" field with 'Summarize this quarter's achievements for the management meeting'.",
         "isScreenShotcaptured": true,
         "summaryText": [
-          "Clicking pencil icon to select emoji",
-          "Selecting smiling face emoji option"
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 6,
-          "checks-failed": 3,
-          "checks-results": [
-            {
-              "item": "Ensure consistent and appropriate typography",
-              "status": "looks off",
-              "comment": "Font sizes vary and may reduce readability."
-            },
-            {
-              "item": "Review button size, shape, and style consistency",
-              "status": "looks off",
-              "comment": "Buttons need consistent styling across the form."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent padding between form elements."
-            }
-          ]
-        }
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pass",
-        "stepStatusReason": "Color selected as Cornflower Blue for task card.",
-        "stepDescription": "Choose a color from the color picker component to set the task color",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "runTime": 88317,
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Updating emoji, selecting color options",
-          "Selecting blue for task card",
-          "Setting color to Cornflower Blue",
-          "Hovering for date picker controls"
+          "Processing: Fill the \"Task Description\" field with 'Summarize this quarter's achievements for the management meeting'.",
+          "Completed: Fill the \"Task Description\" field with 'Summarize this quarter's achievements for the management meeting'."
         ],
         "uiReviewResults": {
           "total-checks-performed": 9,
@@ -199,503 +131,398 @@
             {
               "item": "Check visibility and alignment of form inputs and labels",
               "status": "looks off",
-              "comment": "Form inputs appear misaligned with labels."
+              "comment": "Task deadline field label is missing."
             }
           ]
-        }
+        },
+        "runTime": 21794
       },
       {
-        "stepNumber": 8,
+        "stepNumber": 6,
         "stepStatus": "pass",
-        "stepStatusReason": "Deadline set with valid date entry and format correction.",
-        "stepDescription": "Set the deadline using the deadline picker or date input field provided",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "runTime": 276934,
+        "stepDescription": "Enter today's date in the Task Deadline field",
+        "stepStatusReason": "Fill the \"Task Deadline\" field with today's date.",
         "isScreenShotcaptured": true,
         "summaryText": [
-          "Typing valid date directly in field",
-          "Correcting date format to 10/05/2022"
+          "Processing: Fill the \"Task Deadline\" field with today's date.",
+          "Validation failed: Fill the \"Task Deadline\" field with today's date. - will retry in 2 * 100ms",
+          "Completed: Fill the \"Task Deadline\" field with today's date."
         ],
         "uiReviewResults": {
           "total-checks-performed": 9,
-          "checks-passed": 6,
-          "checks-failed": 3,
+          "checks-passed": 8,
+          "checks-failed": 1,
           "checks-results": [
-            {
-              "item": "Review button size, shape, and style consistency",
-              "status": "looks off",
-              "comment": "No buttons are visible in the screenshot."
-            },
             {
               "item": "Check visibility and alignment of form inputs and labels",
               "status": "looks off",
-              "comment": "'Category' label appears misaligned with the dropdown."
+              "comment": "Task Deadline input could be better aligned with description."
+            }
+          ]
+        },
+        "runTime": 36015
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pass",
+        "stepDescription": "Select up to 3 categories in the Select Categories section, for example choose 'Work' and 'Coding'",
+        "stepStatusReason": "Click the \"Select Categories\" combobox to open the category selection options., Click the \"💻 Coding\" option in the category selection list., Click the \"🏢 Work\" option in the category selection list.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Select Categories\" combobox to open the category selection options.",
+          "Completed: Click the \"Select Categories\" combobox to open the category selection options.",
+          "Processing: Click the \"💻 Coding\" option in the category selection list.",
+          "Completed: Click the \"💻 Coding\" option in the category selection list.",
+          "Processing: Click the \"🏢 Work\" option in the category selection list.",
+          "Completed: Click the \"🏢 Work\" option in the category selection list."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent padding between elements makes it feel cramped."
+            }
+          ]
+        },
+        "runTime": 58164
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "fail",
+        "stepDescription": "Select a color from the Color section, such as Electric Violet (#B624FF)",
+        "stepStatusReason": "Cannot find the Color section to select a color.",
+        "isScreenShotcaptured": false,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 7,
+          "checks-failed": 2,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color usage is inconsistent between categories and context."
             },
             {
               "item": "Ensure consistent padding and margins throughout",
               "status": "looks off",
-              "comment": "Inconsistent padding seen around elements."
+              "comment": "Padding between elements is not uniform."
             }
           ]
-        }
+        },
+        "summaryText": [
+          "Step failed: Cannot find the Color section to select a color."
+        ],
+        "runTime": 8118
       },
       {
         "stepNumber": 9,
         "stepStatus": "pending",
-        "stepStatusReason": "No category selection observed.",
-        "stepDescription": "Assign a category to the task by selecting from the available dropdown options",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
+        "stepDescription": "Click the emoji icon near the top to open the emoji picker",
+        "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
       },
       {
         "stepNumber": 10,
         "stepStatus": "pending",
-        "stepStatusReason": "No form submission to create new task observed.",
-        "stepDescription": "Submit the form to create the new task",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
+        "stepDescription": "Select an emoji, for example 📝 or 😃, to represent the task",
+        "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
       },
       {
         "stepNumber": 11,
         "stepStatus": "pending",
-        "stepStatusReason": "No verification of created task in task list observed.",
-        "stepDescription": "Verify that the newly created task appears in the task list with all details correctly displayed",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
+        "stepDescription": "Click Create Task to submit the new task",
+        "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
       },
       {
         "stepNumber": 12,
         "stepStatus": "pending",
-        "stepStatusReason": "No screenshot taken of completed task creation process.",
-        "stepDescription": "Take a screenshot of the completed task creation process to confirm the final outcome",
-        "lastObservationText": [
-          "Action failed: keypress - Action failed: keypress - keyboard.press: Unknown key: \"BACKSPACE\""
-        ],
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760636259964,
-    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619531718/screenshots",
-    "isMarkDownReport": false,
-    "stepsSummary": "Test the complete task creation workflow including form validation, emoji selection, color picker, deadline setting, and category assignment",
-    "url": "https://react-cool-todo-app.netlify.app/add",
-    "testname": "Task Creation Flow",
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760619554399",
-    "status": "passed",
-    "progress": 100,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepStatusReason": "URL https://react-cool-todo-app.netlify.app opened successfully.",
-        "stepDescription": "Open a web browser and go to the URL https://react-cool-todo-app.netlify.app",
-        "runTime": 77787,
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "No task inputs visible to assess alignment."
-            }
-          ]
-        }
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pass",
-        "stepStatusReason": "Incomplete task identified after 'Test Task' added.",
-        "stepDescription": "Identify an incomplete task displayed on the tasks list on the homepage",
-        "runTime": 63555,
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Filling form to create test task",
-          "Scrolling for task addition button",
-          "Clicking \"Create Task\" button now.",
-          "Marking \"Test Task\" as complete",
-          "Selecting \"Mark as done\" option"
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check for correct spelling and accurate content placement",
-              "status": "looks off",
-              "comment": "The progress bar shows 0% despite a completed task."
-            }
-          ]
-        }
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pass",
-        "stepStatusReason": "Marked 'Test Task' as completed via checkbox and options.",
-        "stepDescription": "Mark the identified task as completed by interacting with the checkbox control",
-        "runTime": 1,
-        "isScreenShotcaptured": true,
-        "summaryText": [],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Verify presence and clarity of images and icons",
-              "status": "looks off",
-              "comment": "Progress bar and badge clarity not confirmed in the screenshot."
-            }
-          ]
-        }
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pass",
-        "stepStatusReason": "Confirmed task visually appears marked completed and updated in UI.",
-        "stepDescription": "Confirm that the task visually appears marked as completed and is updated in the UI",
-        "runTime": 195229,
-        "isScreenShotcaptured": true,
-        "summaryText": ["Confirming task completion, checking updates"],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent spacing around some UI elements."
-            }
-          ]
-        }
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pass",
-        "stepStatusReason": "Progress bar reviewed and reflects completed task accurately.",
-        "stepDescription": "Review the progress bar to ensure it reflects the completed task accurately",
-        "runTime": 59961,
+        "stepDescription": "Observe the success message or confirm the new task appears in the task list",
+        "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
       },
       {
-        "stepNumber": 6,
-        "stepStatus": "pass",
-        "stepStatusReason": "Application badge shows correct count of remaining tasks (none).",
-        "stepDescription": "Check the application badge to verify that it shows the correct count of remaining tasks",
-        "runTime": 0,
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pass",
-        "stepStatusReason": "Scrolled task list confirming all updated statuses and indicators visible.",
-        "stepDescription": "Scroll through the list to confirm that all updated task statuses and progress indicators are clearly visible",
-        "runTime": 1,
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pass",
-        "stepStatusReason": "Screenshot captured showing completed task, progress bar, and badge count.",
-        "stepDescription": "Capture a final screenshot of the interface showing completed task, updated progress bar, and accurate badge count",
-        "runTime": 373926,
-        "isScreenShotcaptured": true,
-        "summaryText": ["Taking screenshot of completed tasks"],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Padding around elements appears inconsistent."
-            }
-          ]
-        }
-      }
-    ],
-    "startedAt": 1760636259964,
-    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619554399/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test task completion workflow including marking tasks as done, verifying progress bar updates, and checking app badge functionality",
-    "url": "https://react-cool-todo-app.netlify.app/",
-    "testname": "Task Completion and Progress Tracking",
-    "finishedAt": 1760636676048,
-    "totalTimeElapsed": 416084,
-    "promptTokens": 305592,
-    "completionTokens": 5954,
-    "totalTokens": 311546,
-    "costEstimate": 0.19876259999999998,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760619576576",
-    "status": "abandoned",
-    "progress": 67,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepStatusReason": "URL opened successfully.",
-        "stepDescription": "Open a web browser and navigate to https://react-cool-todo-app.netlify.app/",
-        "lastObservationText": ["Using menu bar for new tab"],
-        "isScreenShotcaptured": true,
-        "runTime": 77331,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        }
-      },
-      {
-        "stepNumber": 2,
+        "stepNumber": 13,
         "stepStatus": "pending",
-        "stepStatusReason": "No verification of homepage key elements visibility observed.",
-        "stepDescription": "Verify the homepage loads by checking for the visibility of key application elements.",
-        "lastObservationText": ["Using menu bar for new tab"],
+        "stepDescription": "Take a screenshot of the completed task creation as evidence of successful operation",
+        "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
-      },
+      }
+    ],
+    "startedAt": 1761303071522,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/TEST-y04binn/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Add new task with modal inputs and validations",
+    "url": "http://localhost:5173",
+    "testname": "Add a New Task",
+    "finishedAt": 1761303413541,
+    "totalTimeElapsed": 342019,
+    "promptTokens": 4906,
+    "completionTokens": 1494,
+    "totalTokens": 6400,
+    "costEstimate": 0.0016323,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "TEST-8x4rv1e",
+    "status": "failed",
+    "progress": 41,
+    "stepResults": [
       {
-        "stepNumber": 3,
+        "stepNumber": 1,
         "stepStatus": "pass",
-        "stepStatusReason": "New task created and named 'Test Task'.",
-        "stepDescription": "Select an existing task or create a new task to use for testing the sharing functionality.",
-        "lastObservationText": ["Using menu bar for new tab"],
+        "stepDescription": "Open the application by navigating to http://localhost:5173/",
+        "stepStatusReason": "Open the application by navigating to http://localhost:5173/",
         "isScreenShotcaptured": true,
-        "summaryText": [
-          "Creating new task, clicking plus button",
-          "Entering \"Test Task\" as identifier",
-          "Searching for save or submit button",
-          "Clicking \"Create Task\" to activate"
-        ],
-        "runTime": 77331,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "No form inputs visible to verify alignment."
-            }
-          ]
-        }
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pass",
-        "stepStatusReason": "Sharing options accessed.",
-        "stepDescription": "Access the sharing options by clicking the share icon or button associated with the task.",
-        "lastObservationText": ["Using menu bar for new tab"],
-        "isScreenShotcaptured": true,
-        "summaryText": ["Accessing sharing options for task"],
-        "runTime": 125429,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        }
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pass",
-        "stepStatusReason": "Share option selected; shareable link generated.",
-        "stepDescription": "Generate a shareable link for the selected task by choosing the appropriate option.",
-        "lastObservationText": ["Using menu bar for new tab"],
-        "isScreenShotcaptured": true,
-        "summaryText": ["Selecting share option for task"],
-        "runTime": 38512,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        }
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pass",
-        "stepStatusReason": "QR CODE tab selected.",
-        "stepDescription": "Generate a QR code for the task share by selecting the QR code option available.",
-        "lastObservationText": ["Using menu bar for new tab"],
-        "isScreenShotcaptured": true,
-        "summaryText": ["Switching to QR CODE tab"],
-        "runTime": 29093,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        }
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pass",
-        "stepStatusReason": "Shareable link copied and accessed in new tab.",
-        "stepDescription": "Copy the shareable link and use it in a new browser session to simulate another device accessing the task.",
-        "lastObservationText": ["Using menu bar for new tab"],
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Copying shareable link for access",
-          "Copying shareable link for task",
-          "Opening new tab, accessing copied link",
-          "Attempting to open new browser tab",
-          "Opening new tab manually now",
-          "Refocusing, trying new tab method.",
-          "Using CMD + T to open tab",
-          "Navigating menu to open new tab",
-          "Adjusting method to open tab",
-          "Trying alternative method for menu access",
-          "Clicking to open new browser tab",
-          "Clicking title bar to open tab",
-          "Adjusting strategy for new tab",
-          "Using menu bar for new tab"
-        ],
-        "runTime": 43486,
         "uiReviewResults": {
           "total-checks-performed": 9,
           "checks-passed": 7,
           "checks-failed": 2,
           "checks-results": [
             {
-              "item": "Verify clear visual hierarchy (titles > subtitles > body)",
+              "item": "Review button size, shape, and style consistency",
               "status": "looks off",
-              "comment": "Titles not clearly distinguished from other text."
+              "comment": "Button styles are inconsistent with overall design."
+            },
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "No form inputs are visible in the current UI state."
+            }
+          ]
+        },
+        "runTime": 27162
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "On the dashboard, locate and click the Add Task button or icon to open the task creation modal",
+        "stepStatusReason": "Click the button with the aria-label \"Add Task\" to open the task creation modal.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the button with the aria-label \"Add Task\" to open the task creation modal.",
+          "Completed: Click the button with the aria-label \"Add Task\" to open the task creation modal."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color usage needs alignment with brand standards."
+            },
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styling does not match overall theme."
             },
             {
               "item": "Ensure consistent padding and margins throughout",
               "status": "looks off",
-              "comment": "Padding around elements is inconsistent."
+              "comment": "Inconsistent margins around form elements."
             }
           ]
-        }
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepStatusReason": "No verification of task import on new device observed.",
-        "stepDescription": "Verify that the task is successfully imported on the new device by reviewing the displayed task details.",
-        "lastObservationText": ["Using menu bar for new tab"],
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepStatusReason": "No screenshot captured on importing device.",
-        "stepDescription": "Capture a screenshot of the final task view on the importing device to confirm the test completion.",
-        "lastObservationText": ["Using menu bar for new tab"],
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760636711987,
-    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619576576/screenshots",
-    "isMarkDownReport": false,
-    "stepsSummary": "Test task sharing functionality including generating shareable links, QR codes, and verifying the shared task can be imported on another device",
-    "url": "https://react-cool-todo-app.netlify.app/",
-    "testname": "Task Sharing and Import",
-    "finishedAt": 1760637771941
-  },
-  {
-    "id": "test_1760619601093",
-    "status": "failed",
-    "progress": 0,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pending",
-        "stepDescription": "Open a web browser and navigate to 'https://react-cool-todo-app.netlify.app/'",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pending",
-        "stepDescription": "Wait for the PWA installation prompt to appear on the screen",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
+        },
+        "runTime": 23969
       },
       {
         "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Initiate the installation process by accepting the installation prompt",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
+        "stepStatus": "pass",
+        "stepDescription": "In the Add New Task modal, enter 'Complete Project Report' in the Task Name field",
+        "stepStatusReason": "Fill the input field with the placeholder \"Enter task name\" with the text \"Complete Project Report\".",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the input field with the placeholder \"Enter task name\" with the text \"Complete Project Report\".",
+          "Completed: Fill the input field with the placeholder \"Enter task name\" with the text \"Complete Project Report\"."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Check alignment and spacing of all elements",
+              "status": "looks off",
+              "comment": "Elements appear cramped with insufficient spacing."
+            },
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Create Task button style may not match design spec."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent margins around form fields."
+            }
+          ]
+        },
+        "runTime": 27464
       },
       {
         "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the application is successfully installed as a PWA by checking for UI changes such as an app icon or a standalone window view",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
+        "stepStatus": "pass",
+        "stepDescription": "Optionally, provide 'Summarize this quarter's achievements for the management meeting' in the Task Description field",
+        "stepStatusReason": "Fill the textarea with the placeholder \"Enter task description\" with the text \"Summarize this quarter's achievements for the management meeting\".",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the textarea with the placeholder \"Enter task description\" with the text \"Summarize this quarter's achievements for the management meeting\".",
+          "Completed: Fill the textarea with the placeholder \"Enter task description\" with the text \"Summarize this quarter's achievements for the management meeting\"."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Ensure consistent and appropriate typography",
+              "status": "looks off",
+              "comment": "Font sizes differ between fields, affecting readability."
+            },
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styles vary in size and shape, impacting UX."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent padding around form fields affects layout."
+            }
+          ]
+        },
+        "runTime": 32328
       },
       {
         "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Simulate offline mode by disabling network connectivity within the browser or using developer tools",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
+        "stepStatus": "pass",
+        "stepDescription": "Enter a Task Deadline by selecting an appropriate date from the available date picker",
+        "stepStatusReason": "Click the input field with the placeholder \"Enter deadline date\" to open the date picker., Click on a date in the date picker to select it as the task deadline.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the input field with the placeholder \"Enter deadline date\" to open the date picker.",
+          "Completed: Click the input field with the placeholder \"Enter deadline date\" to open the date picker.",
+          "Processing: Click on a date in the date picker to select it as the task deadline.",
+          "Completed: Click on a date in the date picker to select it as the task deadline."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color contrast between text and background is insufficient."
+            },
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styles vary and lack visual consistency."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Padding is inconsistent between sections."
+            }
+          ]
+        },
+        "runTime": 45662
       },
       {
         "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Create a new task in the to-do list while offline by entering a task description in the input field and submitting it",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
+        "stepStatus": "pass",
+        "stepDescription": "Below the category selection area, choose a category (for example, 'Work') from the available options",
+        "stepStatusReason": "Click the combobox with the text \"Select Categories\" to open the category selection options., Click the option with the text \"🏢 Work\" from the category selection options.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the combobox with the text \"Select Categories\" to open the category selection options.",
+          "Completed: Click the combobox with the text \"Select Categories\" to open the category selection options.",
+          "Processing: Click the option with the text \"🏢 Work\" from the category selection options.",
+          "Completed: Click the option with the text \"🏢 Work\" from the category selection options."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color contrast between text and background is low."
+            }
+          ]
+        },
+        "runTime": 50321
       },
       {
         "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the new task is added to the to-do list even while offline",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
+        "stepStatus": "pass",
+        "stepDescription": "Select an emoji from the emoji picker to represent the task",
+        "stepStatusReason": "Click the option with the text \"💻 Coding\" from the category selection options.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the option with the text \"💻 Coding\" from the category selection options.",
+          "Completed: Click the option with the text \"💻 Coding\" from the category selection options."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 7,
+          "checks-failed": 2,
+          "checks-results": [
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Buttons lack uniform size and style."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent spacing around elements."
+            }
+          ]
+        },
+        "runTime": 26384
       },
       {
         "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Check that the application badge count updates to reflect the newly added task",
-        "stepStatusReason": "awaiting status reason rationale",
+        "stepStatus": "fail",
+        "stepDescription": "Pick a custom color from the color picker to assign a unique color to the task",
+        "stepStatusReason": "Cannot find the color picker element to assign a unique color to the task.",
         "isScreenShotcaptured": false,
-        "summaryText": []
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Colors do not seem consistent with branding guidelines."
+            }
+          ]
+        },
+        "summaryText": [
+          "Step failed: Cannot find the color picker element to assign a unique color to the task."
+        ],
+        "runTime": 10339
       },
       {
         "stepNumber": 9,
         "stepStatus": "pending",
-        "stepDescription": "Re-enable network connectivity and observe that the offline task synchronizes correctly if necessary",
+        "stepDescription": "Click the Create Task button to submit your new task",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -703,185 +530,7 @@
       {
         "stepNumber": 10,
         "stepStatus": "pending",
-        "stepDescription": "Take a final screenshot of the application showing the updated badge count and the new task in the list",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760636964069,
-    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619601093/screenshots",
-    "isMarkDownReport": false,
-    "stepsSummary": "Test PWA installation process, offline functionality, and app badge features including installation prompt, offline task creation, and badge count updates",
-    "url": "https://react-cool-todo-app.netlify.app/",
-    "testname": "PWA Installation and Offline Features",
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760619621486",
-    "status": "failed",
-    "progress": 0,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pending",
-        "stepDescription": "Open a web browser and navigate to https://react-cool-todo-app.netlify.app/",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pending",
-        "stepDescription": "Observe that the default light theme is correctly applied when the page loads.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Locate and activate the dark mode toggle to switch the UI to dark mode.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the UI elements update their appearance to match the dark theme.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Open the color theme options and choose a different color theme.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that the selected color theme is accurately reflected across the interface.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Enable the glow effects using the theme settings provided.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Check that glow effects are activated on appropriate UI components as expected.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the final state to validate that theme switching and glow effects work correctly.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760637037337,
-    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619621486/screenshots",
-    "isMarkDownReport": false,
-    "stepsSummary": "Test theme switching functionality including light/dark mode toggle, color theme selection, and glow effects to ensure UI updates correctly",
-    "url": "https://react-cool-todo-app.netlify.app/",
-    "testname": "Theme and UI Customization",
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760619651914",
-    "status": "failed",
-    "progress": 0,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pending",
-        "stepDescription": "Open the web browser and navigate to the transfer page at https://react-cool-todo-app.netlify.app/transfer",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pending",
-        "stepDescription": "Wait for the transfer page to load completely and display the data import/export options",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Select the JSON file upload option and choose a valid JSON file to upload for data import",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the imported data from the JSON file upload is displayed correctly on the page",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Perform a drag-and-drop action by dragging a JSON file into the designated area for file import",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that the data imported via the drag-and-drop method appears correctly in the application",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Copy valid JSON data to the clipboard and trigger the clipboard import functionality in the application",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Ensure that the application correctly processes and displays the data imported from the clipboard",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepDescription": "Click the export to JSON button to start the process of exporting data from the application",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 10,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the exported file contains valid JSON data and matches the expected format of the imported data",
+        "stepDescription": "Observe the application feedback to confirm that a success message appears or the new task is listed in the task list",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -889,18 +538,875 @@
       {
         "stepNumber": 11,
         "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the completed data transfer workflow to document the successful test outcome",
+        "stepDescription": "Verify there is at least one active task displayed in the task list on the dashboard",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 12,
+        "stepStatus": "pending",
+        "stepDescription": "Locate the checkbox or tick icon next to an active task (such as a task labeled 'Project Deal')",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 13,
+        "stepStatus": "pending",
+        "stepDescription": "Click the checkbox or tick icon to mark the chosen task as completed",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 14,
+        "stepStatus": "pending",
+        "stepDescription": "Observe that the task's visual appearance updates, such as a background change, strikethrough text, or a visible checkmark indicating completion",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 15,
+        "stepStatus": "pending",
+        "stepDescription": "If this is the last active task, check that a notification appears indicating that all tasks have been completed",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 16,
+        "stepStatus": "pending",
+        "stepDescription": "Confirm that the completed task now shows a 'done' status and is no longer listed among active tasks",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 17,
+        "stepStatus": "pending",
+        "stepDescription": "Take a screenshot of the final state to verify that the test has been completed successfully",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
       }
     ],
-    "startedAt": 1760637181034,
-    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/test_1760619651914/screenshots",
-    "isMarkDownReport": false,
-    "stepsSummary": "Test data import and export functionality including JSON file upload, drag-and-drop import, clipboard import, and export to JSON with validation",
-    "url": "https://react-cool-todo-app.netlify.app/transfer",
-    "testname": "Data Import and Export",
+    "startedAt": 1761311185862,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/TEST-8x4rv1e/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Add and complete a task via modal",
+    "url": "http://localhost:5173/",
+    "testname": "Mark Task as done",
+    "finishedAt": 1761311429524,
+    "totalTimeElapsed": 243662,
+    "promptTokens": 9500,
+    "completionTokens": 1690,
+    "totalTokens": 11190,
+    "costEstimate": 0.0024389999999999998,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "TEST-gp6fsae",
+    "status": "failed",
+    "progress": 44,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open the web browser and navigate to http://localhost:5173/",
+        "stepStatusReason": "Open the web browser and navigate to http://localhost:5173/",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 7,
+          "checks-failed": 2,
+          "checks-results": [
+            {
+              "item": "Ensure consistent and appropriate typography",
+              "status": "looks off",
+              "comment": "Typography size and weight for subtitles not consistent with titles."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Margin around task creation button is inconsistent with other elements."
+            }
+          ]
+        },
+        "runTime": 24060
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "On the dashboard, click the 'Add Task' button or icon to open the task creation modal.",
+        "stepStatusReason": "Click the 'Add Task' button with the data-testid 'add-task-button'.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the 'Add Task' button with the data-testid 'add-task-button'.",
+          "Completed: Click the 'Add Task' button with the data-testid 'add-task-button'."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styles are inconsistent with modal design."
+            }
+          ]
+        },
+        "runTime": 23471
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "In the 'Add New Task' modal, ensure the modal is visible before proceeding.",
+        "stepStatusReason": "Verify that the 'Add New Task' modal with the text \"Add New Task\" is visible.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the 'Add New Task' modal with the text \"Add New Task\" is visible.",
+          "Completed: Verify that the 'Add New Task' modal with the text \"Add New Task\" is visible."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Ensure consistent and appropriate typography",
+              "status": "looks off",
+              "comment": "Font sizes for labels and inputs vary too much."
+            },
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "Label alignment is inconsistent with input fields."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Padding between elements is inconsistent."
+            }
+          ]
+        },
+        "runTime": 26977
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Enter 'Complete Project Report' in the Task Name field.",
+        "stepStatusReason": "Fill the 'Task Name' field with 'Complete Project Report'.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the 'Task Name' field with 'Complete Project Report'.",
+          "Completed: Fill the 'Task Name' field with 'Complete Project Report'."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Ensure consistent and appropriate typography",
+              "status": "looks off",
+              "comment": "Font sizes or weights may not be consistent between fields."
+            },
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "Labels appear misaligned with their respective inputs."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Padding around input fields is inconsistent."
+            }
+          ]
+        },
+        "runTime": 24923
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Optionally, enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field.",
+        "stepStatusReason": "Fill the 'Task Description' field with \"Summarize this quarter's achievements for the management meeting\".",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the 'Task Description' field with \"Summarize this quarter's achievements for the management meeting\".",
+          "Completed: Fill the 'Task Description' field with \"Summarize this quarter's achievements for the management meeting\"."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Ensure consistent and appropriate typography",
+              "status": "looks off",
+              "comment": "Text fields lack consistent font sizing."
+            },
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styles are inconsistent with other UI elements."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent margins around form elements."
+            }
+          ]
+        },
+        "runTime": 25253
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pass",
+        "stepDescription": "Enter a valid date into the Task Deadline field.",
+        "stepStatusReason": "Fill the 'Task Deadline' field with a valid date.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the 'Task Deadline' field with a valid date.",
+          "Completed: Fill the 'Task Deadline' field with a valid date."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 7,
+          "checks-failed": 2,
+          "checks-results": [
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styles are inconsistent with overall UI."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Some fields have irregular padding, affecting layout."
+            }
+          ]
+        },
+        "runTime": 27493
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pass",
+        "stepDescription": "From the 'Select Categories (max 1)' option, choose the category 'Work'.",
+        "stepStatusReason": "Click on the 'Select Categories' dropdown to open the category selection options., Click on the '🏢 Work' category option.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click on the 'Select Categories' dropdown to open the category selection options.",
+          "Completed: Click on the 'Select Categories' dropdown to open the category selection options.",
+          "Processing: Click on the '🏢 Work' category option.",
+          "Completed: Click on the '🏢 Work' category option."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color contrast needs improvement for better accessibility."
+            }
+          ]
+        },
+        "runTime": 52381
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "fail",
+        "stepDescription": "Click the 'Create Task' button to submit the new task.",
+        "stepStatusReason": "locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByText('Create Task')\n    - locator resolved to <button tabindex=\"0\" type=\"button\" class=\"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary ea72r5w1 css-aahitv-MuiButtonBase-root-MuiButton-root-AddTaskButton\">Create Task</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <li tabindex=\"0\" role=\"option\" clr=\"#248eff\" translate=\"no\" aria-selected=\"true\" data-value=\"0292cba5-f6e2-41c4-b5a7-c59a0aaecfe3\" class=\"MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters Mui-selected MuiMenuItem-root MuiMenuItem-gutters Mui-selected ef0gh7o4 css-kw5ah8-MuiButtonBase-root-MuiMenuItem-root-CategoriesMenu\">…</li> from <div id=\"menu-\" role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-pa188r-MuiModal-root-MuiPopover-root-MuiMenu-root\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <li tabindex=\"0\" role=\"option\" clr=\"#ff9e42\" translate=\"no\" aria-selected=\"false\" data-value=\"afa0fdb4-f668-4d5a-9ad0-4e22d2b8e841\" class=\"MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters ef0gh7o4 css-s4e2rq-MuiButtonBase-root-MuiMenuItem-root-CategoriesMenu\">…</li> from <div id=\"menu-\" role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-pa188r-MuiModal-root-MuiPopover-root-MuiMenu-root\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <li tabindex=\"0\" role=\"option\" clr=\"#248eff\" translate=\"no\" aria-selected=\"true\" data-value=\"0292cba5-f6e2-41c4-b5a7-c59a0aaecfe3\" class=\"MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters Mui-selected MuiMenuItem-root MuiMenuItem-gutters Mui-selected ef0gh7o4 css-kw5ah8-MuiButtonBase-root-MuiMenuItem-root-CategoriesMenu\">…</li> from <div id=\"menu-\" role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-pa188r-MuiModal-root-MuiPopover-root-MuiMenu-root\">…</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <li tabindex=\"0\" role=\"option\" clr=\"#248eff\" translate=\"no\" aria-selected=\"true\" data-value=\"0292cba5-f6e2-41c4-b5a7-c59a0aaecfe3\" class=\"MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters Mui-selected MuiMenuItem-root MuiMenuItem-gutters Mui-selected ef0gh7o4 css-kw5ah8-MuiButtonBase-root-MuiMenuItem-root-CategoriesMenu\">…</li> from <div id=\"menu-\" role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-pa188r-MuiModal-root-MuiPopover-root-MuiMenu-root\">…</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <li tabindex=\"0\" role=\"option\" clr=\"#ff9e42\" translate=\"no\" aria-selected=\"false\" data-value=\"afa0fdb4-f668-4d5a-9ad0-4e22d2b8e841\" class=\"MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters MuiMenuItem-root MuiMenuItem-gutters ef0gh7o4 css-s4e2rq-MuiButtonBase-root-MuiMenuItem-root-CategoriesMenu\">…</li> from <div id=\"menu-\" role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-pa188r-MuiModal-root-MuiPopover-root-MuiMenu-root\">…</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <li tabindex=\"0\" role=\"option\" clr=\"#248eff\" translate=\"no\" aria-selected=\"true\" data-value=\"0292cba5-f6e2-41c4-b5a7-c59a0aaecfe3\" class=\"MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters Mui-selected MuiMenuItem-root MuiMenuItem-gutters Mui-selected ef0gh7o4 css-kw5ah8-MuiButtonBase-root-MuiMenuItem-root-CategoriesMenu\">…</li> from <div id=\"menu-\" role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-pa188r-MuiModal-root-MuiPopover-root-MuiMenu-root\">…</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <li tabindex=\"0\" role=\"option\" clr=\"#248eff\" translate=\"no\" aria-selected=\"true\" data-value=\"0292cba5-f6e2-41c4-b5a7-c59a0aaecfe3\" class=\"MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gutters Mui-selected MuiMenuItem-root MuiMenuItem-gutters Mui-selected ef0gh7o4 css-kw5ah8-MuiButtonBase-root-MuiMenuItem-root-CategoriesMenu\">…</li> from <div id=\"menu-\" role=\"presentation\" class=\"MuiPopover-root MuiMenu-root MuiModal-root css-pa188r-MuiModal-root-MuiPopover-root-MuiMenu-root\">…</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 500ms\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": [
+          "Processing: Click the 'Create Task' button with the text \"Create Task\" to submit the new task."
+        ],
+        "runTime": 50078
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Observe the application feedback, such as a success message or the appearance of the new task in the task list.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 10,
+        "stepStatus": "pending",
+        "stepDescription": "Open the task list and locate the task 'Complete Project Report' that was just added.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 11,
+        "stepStatus": "pending",
+        "stepDescription": "Click the three-dot menu ('...') associated with the selected task to reveal more options.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 12,
+        "stepStatus": "pending",
+        "stepDescription": "Select the 'Move' option from the menu to activate the move mode for the task.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 13,
+        "stepStatus": "pending",
+        "stepDescription": "Drag the task to the desired new position within the task list.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 14,
+        "stepStatus": "pending",
+        "stepDescription": "Click 'Done' or confirm the move if prompted to finalize the repositioning of the task.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 15,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the task now appears in the new position within the list.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 16,
+        "stepStatus": "pending",
+        "stepDescription": "Take a screenshot of the completed task list to confirm the successful move operation.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761311595624,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/TEST-gp6fsae/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Add new task and reposition it",
+    "url": "http://localhost:5173/",
+    "testname": "Drag and Move Task",
+    "finishedAt": 1761311850498,
+    "totalTimeElapsed": 254874,
+    "promptTokens": 14610,
+    "completionTokens": 1998,
+    "totalTokens": 16608,
+    "costEstimate": 0.0033902999999999997,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "TEST-u4j7hud",
+    "status": "failed",
+    "progress": 40,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to http://localhost:5173.",
+        "stepStatusReason": "Open a web browser and navigate to http://localhost:5173.",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Ensure consistent and appropriate typography",
+              "status": "looks off",
+              "comment": "Font sizes vary significantly between headers and body text."
+            },
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "Labels for empty states lack clear visibility."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent padding on the sides of the modal content."
+            }
+          ]
+        },
+        "runTime": 31004
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "On the dashboard, click the Add Task button or icon to launch the Add New Task modal.",
+        "stepStatusReason": "Click the \"Add Task\" button with the aria-label \"Add Task\" to launch the Add New Task modal.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Add Task\" button with the aria-label \"Add Task\" to launch the Add New Task modal.",
+          "Completed: Click the \"Add Task\" button with the aria-label \"Add Task\" to launch the Add New Task modal."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Check alignment and spacing of all elements",
+              "status": "looks off",
+              "comment": "Spacing between inputs is inconsistent."
+            },
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color usage needs alignment with branding guidelines."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Margins around the modal content are inconsistent."
+            }
+          ]
+        },
+        "runTime": 26472
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "In the Add New Task modal, enter 'Complete Project Report' into the Task Name field.",
+        "stepStatusReason": "Fill the \"Task Name\" field with 'Complete Project Report'.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the \"Task Name\" field with 'Complete Project Report'.",
+          "Completed: Fill the \"Task Name\" field with 'Complete Project Report'."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Verify clear visual hierarchy (titles > subtitles > body)",
+              "status": "looks off",
+              "comment": "No clear distinction between task name and other fields."
+            },
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styles not clearly visible or sized appropriately."
+            },
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "Labels for inputs are not prominently displayed."
+            }
+          ]
+        },
+        "runTime": 25941
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Optionally, enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field.",
+        "stepStatusReason": "Fill the \"Task Description\" field with 'Summarize this quarter's achievements for the management meeting'.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the \"Task Description\" field with 'Summarize this quarter's achievements for the management meeting'.",
+          "Completed: Fill the \"Task Description\" field with 'Summarize this quarter's achievements for the management meeting'."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 5,
+          "checks-failed": 4,
+          "checks-results": [
+            {
+              "item": "Check alignment and spacing of all elements",
+              "status": "looks off",
+              "comment": "Elements are not spaced evenly, causing clutter."
+            },
+            {
+              "item": "Ensure consistent and appropriate typography",
+              "status": "looks off",
+              "comment": "Inconsistent font sizes for labels and inputs."
+            },
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "Labels overlap with input fields, reducing clarity."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent margins around inputs and sections."
+            }
+          ]
+        },
+        "runTime": 24737
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Enter a valid task deadline date into the Task Deadline field.",
+        "stepStatusReason": "Fill the \"Task Deadline\" field with a valid date and time.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the \"Task Deadline\" field with a valid date and time.",
+          "Completed: Fill the \"Task Deadline\" field with a valid date and time."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 7,
+          "checks-failed": 2,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color usage does not seem consistent with brand guidelines."
+            },
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styles are inconsistent; need uniformity across elements."
+            }
+          ]
+        },
+        "runTime": 24779
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pass",
+        "stepDescription": "Below the 'Select Categories (max 1)' section, choose the category 'Work'.",
+        "stepStatusReason": "Click the \"Select Categories\" combobox to open the category selection dropdown., Click the \"🏢 Work\" option in the category selection dropdown.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Select Categories\" combobox to open the category selection dropdown.",
+          "Completed: Click the \"Select Categories\" combobox to open the category selection dropdown.",
+          "Processing: Click the \"🏢 Work\" option in the category selection dropdown.",
+          "Completed: Click the \"🏢 Work\" option in the category selection dropdown."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 8,
+          "checks-failed": 1,
+          "checks-results": [
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color usage could be more consistent with brand guidelines."
+            }
+          ]
+        },
+        "runTime": 41357
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "fail",
+        "stepDescription": "Click the Create Task button to submit the new task.",
+        "stepStatusReason": "locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /Create Task/i })\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": [
+          "Processing: Click the \"Create Task\" button to submit the new task."
+        ],
+        "runTime": 45178
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that a success message is displayed or that the new task appears in the task list.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Repeat the add task process by clicking the Add Task button again.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 10,
+        "stepStatus": "pending",
+        "stepDescription": "In the modal, enter alternative values for the task name, description, and deadline to create a second task.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 11,
+        "stepStatus": "pending",
+        "stepDescription": "Click the Create Task button to submit the second task and verify its addition to the task list.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 12,
+        "stepStatus": "pending",
+        "stepDescription": "Wait a few seconds for data retrieval and ensure the task list is updated.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 13,
+        "stepStatus": "pending",
+        "stepDescription": "Identify a task in the list that is currently not pinned.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 14,
+        "stepStatus": "pending",
+        "stepDescription": "Click the three-dot menu on the identified task card and select the Pin option from the dropdown.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 15,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that a pinned icon appears on the task and that the task is positioned at the top or in the pinned area, then take a screenshot to confirm the result.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761312192471,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/TEST-u4j7hud/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Add and pin tasks on dashboard",
+    "url": "http://localhost:5173/",
+    "testname": "Pin a Task",
+    "finishedAt": 1761312412098,
+    "totalTimeElapsed": 219627,
+    "promptTokens": 15535,
+    "completionTokens": 1349,
+    "totalTokens": 16884,
+    "costEstimate": 0.00313965,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "TEST-zlekvij",
+    "status": "failed",
+    "progress": 14,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to http://localhost:5173/",
+        "stepStatusReason": "Open a web browser and navigate to http://localhost:5173/",
+        "isScreenShotcaptured": true,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 6,
+          "checks-failed": 3,
+          "checks-results": [
+            {
+              "item": "Check alignment and spacing of all elements",
+              "status": "looks off",
+              "comment": "Elements are not properly aligned or spaced."
+            },
+            {
+              "item": "Check visibility and alignment of form inputs and labels",
+              "status": "looks off",
+              "comment": "Form labels are unclear or misaligned."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent padding and margins observed."
+            }
+          ]
+        },
+        "runTime": 29723
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "On the dashboard, click the Add Task button or icon to open the Add New Task modal.",
+        "stepStatusReason": "Click the button with the aria-label \"Add Task\" to open the Add New Task modal.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the button with the aria-label \"Add Task\" to open the Add New Task modal.",
+          "Completed: Click the button with the aria-label \"Add Task\" to open the Add New Task modal."
+        ],
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 5,
+          "checks-failed": 4,
+          "checks-results": [
+            {
+              "item": "Check alignment and spacing of all elements",
+              "status": "looks off",
+              "comment": "Elements are misaligned, affecting readability."
+            },
+            {
+              "item": "Verify clear visual hierarchy (titles > subtitles > body)",
+              "status": "looks off",
+              "comment": "Title and error message lack clear distinction and hierarchy."
+            },
+            {
+              "item": "Confirm correct and brand-compliant color usage",
+              "status": "looks off",
+              "comment": "Color choices clash, reducing legibility of the error message."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Inconsistent margins contribute to a cluttered appearance."
+            }
+          ]
+        },
+        "runTime": 25670
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "fail",
+        "stepDescription": "In the modal, enter 'Complete Project Report' in the Task Name field.",
+        "stepStatusReason": "Cannot find the Task Name field in the modal.",
+        "isScreenShotcaptured": false,
+        "uiReviewResults": {
+          "total-checks-performed": 9,
+          "checks-passed": 5,
+          "checks-failed": 4,
+          "checks-results": [
+            {
+              "item": "Check alignment and spacing of all elements",
+              "status": "looks off",
+              "comment": "Elements are not aligned properly in the modal."
+            },
+            {
+              "item": "Verify clear visual hierarchy (titles > subtitles > body)",
+              "status": "looks off",
+              "comment": "Text lacks clear hierarchy; titles and body text are confusing."
+            },
+            {
+              "item": "Review button size, shape, and style consistency",
+              "status": "looks off",
+              "comment": "Button styles are inconsistent with brand guidelines."
+            },
+            {
+              "item": "Ensure consistent padding and margins throughout",
+              "status": "looks off",
+              "comment": "Padding and margins are inconsistent between elements."
+            }
+          ]
+        },
+        "summaryText": [
+          "Step failed: Cannot find the Task Name field in the modal."
+        ],
+        "runTime": 15205
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pending",
+        "stepDescription": "Optionally, enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pending",
+        "stepDescription": "Enter a valid date in the Task Deadline field.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pending",
+        "stepDescription": "Select a category under 'Select Categories (max 1)' by choosing 'Work'.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Click the Create Task button to submit the new task.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the new task appears in the task list with a success notification or feedback message.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Ensure that at least one task is marked as done by checking that a checkmark is visible and the text shows a strikethrough effect.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 10,
+        "stepStatus": "pending",
+        "stepDescription": "Click the three-dot menu on the completed task card to reveal more options.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 11,
+        "stepStatus": "pending",
+        "stepDescription": "Select Mark as not done from the dropdown options to revert the task status.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 12,
+        "stepStatus": "pending",
+        "stepDescription": "Observe the UI to confirm that the checkmark disappears and the text formatting returns to normal, indicating the task is now active.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 13,
+        "stepStatus": "pending",
+        "stepDescription": "Verify any notifications or success messages confirming the status change are displayed.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 14,
+        "stepStatus": "pending",
+        "stepDescription": "Take a screenshot of the completed task list to document the final state.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761312989756,
+    "screenshotDir": "/Users/apple/Desktop/Office/TodoApp/.geck/test-metadata/TEST-zlekvij/screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Add a task and revert its completion status",
+    "url": "http://localhost:5173/",
+    "testname": "Mark Task as Not Done",
+    "finishedAt": 1761313060368,
+    "totalTimeElapsed": 70612,
+    "promptTokens": 15051,
+    "completionTokens": 1329,
+    "totalTokens": 16380,
+    "costEstimate": 0.00305505,
     "isGeneratingReport": false
   }
 ]

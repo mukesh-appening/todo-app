@@ -110,7 +110,7 @@ export const StyledProgress = styled(CircularProgress)<{ glow: boolean }>`
   transition: 0.3s filter;
 `;
 
-export const AddButton = styled(Button)<{ animate?: boolean; glow: boolean }>`
+export const AddButton = styled(Button)<{ animate?: boolean; glow: boolean; testMode?: boolean }>`
   cursor: pointer;
   border: none;
   display: flex;
@@ -136,11 +136,29 @@ export const AddButton = styled(Button)<{ animate?: boolean; glow: boolean }>`
     backdrop-filter: blur(6px);
   }
 
-  animation: ${scale} 0.5s;
-  ${({ animate, theme }) =>
-    animate &&
+  /* Disable animations in test mode for AI agent stability */
+  ${({ testMode }) =>
+    testMode &&
     css`
-      animation: ${pulseAnimation(theme.primary, 14)} 1.2s infinite;
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+      will-change: auto !important;
+      /* Ensure button is always visible and stable */
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+    `}
+
+  /* Only apply animations when not in test mode */
+  ${({ animate, theme, testMode }) =>
+    !testMode &&
+    css`
+      animation: ${scale} 0.5s;
+      ${animate &&
+        css`
+          animation: ${pulseAnimation(theme.primary, 14)} 1.2s infinite;
+        `}
     `}
 
   ${({ theme }) => reduceMotion(theme)}

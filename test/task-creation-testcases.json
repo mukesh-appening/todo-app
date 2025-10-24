@@ -1,0 +1,373 @@
+[
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can successfully add a new task by entering a task name, description, choosing up to 3 categories, selecting an emoji, and picking a custom color.\n\nClick the \"Add New Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add today date.\nBelow \"Select Categories (max 3),\" choose any combination of up to three categories (e.g., \"Work\" and \"Coding\").\nIn the \"Color\" section, select any color (e.g., Electric Violet - #B624FF).\nClick the emoji icon near the top to open the emoji picker.\nSelect an emoji to represent your task (e.g., 📝 or 😃).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).",
+    "createdAt": 1761300951636,
+    "testname": "Add a New Task",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-y04binn",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Click the Add New Task button or icon on the dashboard"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Wait for the Add New Task modal to appear"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Enter 'Complete Project Report' in the Task Name field"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Enter today's date in the Task Deadline field"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Select up to 3 categories in the Select Categories section, for example choose 'Work' and 'Coding'"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Select a color from the Color section, such as Electric Violet (#B624FF)"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Click the emoji icon near the top to open the emoji picker"
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Select an emoji, for example 📝 or 😃, to represent the task"
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Click Create Task to submit the new task"
+        },
+        {
+          "stepNumber": 12,
+          "stepDescription": "Observe the success message or confirm the new task appears in the task list"
+        },
+        {
+          "stepNumber": 13,
+          "stepDescription": "Take a screenshot of the completed task creation as evidence of successful operation"
+        }
+      ],
+      "stepsSummary": "Add new task with modal inputs and validations"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Verify that a user can successfully add a new task by entering a task name, description, choosing up to 3 categories, selecting an emoji, and picking a custom color.\n\nClick the \"Add New Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add any date.\nBelow \"Select Categories (max 1),\" choose any combination of up to one category (e.g., \"Work\" ).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).\n\nOpen the app and ensure at least one active task is visible in the task list.\nLocate the checkbox or tick icon next to an active task (e.g., \"Project Deal\").\nClick the checkbox/tick icon to mark the task as done.\nObserve that the task status updates visually (e.g., background changes, text strikethrough, checkmark appears).\nConfirm that a notification appears stating all tasks have been completed (if it was the last open task).\nVerify that the completed task now reflects its \"done\" status and is no longer considered active.\n",
+    "createdAt": 1761310178171,
+    "testname": "Mark Task as done",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-8x4rv1e",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the application by navigating to http://localhost:5173/"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "On the dashboard, locate and click the Add Task button or icon to open the task creation modal"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "In the Add New Task modal, enter 'Complete Project Report' in the Task Name field"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Optionally, provide 'Summarize this quarter's achievements for the management meeting' in the Task Description field"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Enter a Task Deadline by selecting an appropriate date from the available date picker"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Below the category selection area, choose a category (for example, 'Work') from the available options"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Select an emoji from the emoji picker to represent the task"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Pick a custom color from the color picker to assign a unique color to the task"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Click the Create Task button to submit your new task"
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Observe the application feedback to confirm that a success message appears or the new task is listed in the task list"
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Verify there is at least one active task displayed in the task list on the dashboard"
+        },
+        {
+          "stepNumber": 12,
+          "stepDescription": "Locate the checkbox or tick icon next to an active task (such as a task labeled 'Project Deal')"
+        },
+        {
+          "stepNumber": 13,
+          "stepDescription": "Click the checkbox or tick icon to mark the chosen task as completed"
+        },
+        {
+          "stepNumber": 14,
+          "stepDescription": "Observe that the task's visual appearance updates, such as a background change, strikethrough text, or a visible checkmark indicating completion"
+        },
+        {
+          "stepNumber": 15,
+          "stepDescription": "If this is the last active task, check that a notification appears indicating that all tasks have been completed"
+        },
+        {
+          "stepNumber": 16,
+          "stepDescription": "Confirm that the completed task now shows a 'done' status and is no longer listed among active tasks"
+        },
+        {
+          "stepNumber": 17,
+          "stepDescription": "Take a screenshot of the final state to verify that the test has been completed successfully"
+        }
+      ],
+      "stepsSummary": "Add and complete a task via modal"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Click the \"Add Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add any date.\nBelow \"Select Categories (max 1),\" choose any combination of up to one category (e.g., \"Work\" ).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).\n\nValidate that a user can revert a completed task to \"not done\" status and ensure the UI and task state update correctly.\n\nEnsure at least one task is already marked as done (checkmark visible, strikethrough on text).\nClick the three-dot menu (\"...\") on the completed task card.\nSelect \"Mark as not done\" from the dropdown menu.\nObserve that the checkmark disappears, text formatting returns to normal (no strikethrough), and the task is now shown as active.\nVerify notifications or success messages if any are displayed, confirming the status change.\n\n\n\n",
+    "createdAt": 1761310402303,
+    "testname": "Mark Task as Not Done",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-zlekvij",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173/"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "On the dashboard, click the Add Task button or icon to open the Add New Task modal."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "In the modal, enter 'Complete Project Report' in the Task Name field."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Optionally, enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Enter a valid date in the Task Deadline field."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Select a category under 'Select Categories (max 1)' by choosing 'Work'."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Click the Create Task button to submit the new task."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Verify that the new task appears in the task list with a success notification or feedback message."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Ensure that at least one task is marked as done by checking that a checkmark is visible and the text shows a strikethrough effect."
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Click the three-dot menu on the completed task card to reveal more options."
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Select Mark as not done from the dropdown options to revert the task status."
+        },
+        {
+          "stepNumber": 12,
+          "stepDescription": "Observe the UI to confirm that the checkmark disappears and the text formatting returns to normal, indicating the task is now active."
+        },
+        {
+          "stepNumber": 13,
+          "stepDescription": "Verify any notifications or success messages confirming the status change are displayed."
+        },
+        {
+          "stepNumber": 14,
+          "stepDescription": "Take a screenshot of the completed task list to document the final state."
+        }
+      ],
+      "stepsSummary": "Add a task and revert its completion status"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Verify that a user can successfully add a new task by entering a task name, description, choosing up to 3 categories, selecting an emoji, and picking a custom color.\n\nClick the \"Add Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add any date.\nBelow \"Select Categories (max 1),\" choose any combination of up to one category (e.g., \"Work\" ).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).\n\nsame process again create new add task \n\nRetrieving data. Wait a few seconds and try to cut or copy again.\nIdentify a task in the list that is currently not pinned.\nClick the three-dot menu (\"...\") on the task card.\nSelect the \"Pin\" option from the dropdown menu.\nObserve that the pinned icon appears on the task and the task is now positioned at the top or in the pinned area of the list.\n",
+    "createdAt": 1761310304842,
+    "testname": "Pin a Task",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-u4j7hud",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "On the dashboard, click the Add Task button or icon to launch the Add New Task modal."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "In the Add New Task modal, enter 'Complete Project Report' into the Task Name field."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Optionally, enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Enter a valid task deadline date into the Task Deadline field."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Below the 'Select Categories (max 1)' section, choose the category 'Work'."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Click the Create Task button to submit the new task."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Verify that a success message is displayed or that the new task appears in the task list."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Repeat the add task process by clicking the Add Task button again."
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "In the modal, enter alternative values for the task name, description, and deadline to create a second task."
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Click the Create Task button to submit the second task and verify its addition to the task list."
+        },
+        {
+          "stepNumber": 12,
+          "stepDescription": "Wait a few seconds for data retrieval and ensure the task list is updated."
+        },
+        {
+          "stepNumber": 13,
+          "stepDescription": "Identify a task in the list that is currently not pinned."
+        },
+        {
+          "stepNumber": 14,
+          "stepDescription": "Click the three-dot menu on the identified task card and select the Pin option from the dropdown."
+        },
+        {
+          "stepNumber": 15,
+          "stepDescription": "Verify that a pinned icon appears on the task and that the task is positioned at the top or in the pinned area, then take a screenshot to confirm the result."
+        }
+      ],
+      "stepsSummary": "Add and pin tasks on dashboard"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Click the \"Add Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add any date.\nBelow \"Select Categories (max 1),\" choose any combination of up to one category (e.g., \"Work\" ).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).\n\nagain  create same add new task then \nVerify that a user can change the position of a task within the task list using the move feature.\n\nOpen the task list and identify a task you want to move.\nClick the three-dot menu (\"...\") for that task.\nSelect \"Move\" to activate move mode.\nDrag and drop the task to a new position in the list.\nClick \"Done\" or confirm the move if prompted.\nEnsure the task now appears in the new position in the list.\n\n\n\n",
+    "createdAt": 1761311583998,
+    "testname": "Drag and Move Task",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-gp6fsae",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to http://localhost:5173/"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "On the dashboard, click the 'Add Task' button or icon to open the task creation modal."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "In the 'Add New Task' modal, ensure the modal is visible before proceeding."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Enter 'Complete Project Report' in the Task Name field."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Optionally, enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Enter a valid date into the Task Deadline field."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "From the 'Select Categories (max 1)' option, choose the category 'Work'."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Click the 'Create Task' button to submit the new task."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Observe the application feedback, such as a success message or the appearance of the new task in the task list."
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Open the task list and locate the task 'Complete Project Report' that was just added."
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Click the three-dot menu ('...') associated with the selected task to reveal more options."
+        },
+        {
+          "stepNumber": 12,
+          "stepDescription": "Select the 'Move' option from the menu to activate the move mode for the task."
+        },
+        {
+          "stepNumber": 13,
+          "stepDescription": "Drag the task to the desired new position within the task list."
+        },
+        {
+          "stepNumber": 14,
+          "stepDescription": "Click 'Done' or confirm the move if prompted to finalize the repositioning of the task."
+        },
+        {
+          "stepNumber": 15,
+          "stepDescription": "Verify that the task now appears in the new position within the list."
+        },
+        {
+          "stepNumber": 16,
+          "stepDescription": "Take a screenshot of the completed task list to confirm the successful move operation."
+        }
+      ],
+      "generatedAt": 1761311584002,
+      "stepsSummary": "Add new task and reposition it"
+    }
+  }
+]
