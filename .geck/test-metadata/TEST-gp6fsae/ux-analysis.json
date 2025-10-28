@@ -50,9 +50,7 @@
       {
         "title": "Choose Emoji",
         "stepStatus": "skipped",
-        "details": [
-          "Never reached in tests that failed at Color step; remains pending."
-        ]
+        "details": ["Never reached in tests that failed at Color step; remains pending."]
       },
       {
         "title": "Submit with “Create Task”",

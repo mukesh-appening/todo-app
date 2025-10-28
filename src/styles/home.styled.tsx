@@ -156,9 +156,9 @@ export const AddButton = styled(Button)<{ animate?: boolean; glow: boolean; test
     css`
       animation: ${scale} 0.5s;
       ${animate &&
-        css`
-          animation: ${pulseAnimation(theme.primary, 14)} 1.2s infinite;
-        `}
+      css`
+        animation: ${pulseAnimation(theme.primary, 14)} 1.2s infinite;
+      `}
     `}
 
   ${({ theme }) => reduceMotion(theme)}

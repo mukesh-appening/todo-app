@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { autoEnableTestMode } from '../utils/testMode';
+import { useEffect } from "react";
+import { autoEnableTestMode } from "../utils/testMode";
 
 /**
  * Hook to automatically enable test mode when the app starts

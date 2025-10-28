@@ -141,7 +141,7 @@ const AddIconContainer = styled(Box)<{ clr: string; animate: boolean; testMode?:
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   /* Disable animations in test mode for AI agent stability */
   ${({ testMode }) =>
     testMode &&
@@ -155,7 +155,7 @@ const AddIconContainer = styled(Box)<{ clr: string; animate: boolean; testMode?:
       visibility: visible !important;
       pointer-events: auto !important;
     `}
-  
+
   /* Only apply animations when not in test mode */
   ${({ animate, theme, testMode }) =>
     !testMode &&

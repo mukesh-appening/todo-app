@@ -7,16 +7,16 @@
  * @returns {boolean} True if running in test mode
  */
 export const isTestMode = (): boolean => {
-  if (typeof window === 'undefined') {
-    return process.env.NODE_ENV === 'test';
+  if (typeof window === "undefined") {
+    return process.env.NODE_ENV === "test";
   }
 
   const userAgent = window.navigator.userAgent;
-  const isHeadlessChrome = userAgent.includes('HeadlessChrome');
-  const isPlaywright = userAgent.includes('Playwright');
-  const isPuppeteer = userAgent.includes('Puppeteer');
-  const isTestEnv = process.env.NODE_ENV === 'test';
-  
+  const isHeadlessChrome = userAgent.includes("HeadlessChrome");
+  const isPlaywright = userAgent.includes("Playwright");
+  const isPuppeteer = userAgent.includes("Puppeteer");
+  const isTestEnv = process.env.NODE_ENV === "test";
+
   return isHeadlessChrome || isPlaywright || isPuppeteer || isTestEnv;
 };
 
@@ -24,8 +24,8 @@ export const isTestMode = (): boolean => {
  * Adds test mode class to document body for global test mode styling
  */
 export const enableTestMode = (): void => {
-  if (typeof document !== 'undefined') {
-    document.body.classList.add('test-mode');
+  if (typeof document !== "undefined") {
+    document.body.classList.add("test-mode");
   }
 };
 
@@ -33,8 +33,8 @@ export const enableTestMode = (): void => {
  * Removes test mode class from document body
  */
 export const disableTestMode = (): void => {
-  if (typeof document !== 'undefined') {
-    document.body.classList.remove('test-mode');
+  if (typeof document !== "undefined") {
+    document.body.classList.remove("test-mode");
   }
 };
 
