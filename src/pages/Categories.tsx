@@ -353,6 +353,8 @@ const Categories = () => {
           </InputThemeProvider>
           <ColorPicker
             color={color}
+            name="newCategoryColor"
+            label="Category Color"
             onColorChange={(color) => {
               setColor(color);
             }}
@@ -476,6 +478,8 @@ const Categories = () => {
               />
               <ColorPicker
                 color={editColor}
+                name="editCategoryColor"
+                label="Edit Category Color"
                 width="350px"
                 fontColor={theme.darkmode ? ColorPalette.fontLight : ColorPalette.fontDark}
                 onColorChange={(clr) => {

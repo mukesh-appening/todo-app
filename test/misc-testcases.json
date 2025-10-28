@@ -1,0 +1,92 @@
+[
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can install the Todo App as a Progressive Web App (PWA) for offline and desktop use.\n\nOpen the Todo App\nClick the \"Install App\" option in the app menu/sidebar.\nReview the installation prompt with app description and preview images.\nClick the \"Install\" button.\nConfirm that the app is added to your system as a standalone desktop/mobile application.\nOpen the installed app from desktop/start menu/app launcher and check functionality and offline access.",
+    "createdAt": 1761554541693,
+    "testname": "Install App",
+    "projectName": "Misc",
+    "useSavedLoginState": false,
+    "id": "TEST-aa692",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173 to launch the Todo App."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Access the app menu or sidebar and select the 'Install App' option to initiate installation."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Review the installation prompt that displays the app description and preview images."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Click on the 'Install' button on the installation prompt to confirm the installation."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Verify that the Todo App is added to your system as a standalone desktop or mobile application."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Launch the installed application from the desktop, start menu, or app launcher."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Check that the installed Todo App functions correctly, including offline access features."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Take a screenshot of the completed task to confirm that the installation and functionality are working as expected."
+        }
+      ],
+      "generatedAt": 1761554541694,
+      "stepsSummary": "Install Todo App as a PWA"
+    }
+  },
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can successfully log out from the application and receives confirmation with secure session termination.\n\nClick the user/avatar icon or open the main menu/sidebar.\nSelect the \"Logout\" option.\nIn the logout confirmation dialog, review any warning message (such as \"Your tasks will not be saved\").\nClick the \"Logout\" button to confirm.\nObserve that you are redirected to a logged-out state and see a feedback message (such as \"You have been successfully logged out\").\n",
+    "createdAt": 1761628239453,
+    "testname": "Logout",
+    "projectName": "Misc",
+    "useSavedLoginState": false,
+    "id": "TEST-b232b",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a browser and navigate to http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Click on the user avatar icon or open the main menu/sidebar to access user options"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Select the Logout option from the menu"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Review the logout confirmation dialog for any warnings like 'Your tasks will not be saved'"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Click the Logout button within the confirmation dialog to proceed"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Verify that you are redirected to a logged-out state and that a confirmation message appears indicating successful logout"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Take a screenshot of the final screen to capture the successful logout confirmation"
+        }
+      ],
+      "generatedAt": 1761628239470,
+      "stepsSummary": "User logs out with secure session termination"
+    }
+  }
+]

@@ -68,7 +68,7 @@
   {
     "url": "http://localhost:5173/",
     "description": "Verify that a user can successfully add a new task by entering a task name, description, choosing up to 3 categories, selecting an emoji, and picking a custom color.\n\nClick the \"Add New Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add any date.\nBelow \"Select Categories (max 1),\" choose any combination of up to one category (e.g., \"Work\" ).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).\n\nOpen the app and ensure at least one active task is visible in the task list.\nLocate the checkbox or tick icon next to an active task (e.g., \"Project Deal\").\nClick the checkbox/tick icon to mark the task as done.\nObserve that the task status updates visually (e.g., background changes, text strikethrough, checkmark appears).\nConfirm that a notification appears stating all tasks have been completed (if it was the last open task).\nVerify that the completed task now reflects its \"done\" status and is no longer considered active.\n",
-    "createdAt": 1761310178171,
+    "createdAt": 1761553441871,
     "testname": "Mark Task as done",
     "projectName": "Task Creation",
     "useSavedLoginState": false,
@@ -101,46 +101,38 @@
         },
         {
           "stepNumber": 7,
-          "stepDescription": "Select an emoji from the emoji picker to represent the task"
-        },
-        {
-          "stepNumber": 8,
-          "stepDescription": "Pick a custom color from the color picker to assign a unique color to the task"
-        },
-        {
-          "stepNumber": 9,
           "stepDescription": "Click the Create Task button to submit your new task"
         },
         {
-          "stepNumber": 10,
+          "stepNumber": 8,
           "stepDescription": "Observe the application feedback to confirm that a success message appears or the new task is listed in the task list"
         },
         {
-          "stepNumber": 11,
+          "stepNumber": 9,
           "stepDescription": "Verify there is at least one active task displayed in the task list on the dashboard"
         },
         {
-          "stepNumber": 12,
+          "stepNumber": 10,
           "stepDescription": "Locate the checkbox or tick icon next to an active task (such as a task labeled 'Project Deal')"
         },
         {
-          "stepNumber": 13,
+          "stepNumber": 11,
           "stepDescription": "Click the checkbox or tick icon to mark the chosen task as completed"
         },
         {
-          "stepNumber": 14,
+          "stepNumber": 12,
           "stepDescription": "Observe that the task's visual appearance updates, such as a background change, strikethrough text, or a visible checkmark indicating completion"
         },
         {
-          "stepNumber": 15,
+          "stepNumber": 13,
           "stepDescription": "If this is the last active task, check that a notification appears indicating that all tasks have been completed"
         },
         {
-          "stepNumber": 16,
+          "stepNumber": 14,
           "stepDescription": "Confirm that the completed task now shows a 'done' status and is no longer listed among active tasks"
         },
         {
-          "stepNumber": 17,
+          "stepNumber": 15,
           "stepDescription": "Take a screenshot of the final state to verify that the test has been completed successfully"
         }
       ],
@@ -149,8 +141,8 @@
   },
   {
     "url": "http://localhost:5173/",
-    "description": "Click the \"Add Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add any date.\nBelow \"Select Categories (max 1),\" choose any combination of up to one category (e.g., \"Work\" ).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).\n\nValidate that a user can revert a completed task to \"not done\" status and ensure the UI and task state update correctly.\n\nEnsure at least one task is already marked as done (checkmark visible, strikethrough on text).\nClick the three-dot menu (\"...\") on the completed task card.\nSelect \"Mark as not done\" from the dropdown menu.\nObserve that the checkmark disappears, text formatting returns to normal (no strikethrough), and the task is now shown as active.\nVerify notifications or success messages if any are displayed, confirming the status change.\n\n\n\n",
-    "createdAt": 1761310402303,
+    "description": "Validate that a user can revert a completed task to \"not done\" status and ensure the UI and task state update correctly.\n\nEnsure at least one task is already marked as done (checkmark visible, strikethrough on text).\nClick the three-dot menu (\"...\") on the completed task card.\nSelect \"Mark as not done\" from the dropdown menu.\nObserve that the checkmark disappears, text formatting returns to normal (no strikethrough), and the task is now shown as active.\nVerify notifications or success messages if any are displayed, confirming the status change.\n\n\n\n",
+    "createdAt": 1761556649008,
     "testname": "Mark Task as Not Done",
     "projectName": "Task Creation",
     "useSavedLoginState": false,
@@ -159,62 +151,34 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open a web browser and navigate to http://localhost:5173/"
+          "stepDescription": "Open a browser and navigate to http://localhost:5173"
         },
         {
           "stepNumber": 2,
-          "stepDescription": "On the dashboard, click the Add Task button or icon to open the Add New Task modal."
+          "stepDescription": "Confirm that there is at least one task marked as completed with a visible checkmark and strikethrough text"
         },
         {
           "stepNumber": 3,
-          "stepDescription": "In the modal, enter 'Complete Project Report' in the Task Name field."
+          "stepDescription": "Locate and click the three-dot menu on the completed task card"
         },
         {
           "stepNumber": 4,
-          "stepDescription": "Optionally, enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field."
+          "stepDescription": "Select the 'Mark as not done' option from the dropdown menu"
         },
         {
           "stepNumber": 5,
-          "stepDescription": "Enter a valid date in the Task Deadline field."
+          "stepDescription": "Verify that the task no longer displays the checkmark and that the text formatting is restored to normal"
         },
         {
           "stepNumber": 6,
-          "stepDescription": "Select a category under 'Select Categories (max 1)' by choosing 'Work'."
+          "stepDescription": "Check for a notification or success message confirming the task status change"
         },
         {
           "stepNumber": 7,
-          "stepDescription": "Click the Create Task button to submit the new task."
-        },
-        {
-          "stepNumber": 8,
-          "stepDescription": "Verify that the new task appears in the task list with a success notification or feedback message."
-        },
-        {
-          "stepNumber": 9,
-          "stepDescription": "Ensure that at least one task is marked as done by checking that a checkmark is visible and the text shows a strikethrough effect."
-        },
-        {
-          "stepNumber": 10,
-          "stepDescription": "Click the three-dot menu on the completed task card to reveal more options."
-        },
-        {
-          "stepNumber": 11,
-          "stepDescription": "Select Mark as not done from the dropdown options to revert the task status."
-        },
-        {
-          "stepNumber": 12,
-          "stepDescription": "Observe the UI to confirm that the checkmark disappears and the text formatting returns to normal, indicating the task is now active."
-        },
-        {
-          "stepNumber": 13,
-          "stepDescription": "Verify any notifications or success messages confirming the status change are displayed."
-        },
-        {
-          "stepNumber": 14,
-          "stepDescription": "Take a screenshot of the completed task list to document the final state."
+          "stepDescription": "Take a screenshot of the updated task card to confirm the changes"
         }
       ],
-      "stepsSummary": "Add a task and revert its completion status"
+      "stepsSummary": "Revert completed task to active status"
     }
   },
   {
@@ -368,6 +332,265 @@
       ],
       "generatedAt": 1761311584002,
       "stepsSummary": "Add new task and reposition it"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Verify that a user can view complete details of a specific task, including status, description, color, timestamps, categories, and all relevant properties.\n\nOpen the application and ensure at least one task exists in the list.\nClick the three-dot menu (\"...\") or relevant action icon on the chosen task.\nSelect “Task details” from the dropdown menu.\nObserve the Task Details screen or modal that appears.\nReview all displayed fields: emoji, ID, description, color, created/edited timestamps, deadline, status flags (done, pinned), assigned categories, and any other attributes.\nEnsure all information matches the data saved for the selected task.",
+    "createdAt": 1761553392403,
+    "testname": "View Details of Task",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-85995",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Check that the tasks list is visible and at least one task is present"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Identify the specific task to be examined and locate its three-dot menu or corresponding action icon"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Click the three-dot menu or action icon next to the chosen task"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Select the 'Task details' option from the displayed dropdown menu"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Observe the task details screen or modal and confirm that it is displayed correctly"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Review the details in the modal including the emoji, ID, description, color, created and edited timestamps, deadline, status flags such as done or pinned, assigned categories, and any other attributes"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Verify that all displayed information matches the saved data for the selected task"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Capture a screenshot of the completed task details screen to document the result"
+        }
+      ],
+      "generatedAt": 1761553392404,
+      "stepsSummary": "Verify complete task details view"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Verify that a user can successfully edit an existing task's details, including name, description, deadline, emoji, and categories.\nOpen the app and locate the task you want to edit in the task list.\nClick the three-dot menu (\"...\") next to the task.\nSelect the \"Edit\" option from the dropdown menu to open the edit task dialog.\nModify one or more task fields, such as updating the name, description, deadline date, emoji, or categories.\nClick the \"Save\" button to apply the changes.\nConfirm that the task in the list now displays the updated information.",
+    "createdAt": 1761553586817,
+    "testname": "Edit Task",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-d19c1",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173/"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate the task you want to edit in the task list view of the application"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Click on the three-dot menu adjacent to the target task to reveal additional options"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Choose the 'Edit' option from the dropdown menu to open the edit task dialog"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Change the task name by entering a new name in the appropriate field"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Modify the task description with updated details in the designated description field"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Update the task deadline by selecting a new date in the deadline field"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Adjust the task emoji by choosing a different emoji from the available options"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Change the task categories as needed by selecting or editing them in the categories field"
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Click the 'Save' button to apply the changes to the task"
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Verify that the task in the list now reflects the updated name, description, deadline, emoji, and categories"
+        },
+        {
+          "stepNumber": 12,
+          "stepDescription": "Capture a screenshot of the completed task update to document the successful edit"
+        }
+      ],
+      "generatedAt": 1761553586818,
+      "stepsSummary": "Edit task details successfully in task list"
+    }
+  },
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can create a duplicate (copy) of an existing task, and that all task properties are correctly cloned except for unique identifiers and timestamps.\n\nOpen the app and locate a task you wish to duplicate in the task list.\nClick the three-dot menu (\"...\") beside the chosen task.\nSelect the \"Duplicate\" option from the dropdown menu.\nObserve that a new task appears in the list with the same name, description, deadline, emoji, color, and categories as the original.\nOpen the duplicated task to check all details match the original (apart from unique ID and created/edited times).\nVerify that edits to the new (copied) task do not affect the original.",
+    "createdAt": 1761553636284,
+    "testname": "Duplicate Task",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-e062b",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173 to load the application."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Browse the task list and identify a task to duplicate."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Access the options for the chosen task by clicking the three-dot menu adjacent to it."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Select the 'Duplicate' option from the dropdown menu to copy the task."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Observe that a new task appears in the list, ensuring that it has the same name, description, deadline, emoji, color, and categories as the original."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Open the newly duplicated task and compare its details with the original to confirm that all properties match except for unique identifiers and timestamps."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Modify the duplicated task by editing one or more attributes and verify that the original task remains unchanged."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Capture a screenshot of the final state to confirm that the task duplication process has completed successfully."
+        }
+      ],
+      "generatedAt": 1761553636285,
+      "stepsSummary": "Duplicate task and verify cloned properties"
+    }
+  },
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can delete an existing task and that the task is removed from the list with appropriate confirmation and feedback.\n\nOpen the app and locate a task you wish to delete in the task list.\nClick the three-dot menu (\"...\") next to the selected task.\nSelect the \"Delete\" option from the dropdown menu.\nIn the confirmation dialog that appears, review the displayed task details.\nClick the \"Confirm Delete\" button to proceed with deletion.\nObserve that the task is removed from the main task list and a deletion feedback message or indicator is shown.",
+    "createdAt": 1761553683090,
+    "testname": "Delete Task",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-15bbd",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Launch the web browser and navigate to the application's URL."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate the task list and identify a task you wish to delete."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Click on the three-dot menu adjacent to the selected task."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "From the dropdown menu, choose the option to delete the task."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Review the task details presented in the confirmation dialog."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Click the button labeled 'Confirm Delete' to proceed with the deletion."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Verify that the task is no longer visible in the main task list."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Confirm that a deletion feedback message or indicator is displayed."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Capture a screenshot of the final state to ensure the deletion was successful."
+        }
+      ],
+      "generatedAt": 1761553683091,
+      "stepsSummary": "Open app, delete task, confirm removal"
+    }
+  },
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can delete an existing task and that the task is removed from the list with appropriate confirmation and feedback.\n\nOpen the app and locate a task you wish to delete in the task list.\nClick the three-dot menu (\"...\") next to the selected task.\nSelect the \"Delete\" option from the dropdown menu.\nIn the confirmation dialog that appears, review the displayed task details.\nClick the \"Confirm Delete\" button to proceed with deletion.\nObserve that the task is removed from the main task list and a deletion feedback message or indicator is shown.",
+    "createdAt": 1761553689601,
+    "testname": "Delete Task",
+    "projectName": "Task Creation",
+    "useSavedLoginState": false,
+    "id": "TEST-2734e",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to the app at http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate the task you wish to delete from the task list displayed on the main screen"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Click the three-dot menu adjacent to the selected task to reveal additional options"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Select the Delete option from the dropdown menu to initiate the deletion process"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Review the confirmation dialog that appears and verify the task details before proceeding"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Click the Confirm Delete button in the confirmation dialog to complete the deletion of the task"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Observe that the task is removed from the main task list and that a deletion feedback message or indicator is displayed"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Take a screenshot of the updated task list and feedback to confirm the successful deletion"
+        }
+      ],
+      "generatedAt": 1761553689603,
+      "stepsSummary": "Delete task with confirmation and feedback"
     }
   }
 ]

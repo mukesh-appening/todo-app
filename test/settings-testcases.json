@@ -1,0 +1,77 @@
+[
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can access and modify app settings, including appearance (dark/light mode, theme selection), motion options, and glow effects.\n\nClick the \"Settings\" option in the sidebar or menu.\nIn the settings panel, select the \"Appearance\" tab.\nChange the dark mode option to \"Auto,\" \"System,\" \"Light,\" and \"Dark,\" and observe the theme updates accordingly.\nChoose a theme from the \"Theme Selection\" dropdown (e.g., Light Orange) and check if the UI theme changes.\nToggle the \"Reduce Motion Options\" between \"System,\" \"Always,\" and \"Never,\" noting any differences in UI animations/transitions.\nEnable or disable the \"Glow Effect\" and observe the appearance of tasks in the list.\nClose the settings and confirm that all appearance changes persist across the app.\n",
+    "createdAt": 1761554603845,
+    "testname": "Setting Appearance",
+    "projectName": "Settings",
+    "useSavedLoginState": false,
+    "id": "TEST-c54ca",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to the application URL at http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate and click the 'Settings' option in the sidebar or menu"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "In the settings panel, select the 'Appearance' tab to view appearance options"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Change the dark mode option to 'Auto' and observe the theme update accordingly"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Set the dark mode option to 'System' and verify that the theme changes to match the system setting"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Switch the dark mode option to 'Light' and confirm that the UI updates appropriately"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Adjust the dark mode option to 'Dark' and check that the interface reflects the dark theme"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Select a theme from the 'Theme Selection' dropdown such as 'Light Orange' and verify the UI theme changes"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Toggle the 'Reduce Motion Options' to 'System' and observe any differences in UI animations and transitions"
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Change the 'Reduce Motion Options' setting to 'Always' and note the adjustments in motion effects"
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Switch the 'Reduce Motion Options' to 'Never' and verify that the animation behavior reflects this selection"
+        },
+        {
+          "stepNumber": 12,
+          "stepDescription": "Enable the 'Glow Effect' and observe changes in the appearance of tasks within the list"
+        },
+        {
+          "stepNumber": 13,
+          "stepDescription": "Disable the 'Glow Effect' and confirm that the task list appearance updates accordingly"
+        },
+        {
+          "stepNumber": 14,
+          "stepDescription": "Close the settings panel and navigate through the app to ensure that all appearance changes persist"
+        },
+        {
+          "stepNumber": 15,
+          "stepDescription": "Take a final screenshot of the application to document the applied settings changes"
+        }
+      ],
+      "generatedAt": 1761554603846,
+      "stepsSummary": "Access and update app appearance settings"
+    }
+  }
+]

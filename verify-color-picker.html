@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Color Picker Verification</title>
+    <style>
+      body {
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+      .info {
+        background: #f0f0f0;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+      code {
+        background: #e0e0e0;
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color Picker AI Compatibility Verification</h1>
+
+    <div class="info">
+      <h2>✅ The ColorPicker now includes these AI-detectable elements:</h2>
+
+      <h3>1. Select Element with Aria-Label</h3>
+      <p>The select element has <code>aria-label="Pick a color for the task"</code></p>
+
+      <h3>2. Label Element</h3>
+      <p>The label contains text: "Pick a color for the task"</p>
+
+      <h3>3. Multiple Detection Methods</h3>
+      <ul>
+        <li><code>aria-label</code> attribute</li>
+        <li><code>data-testid</code> attribute</li>
+        <li><code>name</code> attribute (e.g., "taskColor")</li>
+        <li><code>title</code> attribute</li>
+      </ul>
+
+      <h3>4. How to Find in Browser DevTools</h3>
+      <p>Open DevTools and run:</p>
+      <code>document.querySelector('select[aria-label*="Pick a color"]')</code>
+
+      <h3>5. How AI Should Interact</h3>
+      <p><strong>Most Reliable Method:</strong></p>
+      <code>await page.selectOption('select[aria-label*="Pick a color"]', '#B624FF');</code>
+
+      <p><strong>Alternative Methods:</strong></p>
+      <ul>
+        <li><code>await page.selectOption('select[name="taskColor"]', '#B624FF');</code></li>
+        <li>
+          <code
+            >await page.selectOption('[data-testid="color-picker-select-taskColor"]',
+            '#B624FF');</code
+          >
+        </li>
+        <li>
+          <code
+            >await page.getByRole('combobox', { name: /pick a color/i
+            }).selectOption('#B624FF');</code
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="info">
+      <h2>🔍 To Verify the Element Exists:</h2>
+      <ol>
+        <li>Start your dev server: <code>npm run dev</code></li>
+        <li>Navigate to the page with ColorPicker (e.g., AddTask page)</li>
+        <li>Open Browser DevTools (F12)</li>
+        <li>Go to Console tab</li>
+        <li>Run: <code>document.querySelectorAll('select[aria-label*="Pick a color"]')</code></li>
+        <li>You should see the select element listed</li>
+      </ol>
+    </div>
+
+    <div class="info">
+      <h2>🎯 If AI Still Can't Find It:</h2>
+      <p>The issue is likely that your testing environment hasn't loaded the new build yet.</p>
+      <ul>
+        <li>
+          <strong>If using dev server:</strong> Stop and restart with <code>npm run dev</code>
+        </li>
+        <li>
+          <strong>If using production build:</strong> Run <code>npm run build</code> and deploy
+        </li>
+        <li>
+          <strong>If testing with automation:</strong> Make sure you're pointing to the updated
+          version
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -2,116 +2,130 @@
   "narrative": {
     "steps": [
       {
-        "title": "1. Launch the app (both tests)",
+        "title": "Launch & land on dashboard",
         "stepStatus": "pass",
         "details": [
-          "Browser successfully loads http://localhost:5173.",
-          "Minor UI issues flagged: low text/background contrast and missing form inputs in the viewport."
+          "All runs successfully reached http://localhost:5173.",
+          "Minor UI warnings surfaced (inconsistent typography, padding)."
         ]
       },
       {
-        "title": "2. Click “Add Task” button",
-        "stepStatus": "fail (TEST-8x4rv1e) / pass (TEST-y04binn)",
+        "title": "Open “Add Task” modal",
+        "stepStatus": "pass",
         "details": [
-          "TEST-8x4rv1e: Button located but never reached a stable state – Playwright timed out.",
-          "TEST-y04binn: Button clicked after ~144 s (long for a simple tap). UI checker still notes label–input mis-alignment."
+          "User clicks the + / Add-Task button; modal appears in 5 of 6 runs.",
+          "UI checker again flags spacing / style inconsistencies."
         ]
       },
       {
-        "title": "3. Wait for ‘Add New Task’ modal",
-        "stepStatus": "pass (TEST-y04binn)",
+        "title": "Fill in task details",
+        "stepStatus": "pass",
         "details": [
-          "Modal appears, but spacing/padding is uneven and several labels don’t line up with inputs."
+          "Task Name, Description and Category are entered without functional errors in most runs.",
+          "One run (TEST-zlekvij) cannot locate the Task Name field – modal rendering issue or selector mismatch."
         ]
       },
       {
-        "title": "4-7. Fill out Task fields (Name, Description, Deadline, Categories)",
-        "stepStatus": "pass (TEST-y04binn)",
+        "title": "Pick a deadline",
+        "stepStatus": "fail",
         "details": [
-          "All text inputs accept data, but auto-validation retried the date field twice.",
-          "UI review keeps flagging label alignment issues and missing labels (‘Select Categories’, ‘Task Deadline’)."
+          "TEST-8x4rv1e loops 15× trying to open the date-picker → step aborted (possible invisible overlay or disabled field)."
         ]
       },
       {
-        "title": "8. Choose a color",
-        "stepStatus": "fail (TEST-y04binn)",
+        "title": "Click “Create Task”",
+        "stepStatus": "fail",
         "details": [
-          "Automation cannot find a ‘Color’ section at all; user would be stuck or forced to skip color choice."
+          "Major blocker in two flows (TEST-gp6fsae, TEST-u4j7hud).",
+          "Click is intercepted by the still-open Categories dropdown; pointer events blocked → 5 s timeout.",
+          "Down-stream steps (success message, list update, drag-and-drop, pinning, etc.) remain pending."
         ]
       },
       {
-        "title": "9-17. Emoji pick, submit task, mark done, screenshot",
-        "stepStatus": "not executed / pending",
+        "title": "Extended task operations (drag, pin, mark done, etc.)",
+        "stepStatus": "pending",
         "details": [
-          "Both test runs halt after the color-picker failure, so the flow never reaches submission or completion states."
+          "All downstream interactions are skipped because task creation never completes."
+        ]
+      },
+      {
+        "title": "Control run that passes",
+        "stepStatus": "pass",
+        "details": [
+          "One long exploratory run (TEST-y04binn) eventually submits the form and passes, confirming the core path can work, but UI audits still highlight the same visual issues."
         ]
       }
     ]
   },
-  "emotional_arc": "Starts with moderate confidence – site loads quickly. Confidence dips when UI looks visually ‘off’ (low contrast, misaligned labels). In test 1, frustration spikes immediately when the Add Task button doesn’t respond. In test 2, optimism returns as fields can be filled, but lingering sloppiness (spacing, missing labels) creates distrust. Failure to find the Color section abruptly blocks progress, leaving the shopper confused and disappointed.",
+  "emotional_arc": "The session starts with mild optimism— the dashboard loads quickly and the Add-Task modal appears. Confidence fades into irritation as visual inconsistencies pile up. Frustration spikes when Create-Task and Date-picker actions fail repeatedly (they look clickable but do nothing). Momentum is lost; user feels stuck, uncertain whether data is saved. In the one successful flow, relief arrives, but lingering UI rough edges prevent delight.",
   "qualitative_opportunities": [
     {
-      "area": "Element stability & clickability (Add Task button)",
-      "why_it_matters": "If primary CTA is intermittently unclickable, users feel the app is broken and abandon quickly.",
+      "area": "Form overlays & click interception",
+      "why_it_matters": "Users cannot finish a task when hidden overlays (category menu) sit above primary CTAs — leading to dead-end frustration.",
       "next_actions": [
-        "Remove entrance/hover animations until the element is fully mounted OR wait for transitionend before enabling clicks.",
-        "Ensure size/position is not shifting in the DOM after initial render."
+        "Auto-close dropdown/onBlur when an option is chosen.",
+        "Raise z-index of modal footer OR lower z-index of popover so it never covers the footer area.",
+        "Add E2E test that asserts Create-Task button is clickable after category selection."
       ]
     },
     {
-      "area": "Visibility & alignment of form labels/inputs",
-      "why_it_matters": "Misaligned or missing labels hurt comprehension, accessibility (screen readers), and data-entry speed.",
+      "area": "Date-picker focus & accessibility",
+      "why_it_matters": "Endless retry loop signals the date field is either off-screen, disabled, or lacks focus management, blocking progress.",
       "next_actions": [
-        "Audit every field in the modal; pair each input with a <label> and consistent grid/stack layout.",
-        "Run automated a11y tests for label-input association.",
-        "Add CSS rules for consistent left alignment and equal spacing."
+        "Ensure the input receives focus and opens the picker on click and keyboard.",
+        "Add visible affordance (calendar icon) with aria-label.",
+        "Write unit test for opening/closing date-picker."
       ]
     },
     {
-      "area": "Missing Color section / Color picker discoverability",
-      "why_it_matters": "Feature advertised in UI text but not present causes dead ends and undermines trust.",
+      "area": "Field discoverability & selector stability",
+      "why_it_matters": "Failure to locate “Task Name” suggests dynamic IDs or conditional rendering that QA & assistive tech can’t find.",
       "next_actions": [
-        "Confirm component is mounted in DOM; if hidden behind accordion/tab, default it to open or add guiding copy.",
-        "Add explicit label ‘Color’ visible in viewport and keyboard focusable.",
-        "Write an e2e test that asserts its presence before allowing task submission."
+        "Use stable data-testids / aria-labels on all fields.",
+        "Render modal fields immediately (then disable if needed) to keep selectors constant.",
+        "Add empty-state placeholder text so humans can spot fields quickly."
       ]
     },
     {
-      "area": "Inconsistent spacing, padding, and button styling",
-      "why_it_matters": "Visual inconsistency makes product feel unfinished and distracts users from their goal.",
+      "area": "Visual consistency (typography, spacing, button styles)",
+      "why_it_matters": "Repeated “looks off” flags erode brand trust and make the layout feel unfinished.",
       "next_actions": [
-        "Introduce a spacing scale (4-8-12-20 px) and apply via CSS variables.",
-        "Use design-token-based button component across the app."
+        "Adopt a global typographic scale (e.g., 16/20/24 px).",
+        "Define spacing tokens (8-pt grid) and use in MUI theme.",
+        "Audit button variants; reduce to primary / secondary with fixed sizes.",
+        "Run automated visual regression after theme changes."
       ]
     },
     {
-      "area": "Low text/background contrast",
-      "why_it_matters": "Impacts readability and fails WCAG AA, especially for color-blind users.",
+      "area": "Color contrast & theme adherence",
+      "why_it_matters": "Low contrast harms accessibility and may breach WCAG AA; brand colors feel inconsistent.",
       "next_actions": [
-        "Run a contrast checker, update palette or increase font weight/size where needed."
+        "Re-evaluate palette in Figma; pair each brand color with an accessible contrast fallback.",
+        "Expose category colors in a fixed grid rather than free-form to control contrast.",
+        "Add storybook a11y addon to flag contrast issues early."
       ]
     }
   ],
   "first_tackles": [
     {
       "rank": 1,
-      "description": "Fix Add-Task button stability (disable transition until mounted or increase hit-area)."
+      "description": "Close or lower z-index of Category dropdown automatically so “Create Task” is never obstructed."
     },
     {
       "rank": 2,
-      "description": "Ensure ‘Color’ section renders and is visible without scrolling or extra clicks."
+      "description": "Stabilize Date-picker click/focus behaviour and add a visible calendar icon."
     },
     {
       "rank": 3,
-      "description": "Add/align missing labels for ‘Select Categories’ and ‘Task Deadline’; quick HTML tweaks with immediate clarity gains."
+      "description": "Add consistent data-testids & aria-labels to all modal fields to prevent selector failures."
     },
     {
       "rank": 4,
-      "description": "Increase text/background contrast to meet WCAG AA (can be done by adjusting two CSS variables)."
+      "description": "Apply a base type scale and 8-pt spacing tokens in the global MUI theme for instant visual polish."
     },
     {
       "rank": 5,
-      "description": "Apply uniform padding/margin token to modal fields to clean up visual clutter."
+      "description": "Introduce automated a11y/contrast checks in CI to catch color issues early."
     }
   ]
 }

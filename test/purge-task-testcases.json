@@ -1,0 +1,99 @@
+[
+  {
+    "url": "http://localhost:5173/",
+    "description": "Verify that a user can purge (delete) all tasks from the database in one action and receives appropriate confirmation and feedback.\n\nNavigate to the \"Purge Tasks\" screen in the app.\nClick the \"PURGE ALL TASKS\" button.\nReview and acknowledge the confirmation dialog (\"This action cannot be undone. Are you sure you want to proceed?\").\nClick the \"PURGE\" button to confirm.\nObserve a feedback message indicating successful deletion.\nConfirm that the task list is now empty and no tasks are available for purge.\nCheck that the confirm success message showing  Purge all taks",
+    "createdAt": 1761554480895,
+    "testname": "Purge All Tasks",
+    "projectName": "Purge Task",
+    "useSavedLoginState": false,
+    "id": "TEST-b33d0",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to the URL http://localhost:5173/ to launch the application."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Navigate within the application to reach the 'Purge Tasks' screen."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Select the 'PURGE ALL TASKS' button on the screen."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Review the confirmation dialog that appears with the message 'This action cannot be undone. Are you sure you want to proceed?' and acknowledge its presence."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Confirm the purge action by selecting the 'PURGE' button in the dialog."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Observe the feedback message indicating that tasks have been successfully deleted from the database."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Verify that the task list is empty and that there are no available tasks for further deletion."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Ensure that a confirmation success message with the text 'Purge all taks' is visible on the screen."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Capture a screenshot of the final state to confirm the purge action was completed correctly."
+        }
+      ],
+      "stepsSummary": "Verify purge tasks confirmation and empty list"
+    }
+  },
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can select and purge (bulk delete) specific tasks, and that the selected tasks are accurately removed from the task database.\n\nNavigate to the \"Purge Tasks\" screen in the app.\nReview the list of done tasks and not done tasks.\nSelect one or more tasks by ticking their respective checkboxes.\nClick the \"PURGE SELECTED\" button.\nObserve the confirmation message indicating which tasks were purged.\nCheck the main task list to confirm the selected tasks are no longer present.",
+    "createdAt": 1761628797709,
+    "testname": "Purge Tasks (Selected Tasks)",
+    "projectName": "Purge Task",
+    "useSavedLoginState": false,
+    "id": "TEST-164c5",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Go to the 'Purge Tasks' screen within the application"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Review the displayed tasks and differentiate between done and not done tasks"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Select one or more tasks to purge by ticking the corresponding checkboxes"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Click the 'PURGE SELECTED' button to initiate the bulk deletion process"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Observe and confirm the displayed message which indicates the specific tasks that were purged"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Return to the main task list and verify that the selected tasks are no longer visible"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Capture a screenshot of the final page state to confirm the tasks have been removed"
+        }
+      ],
+      "generatedAt": 1761628797710,
+      "stepsSummary": "Navigate, select, purge and verify tasks"
+    }
+  }
+]

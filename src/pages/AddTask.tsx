@@ -227,6 +227,8 @@ const AddTask = () => {
         <ColorPicker
           color={color}
           width="400px"
+          name="taskColor"
+          label="Task Color"
           onColorChange={(color) => {
             setColor(color);
           }}

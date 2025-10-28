@@ -2,130 +2,140 @@
   "narrative": {
     "steps": [
       {
-        "title": "Launch & Land on Dashboard",
+        "title": "Launch application",
         "stepStatus": "pass",
-        "details": [
-          "All five scenarios begin by loading http://localhost:5173 successfully."
-        ]
+        "details": ["All scenarios open http://localhost:5173 successfully."]
       },
       {
         "title": "Open “Add Task” modal",
         "stepStatus": "pass",
         "details": [
-          "User clicks the Add Task FAB / button and the modal appears in every run. Minor UI nits (button styling, spacing) flagged but flow continues."
+          "User clicks the + / Add-Task button and modal appears in four of five relevant tests.",
+          "Minor UI issues (button style, spacing) flagged but flow is unblocked."
         ]
       },
       {
-        "title": "Fill in core task fields",
+        "title": "Populate task fields (name, description, deadline, category, color, emoji)",
         "stepStatus": "pass",
         "details": [
-          "Task Name, Description and Deadline are entered without functional errors across runs. Repeated visual problems: mis-aligned labels, uneven padding, typography inconsistencies."
+          "Data entry succeeds in every flow; repeated visual-consistency warnings (typography, label alignment, padding)."
         ]
       },
       {
-        "title": "Select Categories",
-        "stepStatus": "pass",
-        "details": [
-          "User opens category combobox and chooses ‘Work’ (and sometimes ‘Coding’).  Works, but after selection the category menu stays open and later intercepts clicks (see failures below)."
-        ]
-      },
-      {
-        "title": "Pick a color  (HARD FAILURE #1)",
+        "title": "Submit task via “Create Task” button",
         "stepStatus": "fail",
         "details": [
-          "Add New Task & Mark Task as done flows: step cannot find Color section/picker → flow aborted at 54 % and 41 %."
+          "Drag-and-Move scenario: category dropdown (MuiPopover) sits above the Create-Task button and intercepts clicks → hard failure (timeout).",
+          "Other tests succeed but still note inconsistent button styling."
         ]
       },
       {
-        "title": "Click “Create Task”  (HARD FAILURE #2)",
-        "stepStatus": "fail",
+        "title": "System feedback after creating / editing task",
+        "stepStatus": "mixed",
         "details": [
-          "In three different tests (Mark Task as Not Done, Drag & Move Task, Pin a Task) Playwright times out trying to click the “Create Task” button.",
-          "Root cause logged: open Category dropdown menu (MuiPopover) remains on top and intercepts pointer events, blocking the button."
+          "Success toast or inline confirmation frequently missing; several tests resort to checking the list manually.",
+          "Lack of feedback causes test zlekvij to fail when ‘Mark as not done’ shows no confirmation message."
         ]
       },
       {
-        "title": "All downstream actions (emoji picker, task completion, pin/move, etc.)",
+        "title": "Drag & move task",
         "stepStatus": "pending",
+        "details": ["Feature never reached because previous step failed."]
+      },
+      {
+        "title": "Mark task as completed",
+        "stepStatus": "pass",
+        "details": ["Flow works; UI review still flags spacing / color issues."]
+      },
+      {
+        "title": "Mark task as NOT done",
+        "stepStatus": "fail",
         "details": [
-          "Because task creation never succeeds, every scenario’s subsequent steps remain unexecuted (progress stops around 40–54 %)."
+          "Visual change happens, but no success message → automation treats as failure; potential user doubt."
         ]
+      },
+      {
+        "title": "Pin a task",
+        "stepStatus": "fail",
+        "details": [
+          "Pin icon expected but not surfaced / captured; step left pending, test marked failed."
+        ]
+      },
+      {
+        "title": "Add new category",
+        "stepStatus": "pending",
+        "details": ["Entire flow never executed (test aborted at start)."]
       }
     ]
   },
-  "emotional_arc": "Initial confidence (app loads) → mild concern (visual mis-alignments) → optimism (fields accept input) → confusion (color picker missing) → mounting frustration (cannot click Create Task) → abandonment (no tasks ever created, all later goals impossible).",
+  "emotional_arc": "User starts confident (app loads quickly). Filling in the task form feels okay but slightly sloppy because of visual inconsistency. Frustration spikes when the category menu blocks the Create-Task button – user can’t proceed. Even when tasks are created, the lack of clear success feedback leaves the user uncertain. Marking tasks complete is satisfying but reversing status or pinning a task gives no confirmation, leading to renewed doubt. Overall arc: Confidence → Mild friction → Major blockage → Recovery → Uncertainty.",
   "qualitative_opportunities": [
     {
-      "area": "Modal layout: label/input alignment, spacing & padding",
-      "why_it_matters": "Messy forms reduce readability and perceived quality; users doubt correctness.",
+      "area": "Modal layout & visual consistency (typography, spacing, button styling)",
+      "why_it_matters": "Inconsistent UI erodes trust and makes forms feel unfinished or buggy.",
       "next_actions": [
-        "Adopt a grid / flex layout with consistent gutters (8-pt scale).",
-        "Pair each label with its input using Material-UI FormControl/Label components.",
-        "Add visual QA in Storybook or Chromatic to catch regressions."
+        "Audit font sizes/weights for headers, labels, inputs.",
+        "Establish spacing scale (e.g., 8-pt grid) and apply consistently.",
+        "Create a Button component with canonical size, radius, color and swap all ad-hoc buttons."
       ]
     },
     {
-      "area": "Button styling & hierarchy",
-      "why_it_matters": "Inconsistent primary actions lower brand cohesion and make it hard to identify the next step.",
+      "area": "Z-index / overlay management (category dropdown blocks main CTA)",
+      "why_it_matters": "Users literally cannot submit the form when the popover obscures the primary action.",
       "next_actions": [
-        "Define primary/secondary button tokens in design system; apply across FAB, modal buttons, menu items.",
-        "Audit sizes (height, border-radius) and colors vs brand guidelines."
+        "Ensure Popover closes on selection (or outside click).",
+        "Give Popover a lower z-index than modal footer, or move Create-Task button above fold.",
+        "Add automated test to detect element obstruction before release."
       ]
     },
     {
-      "area": "Color picker visibility",
-      "why_it_matters": "Missing or hidden UI blocks the happy path and confuses users expecting to set a color.",
+      "area": "Explicit success & status feedback",
+      "why_it_matters": "Without confirmation, users are unsure their action worked, leading to duplicate actions or abandonment.",
       "next_actions": [
-        "If feature not ready, hide the prompt entirely or provide a default color.",
-        "Add explicit label & affordance (swatch or ‘Pick Color’ button) inside modal."
+        "Add toast/snackbar (“Task created”, “Task updated”) with ARIA live region.",
+        "Show inline checkmark/strikethrough immediately after status change.",
+        "Log analytics event to verify feedback fires."
       ]
     },
     {
-      "area": "Category dropdown does not close after selection",
-      "why_it_matters": "Open popover overlaps other controls and, as logs show, blocks the “Create Task” button—hard-stopping the flow.",
+      "area": "State-change visibility (pin icon, mark-as-not-done)",
+      "why_it_matters": "Visual cues are the user’s proof that state has changed; missing icons or styling undermines feature discoverability.",
       "next_actions": [
-        "OnSelect: automatically close the MuiMenu (setMenuOpen(false)).",
-        "Add click-away listener to dismiss on outside click.",
-        "Regression test: ensure Create Task remains clickable after category choice."
+        "Design and add pinned icon asset; position consistently on card.",
+        "Ensure ‘Mark as not done’ toggles checkmark/strikethrough off instantly.",
+        "Write Cypress/Playwright assertions for icon presence."
       ]
     },
     {
-      "area": "Typography & visual hierarchy",
-      "why_it_matters": "Uneven font sizes make it harder to scan forms and distinguish headings.",
+      "area": "Accessibility & color contrast",
+      "why_it_matters": "Poor contrast harms readability and fails WCAG AA, excluding users with low vision.",
       "next_actions": [
-        "Apply design-system typography scale (e.g., h6 for modal title, body-1 for labels).",
-        "Run accessibility audit for minimum size/contrast."
-      ]
-    },
-    {
-      "area": "Color contrast & brand compliance",
-      "why_it_matters": "Low contrast impairs accessibility; mismatched hues weaken brand.",
-      "next_actions": [
-        "Use accessible palette (WCAG AA).",
-        "Codify colors in theme.ts and replace hard-coded values."
+        "Run automated contrast audit (axe, Lighthouse); adjust palette.",
+        "Provide focus outlines on interactive elements.",
+        "Test dark/light themes."
       ]
     }
   ],
   "first_tackles": [
     {
       "rank": 1,
-      "description": "Auto-close Category dropdown after selection to unblock Create Task button."
+      "description": "Fix Popover overlay so “Create Task” button is always clickable (close on select or adjust z-index)."
     },
     {
       "rank": 2,
-      "description": "Ensure Create Task button is always on top (z-index) and test clickability after each form interaction."
+      "description": "Implement toast/snackbar confirmations for create, update, pin/unpin, mark done/undone."
     },
     {
       "rank": 3,
-      "description": "Temporarily hide or properly expose Color picker; remove test dependency until UI is implemented."
+      "description": "Add pinned icon and ensure state toggle instantly reflects on card."
     },
     {
       "rank": 4,
-      "description": "Quick CSS pass to align labels/inputs and add consistent 16 px horizontal padding in modal."
+      "description": "Standardize button component and apply across modal & dashboard for consistent look/feel."
     },
     {
       "rank": 5,
-      "description": "Standardize primary button style (color, size) via theme token to raise immediate visual credibility."
+      "description": "Quick typography & spacing sweep using a defined spacing scale to eliminate obvious visual drift."
     }
   ]
 }

@@ -1,0 +1,205 @@
+[
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can successfully add a new category with a custom name and color.\n\nGo to the Categories management screen in the app.\nClick on the field to enter a new category name (e.g., \"Hobby\").\nChoose a color for the category from the color selection options.\nClick the \"Create Category\" button.\nObserve the confirmation message and check that the new category appears in the category list.\n",
+    "createdAt": 1761553848416,
+    "testname": "Add New Category",
+    "projectName": "Categories",
+    "useSavedLoginState": true,
+    "id": "TEST-1d4cc",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Navigate to the Categories management screen in the application"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Select the field designated for entering a new category name"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Enter 'Hobby' as the new category name in the input field"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Choose a color from the color selection options for the new category"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Click the 'Create Category' button to submit the new category"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Observe that a confirmation message is displayed indicating successful creation"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Verify that the new category 'Hobby' is visible in the category list"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Take a screenshot of the final category list view to confirm the process"
+        }
+      ],
+      "generatedAt": 1761553848418,
+      "stepsSummary": "Add new category with custom name and color"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Verify that a user can mark a category as favourite and that it is visually highlighted as a favourite in the categories list and in selection dialogs.\n\nGo to the Categories management screen in the app.\nIdentify a category you want to mark as favourite.\nClick on the star icon next to the category name.\nObserve that the star icon is filled or highlighted to indicate favourite status.\nCheck the category selector (e.g., when adding a new task) to confirm the favourite category appears under \"Favourite Categories\" or is visually prioritized.",
+    "createdAt": 1761553891965,
+    "testname": "Mark Catgeory as a Favourite",
+    "projectName": "Categories",
+    "useSavedLoginState": false,
+    "id": "TEST-12e44",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open your browser and navigate to the target URL http://localhost:5173."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Navigate to the Categories management screen within the application."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Identify a specific category that you want to mark as favourite in the categories list."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Click on the star icon adjacent to the chosen category name to mark it as a favourite."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Observe that the star icon updates to a filled or highlighted state to indicate it is now a favourite."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Open a category selection dialog, such as when adding a new task, to view the list of categories."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Verify that the marked favourite category appears under a dedicated 'Favourite Categories' section or is visually prioritized in the selector."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Capture a screenshot of the completed task to confirm the visual changes in both the categories list and the selection dialog."
+        }
+      ],
+      "generatedAt": 1761553891967,
+      "stepsSummary": "Verify category favourite marking and visual highlight"
+    }
+  },
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can edit an existing category’s name and color, and the changes are accurately reflected in the category list.\n\nGo to the Categories management screen in the app.\nFind the category you want to edit and click the pencil (edit) icon beside it.\nIn the edit category dialog, update the category name and/or select a new color.\nClick the \"Save\" button to confirm your changes.\nObserve that the updated category immediately appears in the list with the new name and color.\nCheck the success message appear category updated or not",
+    "createdAt": 1761554239164,
+    "testname": "Edit Category",
+    "projectName": "Categories",
+    "useSavedLoginState": false,
+    "id": "TEST-6e9c7",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to http://localhost:5173."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Navigate to the Categories management screen within the application."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Locate the specific category that needs to be edited."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Click on the pencil icon next to the chosen category to initiate editing."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Wait for the edit category dialog to appear on the screen."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Update the category name in the edit dialog to the new desired name."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Select a new color for the category using the dialog options."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Click the Save button in the edit dialog to confirm the changes."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Observe and verify that the updated category appears in the list with the new name and color."
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Check for a success message indicating that the category was updated successfully."
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Capture a screenshot of the completed update to confirm the test result."
+        }
+      ],
+      "generatedAt": 1761554239167,
+      "stepsSummary": "Edit category details and verify update"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Verify that a user can select and purge (bulk delete) specific tasks, and that the selected tasks are accurately removed from the task database.\n\nNavigate to the \"Purge Tasks\" screen in the app.\nReview the list of done tasks and not done tasks.\nSelect one or more tasks by ticking their respective checkboxes.\nClick the \"PURGE SELECTED\" button.\nObserve the confirmation message indicating which tasks were purged.\nCheck the main task list to confirm the selected tasks are no longer present.",
+    "createdAt": 1761554428761,
+    "testname": "Purge Task (Selected Tasks)",
+    "projectName": "Purge Task",
+    "useSavedLoginState": false,
+    "id": "TEST-dfb2c",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173/ to load the application."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Navigate within the application to the 'Purge Tasks' screen."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Review the displayed list of tasks, ensuring both done and not done tasks are visible."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Select one or more tasks by ticking their respective checkboxes."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Click the 'PURGE SELECTED' button to initiate bulk deletion of the selected tasks."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Observe the confirmation message that indicates which tasks were purged."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Review the main task list to verify that the selected tasks no longer appear, ensuring they were accurately removed."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Take a screenshot of the final state to document successful task purging."
+        }
+      ],
+      "stepsSummary": "Select and purge specific tasks"
+    }
+  }
+]

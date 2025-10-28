@@ -6,6 +6,7 @@ export { saveQRCode } from "./saveQRCode";
 export { showToast } from "./showToast";
 export { generateUUID } from "./generateUUID";
 export { timeAgo, formatDate, calculateDateDifference, shortRelativeTime } from "./timeUtils";
+export { isTestMode, enableTestMode, disableTestMode, autoEnableTestMode } from "./testMode";
 export {
   initDB,
   deleteProfilePictureFromDB,
@@ -16,3 +17,4 @@ export {
   optimizeProfilePicture,
   ALLOWED_PFP_TYPES,
 } from "./profilePictureStorage";
+export { indexedDBStorage } from "./indexedDBStorage";

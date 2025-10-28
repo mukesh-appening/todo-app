@@ -1,0 +1,134 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch & land on Dashboard",
+        "stepStatus": "pass",
+        "details": ["All tests begin by opening http://localhost:5173 without issue."]
+      },
+      {
+        "title": "Open “Add New Task” modal",
+        "stepStatus": "pass",
+        "details": [
+          "User clicks the global “+ / Add Task” button.",
+          "Modal appears, but UI review flags inconsistent typography, padding and button styling."
+        ]
+      },
+      {
+        "title": "Fill out task fields (name, description, deadline, category, colour, emoji)",
+        "stepStatus": "pass",
+        "details": [
+          "Typing and picker interactions generally work, but many alignment / spacing / contrast issues are recorded.",
+          "Colour & category dropdowns are visually noisy."
+        ]
+      },
+      {
+        "title": "Submit the task via “Create Task”",
+        "stepStatus": "fail",
+        "details": [
+          "In the Drag-and-Move scenario the click is blocked by the still-open category pop-over causing a 5 s timeout. This is a hard failure stopping the remainder of that flow."
+        ]
+      },
+      {
+        "title": "Observe confirmation / new task in list",
+        "stepStatus": "mixed",
+        "details": [
+          "Some scenarios show the task appearing; others never surface a toast or list update, leaving testers uncertain if save worked."
+        ]
+      },
+      {
+        "title": "Additional task actions (complete, move, pin, duplicate, edit, delete)",
+        "stepStatus": "mixed",
+        "details": [
+          "Mark done / not-done and pin flows finish but screens lack clear visual state change or snack-bar feedback.",
+          "Move (drag-and-drop) never reached because creation failed.",
+          "Duplicate & Edit succeed but rely on the same modal with the same UI consistency issues.",
+          "Delete flow completes but feedback message/screenshot timing is inconsistent."
+        ]
+      },
+      {
+        "title": "Settings – Appearance",
+        "stepStatus": "partial",
+        "details": [
+          "Dark-mode, theme, glow-effect toggles can be switched, yet several planned assertions remain pending (e.g. Reduce Motion ‘System’).",
+          "UI checklist again flags padding/typography issues."
+        ]
+      },
+      {
+        "title": "Category management (add / edit / favourite)",
+        "stepStatus": "not-executed",
+        "details": ["Corresponding tests never progressed beyond ‘pending’."]
+      }
+    ]
+  },
+  "emotional_arc": "User starts confident (app loads quickly) → mild irritation (visual polish feels unfinished) → rising friction (long scrolls within modal, dropdown clutter) → major frustration when “Create Task” cannot be clicked (blocked by overlay) → uncertainty (no clear success feedback) → partial relief when later flows succeed → lingering doubt about reliability & visual quality.",
+  "qualitative_opportunities": [
+    {
+      "area": "Clickable overlays block primary actions",
+      "why_it_matters": "A category pop-over intercepting clicks prevents saving a task—core workflow stopper.",
+      "next_actions": [
+        "Auto-close pop-over when a value is chosen or when user clicks outside.",
+        "Disable pointer-events for hidden menu layers.",
+        "Add e2e test that tries to click “Create Task” immediately after selecting a category."
+      ]
+    },
+    {
+      "area": "Lack of success / error feedback",
+      "why_it_matters": "Users aren’t sure if actions (save, delete, duplicate) worked; leads to double input or abandonment.",
+      "next_actions": [
+        "Show toast/snack-bar with concise copy (e.g. “Task created”) and fade after 2–3 s.",
+        "Ensure list auto-scrolls to new/updated task.",
+        "Add ARIA live-region for screen-reader parity."
+      ]
+    },
+    {
+      "area": "Typography, spacing & visual hierarchy",
+      "why_it_matters": "Inconsistent fonts and cramped layouts make the UI feel unprofessional and hamper scannability.",
+      "next_actions": [
+        "Establish type scale (e.g. 16/24/32 px) and apply via design tokens.",
+        "Use consistent 8-pt spacing grid for padding/margins.",
+        "Audit CSS for duplicate ad-hoc font-weight overrides."
+      ]
+    },
+    {
+      "area": "Button style consistency",
+      "why_it_matters": "Mismatched sizes/colours reduce recognisability and hurt brand perception.",
+      "next_actions": [
+        "Define primary / secondary / ghost button variants in design system.",
+        "Replace ad-hoc class combinations with those tokens.",
+        "Run automated visual regression on buttons."
+      ]
+    },
+    {
+      "area": "Input label alignment & accessibility contrast",
+      "why_it_matters": "Misaligned labels and low-contrast colours slow form completion and fail WCAG AA.",
+      "next_actions": [
+        "Wrap each label+input in flex column or grid.",
+        "Run automated a11y check for 4.5:1 contrast.",
+        "Adjust theme colours accordingly."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix category pop-over so it no longer blocks the “Create Task” button (auto-close / z-index)."
+    },
+    {
+      "rank": 2,
+      "description": "Add toast/snack-bar confirmations for create, edit, delete, duplicate actions."
+    },
+    {
+      "rank": 3,
+      "description": "Create global button component and swap out inconsistent instances."
+    },
+    {
+      "rank": 4,
+      "description": "Apply consistent 8-pt spacing & type scale to the Add/Edit Task modal (highest screen-time)."
+    },
+    {
+      "rank": 5,
+      "description": "Improve contrast of text vs. background, starting with category pills & settings panel. "
+    }
+  ]
+}

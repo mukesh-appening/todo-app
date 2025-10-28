@@ -1,0 +1,135 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch & initial dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "Most tests open http://localhost:5173 without issue.",
+          "UI review repeatedly flags mismatched typography and spacing right from the first screen."
+        ]
+      },
+      {
+        "title": "Add-Task flow",
+        "stepStatus": "fail",
+        "details": [
+          "User opens the “Add Task” modal and fills fields successfully.",
+          "Hard failure: clicking “Create Task” times out (dropdown menu intercepts pointer events).",
+          "Because of this, follow-on steps (success toast, list refresh, drag-and-drop) are never reached in Drag & Move Task test."
+        ]
+      },
+      {
+        "title": "Basic task CRUD (other runs)",
+        "stepStatus": "pass",
+        "details": [
+          "A separate run adds a task end-to-end, but logs show many redundant scrolls/clicks and no clear success toast.",
+          "Mark-as-done and Purge Tasks flows succeed, yet UI checker still flags alignment, padding, and spelling issues (e.g., “taks”)."
+        ]
+      },
+      {
+        "title": "Category management",
+        "stepStatus": "fail",
+        "details": [
+          "Adding a new category named “Hobby” fails—no confirmation, item never appears in list.",
+          "Editing category flow still in progress (pending steps) — dialog sometimes fails to surface."
+        ]
+      },
+      {
+        "title": "Settings / appearance",
+        "stepStatus": "mixed",
+        "details": [
+          "Dark-mode & theme toggles mostly work, but a few options stay pending (Reduce Motion, Glow Off).",
+          "UI checker continues to flag padding & color-contrast in settings panel."
+        ]
+      },
+      {
+        "title": "PWA / Install App",
+        "stepStatus": "fail",
+        "details": [
+          "Tester cannot locate an “Install App” option; install prompt never appears, subsequent verification steps fail."
+        ]
+      },
+      {
+        "title": "Overall",
+        "stepStatus": "failed",
+        "details": [
+          "4 of 12 test scripts end in hard failure; the rest pass but surface dozens of visual-consistency warnings."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts curious and hopeful (clean launch). Mild friction grows with inconsistent visuals. Major frustration hits when primary CTA (“Create Task”) is unresponsive. Small relief when other flows technically succeed, then disappointment returns with category add & PWA install failures. Overall feeling: the app works in parts but lacks polish and reliability, eroding user confidence.",
+  "qualitative_opportunities": [
+    {
+      "area": "Clickable controls obstructed or unreachable",
+      "why_it_matters": "Primary actions that don’t fire (e.g., Create Task) break core value proposition and drive abandonment.",
+      "next_actions": [
+        "Auto-close open dropdowns/menus when user attempts to click outside.",
+        "Increase z-index / ensure pointer-events for primary buttons.",
+        "Add Playwright/E2E test specifically for this regression."
+      ]
+    },
+    {
+      "area": "Visual consistency (typography, padding, buttons)",
+      "why_it_matters": "Inconsistent spacing and text hierarchy makes the product feel unfinished and hurts scannability.",
+      "next_actions": [
+        "Adopt a spacing scale (e.g., 8-pt) and apply via design tokens.",
+        "Define heading/body font sizes in theme; audit components.",
+        "Lint screenshots in CI with a baseline visual-regression tool."
+      ]
+    },
+    {
+      "area": "Feedback & confirmation states",
+      "why_it_matters": "Users doubt whether actions succeeded (task add, delete, settings save).",
+      "next_actions": [
+        "Show toast/snackbar after creates, updates, deletes.",
+        "Dismiss toast automatically but allow click-to-dismiss for a11y.",
+        "Ensure ARIA live regions for screen readers."
+      ]
+    },
+    {
+      "area": "Copy & spelling",
+      "why_it_matters": "Misspellings (“taks”) reduce credibility.",
+      "next_actions": ["Spell-check all static strings; add i18n linter."]
+    },
+    {
+      "area": "Color contrast & brand compliance",
+      "why_it_matters": "Low contrast harms accessibility and brand perception.",
+      "next_actions": [
+        "Run automated contrast checker (WCAG AA).",
+        "Refine palette and test in both light/dark themes."
+      ]
+    },
+    {
+      "area": "PWA installability",
+      "why_it_matters": "Missing install prompt breaks expectation set by menu item and test case.",
+      "next_actions": [
+        "Add manifest.json with required icons/name.",
+        "Serve over https & register service-worker with display: standalone.",
+        "Verify install prompt in Chrome & Safari and document fallback."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix click-through issue that blocks “Create Task” (close menus / adjust z-index)."
+    },
+    {
+      "rank": 2,
+      "description": "Add success & error toasts for task and category actions so users get immediate feedback."
+    },
+    {
+      "rank": 3,
+      "description": "Standardize spacing & font scale across components using a design-token system (quick visual lift)."
+    },
+    {
+      "rank": 4,
+      "description": "Correct spelling/copy errors surfaced by tests (“taks”, button labels)."
+    },
+    {
+      "rank": 5,
+      "description": "Ship basic PWA manifest + service-worker to enable install prompt and satisfy install test."
+    }
+  ]
+}

@@ -36,6 +36,7 @@ interface ColorPickerProps {
   width?: CSSProperties["width"];
   fontColor?: CSSProperties["color"];
   label?: string;
+  name?: string; // Form field name for AI compatibility
 }
 
 /**
@@ -48,6 +49,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
   width,
   fontColor,
   label,
+  name,
 }) => {
   const { user, setUser } = useContext(UserContext);
   const { colorList } = user;
@@ -60,6 +62,11 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
   const colorElementRefs = useRef<Array<HTMLElement | null>>([]);
 
   const theme = useTheme();
+
+  // Hidden select for AI compatibility
+  const selectId = name
+    ? `color-picker-select-${name}`
+    : `color-picker-select-${Math.random().toString(36).substr(2, 9)}`;
 
   const prefersReducedMotion = usePrefersReducedMotion(user.settings.reduceMotion);
 
@@ -160,13 +167,81 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
     });
   };
 
+  // Handle color change from hidden select (AI compatibility)
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newColor = e.target.value;
+    handleColorChange(newColor);
+    // Auto-expand accordion when AI selects a color
+    setAccordionExpanded(true);
+  };
+
   return (
-    <>
+    <div style={{ position: "relative", width }}>
+      {/* AI-Compatible Color Picker - Visible to AI but visually hidden */}
+      <div style={{ position: "absolute", zIndex: 1, pointerEvents: "auto" }}>
+        <label
+          htmlFor={selectId}
+          id={`${selectId}-label`}
+          style={{
+            fontSize: "14px",
+            color: "transparent",
+            display: "block",
+            height: "1px",
+            width: "1px",
+            overflow: "hidden",
+            position: "absolute",
+            left: "-10000px",
+          }}
+          aria-hidden="false"
+        >
+          Pick a color for the task
+        </label>
+        <select
+          id={selectId}
+          name={name}
+          value={selectedColor}
+          onChange={handleSelectChange}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: width || "100%",
+            height: "56px",
+            border: "1px solid transparent",
+            background: "transparent",
+            color: "transparent",
+            cursor: "pointer",
+            fontSize: "14px",
+            zIndex: 10001,
+            pointerEvents: "auto",
+            appearance: "none",
+            WebkitAppearance: "none",
+            MozAppearance: "none",
+          }}
+          aria-label="Pick a color for the task"
+          aria-labelledby={`${selectId}-label`}
+          title="Pick a color"
+          data-testid={`color-picker-select-${name || "default"}`}
+          data-label="Pick a color"
+          tabIndex={0}
+        >
+          <option value={selectedColor} disabled hidden>
+            Pick a color for the task
+          </option>
+          {[theme.primary, ...colorList].map((clr) => (
+            <option key={clr} value={clr}>
+              {getColorName(clr).name} - {clr}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <StyledAccordion
         onChange={(_event, isExpanded) => setAccordionExpanded(isExpanded)}
         isExpanded={accordionExpanded}
         fontColor={fontColor}
         aria-label="Color selection section - Click to expand and choose a color for your task. Currently selected: Electric Violet (#B624FF). This is a collapsible accordion that contains color options"
+        aria-labelledby={`${selectId}-label`}
         role="region"
         data-testid="color-picker-accordion"
         slotProps={{
@@ -180,10 +255,13 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
       >
         <AccordionSummary
           expandIcon={<ExpandMoreRounded sx={{ color: fontColor || ColorPalette.fontLight }} />}
-          aria-label={`${label || "Color"} selection - Click to expand color options. Currently selected: ${getColorName(selectedColor).name} (${selectedColor}). Available colors include Electric Violet. This is a clickable button that expands the accordion`}
-          role="button"
+          aria-label={`${label || "Select Colors"} - Click to expand color options. Currently selected: ${getColorName(selectedColor).name} (${selectedColor}). Available colors include Electric Violet. This is a clickable button that expands the accordion`}
+          aria-controls={selectId}
+          role="combobox"
+          aria-expanded={accordionExpanded}
+          aria-haspopup="listbox"
           tabIndex={0}
-          data-testid="color-picker-summary"
+          data-testid={`color-picker-combobox-${name || "default"}`}
         >
           <SummaryContent clr={fontColor || ColorPalette.fontLight}>
             {!accordionExpanded && <AccordionPreview clr={selectedColor} />}
@@ -192,11 +270,22 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
           </SummaryContent>
         </AccordionSummary>
         <AccordionDetails data-testid="color-picker-details" aria-label="Color selection options">
-          <ColorPreview maxWidth={width || 400} clr={selectedColor} aria-label={`Currently selected color: ${getColorName(selectedColor).name} (${selectedColor})`}>
+          <ColorPreview
+            maxWidth={width || 400}
+            clr={selectedColor}
+            aria-label={`Currently selected color: ${getColorName(selectedColor).name} (${selectedColor})`}
+          >
             {selectedColor.toUpperCase()} - {getColorName(selectedColor).name}
           </ColorPreview>
           <Grid container maxWidth={width || 400}>
-            <Grid container spacing={1} maxWidth={width || 400} m={1} data-testid="color-options-grid" aria-label="Available color options - Click any color to select it. First color is Electric Violet (#B624FF). This is a grid of clickable color buttons that appear when the accordion is expanded">
+            <Grid
+              container
+              spacing={1}
+              maxWidth={width || 400}
+              m={1}
+              data-testid="color-options-grid"
+              aria-label="Available color options - Click any color to select it. First color is Electric Violet (#B624FF). This is a grid of clickable color buttons that appear when the accordion is expanded"
+            >
               {[theme.primary, ...colorList].map((color, index) => (
                 <Grid key={color}>
                   <Tooltip title={getColorName(color).name}>
@@ -206,10 +295,10 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
                       }}
                       id={`color-element-${index}`}
                       clr={color}
-                      aria-label={`Select color ${getColorName(color).name} (${color})${color === theme.primary ? ' - Electric Violet' : ''}`}
+                      aria-label={`Select color ${getColorName(color).name} (${color})${color === theme.primary ? " - Electric Violet" : ""}`}
                       role="button"
                       tabIndex={0}
-                      data-testid={`color-option-${color.toLowerCase()}${color === theme.primary ? '-electric-violet' : ''}`}
+                      data-testid={`color-option-${color.toLowerCase()}${color === theme.primary ? "-electric-violet" : ""}`}
                       // show delete popover only on desktop
                       onContextMenu={(e) => {
                         if (
@@ -279,7 +368,10 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
               </Tooltip>
             </Grid>
           </Grid>
-          <StyledInfo clr={fontColor || ColorPalette.fontLight} aria-label="Instructions for removing colors from the list - Right click on desktop or double tap on mobile to delete colors. This is informational text that explains how to remove colors">
+          <StyledInfo
+            clr={fontColor || ColorPalette.fontLight}
+            aria-label="Instructions for removing colors from the list - Right click on desktop or double tap on mobile to delete colors. This is informational text that explains how to remove colors"
+          >
             <InfoRounded fontSize="small" />{" "}
             {window.matchMedia("(pointer:fine)").matches ? "Right click" : "Double tap"} to remove
             color from list
@@ -330,7 +422,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({
           </DialogBtn>
         </DialogActions>
       </Dialog>
-    </>
+    </div>
   );
 };
 

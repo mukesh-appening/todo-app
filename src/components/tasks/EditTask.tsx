@@ -266,6 +266,8 @@ export const EditTask = ({ open, task, onClose }: EditTaskProps) => {
         >
           <ColorPicker
             width={"100%"}
+            name="editTaskColor"
+            label="Edit Task Color"
             color={editedTask?.color || "#000000"}
             fontColor={theme.darkmode ? ColorPalette.fontLight : ColorPalette.fontDark}
             onColorChange={(color) => {

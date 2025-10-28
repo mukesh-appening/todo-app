@@ -1,0 +1,141 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on the dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "All tests open http://localhost:5173 successfully.",
+          "First visual impression already shows typographic and spacing inconsistencies (7-9 UI checks per view, 2-5 fail)."
+        ]
+      },
+      {
+        "title": "Core task flow – create ➜ drag / reorder",
+        "stepStatus": "fail",
+        "details": [
+          "User opens “Add Task” modal, fills fields, selects category.",
+          "Hard failure: clicking ‘Create Task’ is blocked by still-open category pop-over (step 8 in “Drag & Move Task”). Journey halts; downstream steps (re-ordering) never run.",
+          "Root cause: overlay does not auto-close or click-through handling is missing."
+        ]
+      },
+      {
+        "title": "Marking tasks done / not-done / pin",
+        "stepStatus": "mixed",
+        "details": [
+          "Mark Done flow passes but confirmations & visual affordances are weak (numerous “no success message observed”).",
+          "Mark Not-Done: confirmation toast missing ➜ step 6 fails.",
+          "Pin Task: flow stalls at verification (pending) – no pinned icon/placement feedback visible."
+        ]
+      },
+      {
+        "title": "Secondary CRUD actions (edit, duplicate, delete, purge)",
+        "stepStatus": "pass",
+        "details": [
+          "Actions technically succeed, yet testers repeatedly report lack of explicit confirmation or visual update (e.g., edited task not obviously refreshed, duplicate not clearly highlighted, delete feedback toast missing).",
+          "Spelling errors in purge confirmation (“taks”)."
+        ]
+      },
+      {
+        "title": "Category management",
+        "stepStatus": "mixed",
+        "details": [
+          "Add Category flow executes, but no success toast and category not immediately visible in list (steps 7-9 pending).",
+          "Edit Category, Favourite Category tests still queued/failing—feature discoverability low."
+        ]
+      },
+      {
+        "title": "Settings / appearance",
+        "stepStatus": "partial",
+        "details": [
+          "Theme and motion toggles work, yet two sub-steps remain pending (Auto motion, disable glow).",
+          "UI panel has many padding / label alignment issues; hierarchy unclear."
+        ]
+      },
+      {
+        "title": "PWA install",
+        "stepStatus": "fail",
+        "details": [
+          "User cannot find install prompt—app not configured as installable PWA or lacks guidance."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts mildly optimistic (site loads), turns to moderate frustration during core ‘Create Task’ failure. Confidence dips further when confirmations are absent (\"Did it save?\"). Reordering, pinning, and category features feel unreliable, adding uncertainty. Misspellings and UI misalignment erode trust. Settings page offers some delight (theme switch) but usability quirks keep annoyance simmering. Attempt to install the app ends on a low note – expectation unmet. Overall arc: Hope → Friction → Doubt → Small wins → Disappointment.",
+  "qualitative_opportunities": [
+    {
+      "area": "Modal & overlay logic",
+      "why_it_matters": "Blocked clicks (category pop-over intercepting ‘Create Task’) stop primary tasks and feel like bugs.",
+      "next_actions": [
+        "Auto-close dropdowns on outside click or submission.",
+        "Ensure z-index / pointer-events allow underlying CTA clicks.",
+        "Add e2e test for ‘Create Task’ path with open dropdown."
+      ]
+    },
+    {
+      "area": "Feedback & confirmations (toast, inline states)",
+      "why_it_matters": "Users need assurance that actions (create, edit, delete, pin, category add) succeeded; current silence forces guesswork.",
+      "next_actions": [
+        "Add non-blocking toast with concise copy for all CRUD actions.",
+        "Update task list in place with subtle animation (fade/slide) so the change is visible.",
+        "Add ARIA live region for accessibility."
+      ]
+    },
+    {
+      "area": "Visual consistency (typography, spacing, button styling)",
+      "why_it_matters": "Repeated ‘looks off’ flags make the product appear unfinished and hurt readability.",
+      "next_actions": [
+        "Define typography scale (e.g., H1-H6, body, caption) and apply via theme tokens.",
+        "Audit spacing (8-pt grid) and component padding; refactor CSS/Material-UI overrides.",
+        "Create shared button component; purge ad-hoc styles."
+      ]
+    },
+    {
+      "area": "Status icons & affordances (done, pinned, favourite)",
+      "why_it_matters": "Without clear iconography/state change, users can’t tell what happened.",
+      "next_actions": [
+        "Ensure icons change (fill / color) immediately on toggle.",
+        "Add tooltip labels (‘Pinned’, ‘Un-pin’).",
+        "Group favourites/pins at top of lists for visibility."
+      ]
+    },
+    {
+      "area": "Copy & localisation",
+      "why_it_matters": "Misspellings (‘taks’) and inconsistent wording break credibility.",
+      "next_actions": [
+        "Run spell-check; add copy review step to CI.",
+        "Move static strings to i18n file for single-source editing."
+      ]
+    },
+    {
+      "area": "PWA installability guidance",
+      "why_it_matters": "Users attempted install and failed—lost opportunity for stickiness.",
+      "next_actions": [
+        "Add ‘Install App’ button that triggers `beforeinstallprompt`.",
+        "Ensure manifest & service-worker meet Chrome/Safari criteria; test across browsers.",
+        "Provide tooltip or modal explaining how to install on each platform."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix dropdown / overlay blocking the ‘Create Task’ button – prevents core task creation."
+    },
+    {
+      "rank": 2,
+      "description": "Implement toast confirmations for create / edit / delete / category add. Immediate confidence boost."
+    },
+    {
+      "rank": 3,
+      "description": "Spell-check & update all static copy (‘tasks’, confirmation texts). Quick polish, high trust impact."
+    },
+    {
+      "rank": 4,
+      "description": "Standardise typography & spacing via theme tokens – low-effort with Material-UI theme override, large visual payoff."
+    },
+    {
+      "rank": 5,
+      "description": "Expose a visible ‘Install App’ CTA and verify PWA manifest to turn failed install flow into a win."
+    }
+  ]
+}

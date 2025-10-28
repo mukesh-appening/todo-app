@@ -1,0 +1,125 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on the dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "All scenarios start by navigating to http://localhost:5173 and loading the dashboard successfully."
+        ]
+      },
+      {
+        "title": "Opening “Add Task” modal",
+        "stepStatus": "pass",
+        "details": [
+          "Users click the + / Add-Task button; the modal usually appears, but typography, spacing and button-style issues are repeatedly flagged."
+        ]
+      },
+      {
+        "title": "Filling in task details",
+        "stepStatus": "pass",
+        "details": [
+          "Users enter name, description, deadline, category, colour and emoji. Multiple UI checks note mis-aligned labels, inconsistent padding and typography."
+        ]
+      },
+      {
+        "title": "Submitting the task",
+        "stepStatus": "fail",
+        "details": [
+          "Critical failure in Drag & Move Task test – step 8: ‘Create Task’ button never receives the click because the category dropdown remains open and intercepts pointer events (timeout 5 s)."
+        ]
+      },
+      {
+        "title": "Seeing feedback / new task in list",
+        "stepStatus": "mixed",
+        "details": [
+          "Some flows show success and new task in list; others (e.g. Add Task, Delete Task) never surface a toast or visual confirmation, causing uncertainty."
+        ]
+      },
+      {
+        "title": "Manipulating existing tasks (move, pin, mark done/undone, edit, duplicate, delete)",
+        "stepStatus": "mixed",
+        "details": [
+          "• Move: test never ran because task creation failed, so drag-reorder is untested.\n• Pin: steps execute until verifying pin icon at top – pending → test marked failed.\n• Mark as Not Done: visual change succeeded, but no notification surfaced → step failed.\n• Edit: lengthy edit flow runs, but no clear ‘Save’ action visible; relies on screenshots rather than UI state verification.\n• Duplicate & Delete: operations run but confirmations (success toast / list refresh) are missing, leading to shaky pass criteria."
+        ]
+      },
+      {
+        "title": "Hard failures summary",
+        "stepStatus": "fail",
+        "details": [
+          "1. Create Task button blocked by open menu (TEST-gp6fsae, Step 8).\n2. Add New Category test never started (all steps pending).\n3. Missing success notification causes failure (Mark Task as Not Done, Step 6).\n4. Pin verification never completed (Pin a Task, Step 15 pending)."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts confident: app loads quickly. Enthusiasm dips as modal looks unpolished (fonts & spacing). Anxiety spikes when “Create Task” doesn’t respond because a menu blocks clicks. Relief when a task finally appears, but confidence never fully recovers because visual confirmations are spotty. Further frustration arises when actions like Pin or Mark-as-Not-Done give no feedback, leaving the user unsure if the app worked. Overall feeling: \"I can get things done, but I’m never 100 % sure and the UI feels slightly messy.\"",
+  "qualitative_opportunities": [
+    {
+      "area": "Consistent visual design (typography, padding, button styles)",
+      "why_it_matters": "Repeated ‘looks off’ flags erode perceived quality and trust; inconsistent spacing makes forms feel cluttered.",
+      "next_actions": [
+        "Adopt a design-token / theme system for font sizes & weights.",
+        "Audit padding / margin scale (e.g. 8-pt grid) across modals, menus and cards.",
+        "Create a shared MUI button variant and replace ad-hoc styles."
+      ]
+    },
+    {
+      "area": "Modal workflow & overlay behaviour",
+      "why_it_matters": "Open menus remain on top of action buttons, blocking interactions (hard failure).",
+      "next_actions": [
+        "Auto-close dropdown/menus when the user clicks outside or when focus shifts.",
+        "Disable underlying buttons while a dropdown is open, or z-index menus beneath primary CTA.",
+        "Add E2E tests specifically for ‘Create Task’ with open dropdown edge-case."
+      ]
+    },
+    {
+      "area": "Action feedback (toasts / inline status)",
+      "why_it_matters": "Users don’t know if an operation succeeded (delete, pin, duplicate, mark not done). Missing feedback caused test assertions to fail and would confuse real users.",
+      "next_actions": [
+        "Show ephemeral toast ‘Task created’, ‘Task deleted’, etc.",
+        "Animate the task card (fade/slide) when state changes.",
+        "Log actions to an activity feed for later confirmation."
+      ]
+    },
+    {
+      "area": "Accessibility & colour contrast",
+      "why_it_matters": "Colour contrast issues reported; poor accessibility excludes users and may fail compliance.",
+      "next_actions": [
+        "Run automated contrast checker (WCAG AA) on palette.",
+        "Adjust category colours or add darker foreground text.",
+        "Offer alternate theme / high-contrast mode."
+      ]
+    },
+    {
+      "area": "List state sync after operations",
+      "why_it_matters": "Pin, duplicate, edit and delete rely on the list refreshing; when it doesn’t, tests stall and users must refresh.",
+      "next_actions": [
+        "After any mutation, update list via optimistic UI or refetch query.",
+        "Scroll to / highlight the affected task so users see the result.",
+        "Add loading indicator if refresh might take >300 ms."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix dropdown overlay that blocks ‘Create Task’ button (close-on-select & outside-click)."
+    },
+    {
+      "rank": 2,
+      "description": "Add universal toast component for create, edit, delete, pin/unpin, etc."
+    },
+    {
+      "rank": 3,
+      "description": "Implement a design token system (fonts, spacing, button variants) and run quick CSS sweep to align modal inputs & labels."
+    },
+    {
+      "rank": 4,
+      "description": "Improve colour contrast for category pills and buttons to meet WCAG AA."
+    },
+    {
+      "rank": 5,
+      "description": "Ensure list re-renders immediately after task mutations (optimistic update or refetch)."
+    }
+  ]
+}

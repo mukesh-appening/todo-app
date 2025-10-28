@@ -1,0 +1,159 @@
+[
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can share a task using the available sharing options (link, QR code, calendar) and that the shareable link is generated and copied as expected.\n\nOpen the app and identify a task you want to share from the task list.\nClick the three-dot menu (\"...\") on the selected task.\nSelect the \"Share\" option from the dropdown menu.\nIn the share dialog, review the available share options (e.g., Link, QR Code, Calendar).\nClick \"Copy\" to copy the shareable link, or select another share method if desired.\nObserve the confirmation message (such as \"Copied link to clipboard\") and verify the link content if pasted elsewhere.\n",
+    "createdAt": 1761553327053,
+    "testname": "Share Task Via Link",
+    "projectName": "Share Task",
+    "useSavedLoginState": false,
+    "id": "TEST-45c14",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a browser and navigate to http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate and select a task from the task list to be shared"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Click on the three-dot menu associated with the chosen task"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Choose the Share option from the dropdown menu"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "In the share dialog, review the available share options such as Link, QR Code, and Calendar"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Copy the shareable link by clicking the Copy button or choose an alternative share method if desired"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Verify that a confirmation message such as 'Copied link to clipboard' is displayed"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Optionally paste the copied link to confirm that the correct URL is generated"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Take a screenshot of the completed share operation to ensure the test outcome"
+        }
+      ],
+      "generatedAt": 1761553327054,
+      "stepsSummary": "Share task using available options and verify link copy"
+    }
+  },
+  {
+    "url": "http://localhost:5173",
+    "description": "Verify that a user can generate and download a QR code to share a task.\n\nOpen the app and locate the task you want to share.\nClick the three-dot menu (\"...\") next to the task.\nSelect \"Share\" from the dropdown menu to open the share dialog.\nClick the \"QR CODE\" tab within the share options.\nConfirm a QR code is generated and visible on the dialog.\nClick the \"DOWNLOAD QR CODE\" button to save the QR code image.\nOptionally, scan the QR code with a QR code reader to validate it directs to the correct task details or shareable link.\n",
+    "createdAt": 1761553500518,
+    "testname": "Share Task Via QR Code and Download QR Code",
+    "projectName": "Share Task",
+    "useSavedLoginState": false,
+    "id": "TEST-d6f2b",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web application by navigating to http://localhost:5173"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate the task you want to share within the application interface"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Identify and click the three-dot menu next to the selected task"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "From the dropdown menu, select the 'Share' option to open the share dialog"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Within the share dialog, switch to the 'QR CODE' tab to display the QR code generator"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Verify that a QR code is generated and visible in the share dialog"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Click the 'DOWNLOAD QR CODE' button to save the QR code image to your device"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Optionally, scan the downloaded QR code with a QR code reader to validate it directs to the correct task details"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Take a final screenshot of the completed task sharing process to document the successful generation and download of the QR code"
+        }
+      ],
+      "generatedAt": 1761553500519,
+      "stepsSummary": "Generate and download task share QR code"
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "description": "Verify that a user can export a task to an external calendar (e.g., Apple Calendar) using the share dialog's calendar feature.\n\nOpen the app and find the task you want to export to a calendar.\nClick the three-dot menu (\"...\") for that task.\nSelect \"Share\" to open the share dialog.\nClick the \"CALENDAR\" tab in the share options.\nClick the \"Add to Apple Calendar\" (or relevant calendar app) button.\nObserve the calendar file (.ics) downloads automatically.\nOpen the .ics file and check that the event details match the task's title, description, and deadline.\n",
+    "createdAt": 1761553538253,
+    "testname": "Export Task to a Calendar",
+    "projectName": "Share Task",
+    "useSavedLoginState": false,
+    "id": "TEST-f9ed8",
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to http://localhost:5173/"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate the task you want to export in the application interface."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Access the options for the task by clicking the three-dot menu for that task."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Open the share dialog by selecting the Share option from the menu."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Switch to the CALENDAR tab within the share options of the dialog."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Click the Add to Apple Calendar button (or the corresponding calendar app button) in the share dialog."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Observe that the .ics file downloads automatically upon clicking the calendar export option."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Open the downloaded .ics file to review the event details."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Verify that the event details in the .ics file match the task’s title, description, and deadline."
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Capture a screenshot of the completed task export to confirm the successful execution of the test."
+        }
+      ],
+      "generatedAt": 1761553538254,
+      "stepsSummary": "Export task to external calendar"
+    }
+  }
+]

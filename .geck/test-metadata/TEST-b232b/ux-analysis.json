@@ -1,0 +1,138 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch & onboarding",
+        "stepStatus": "pass",
+        "details": ["All scenarios start by loading http://localhost:5173 successfully."]
+      },
+      {
+        "title": "Create a task (core flow)",
+        "stepStatus": "fail",
+        "details": [
+          "User opens ‘Add Task’ modal.",
+          "Fills in fields, but ‘Create Task’ button is often blocked by the still-open category dropdown (z-index / focus bug).",
+          "Result: timeout – task never created; no success toast."
+        ]
+      },
+      {
+        "title": "Move / reorder task",
+        "stepStatus": "blocked",
+        "details": ["Flow never executed because previous task was not created."]
+      },
+      {
+        "title": "Edit, complete, favourite & pin",
+        "stepStatus": "mixed",
+        "details": [
+          "When task does exist, edit / complete / favourite generally works but user must scroll to find save buttons.",
+          "Visual indicators (strikethrough, star fill, pin icon) are subtle; users look for confirmation."
+        ]
+      },
+      {
+        "title": "Category management",
+        "stepStatus": "fail",
+        "details": [
+          "Adding a new category (‘Hobby’) appears to work, but list never refreshes – user concludes it failed.",
+          "Editing a category (rename & colour) works after multiple clicks; UI feedback is minimal."
+        ]
+      },
+      {
+        "title": "Share task (link / QR / calendar)",
+        "stepStatus": "fail",
+        "details": [
+          "Share dialog opens but link copy / QR download / .ics export are unreliable – repeated retries, manual right-click to download. No confirmation messages."
+        ]
+      },
+      {
+        "title": "Settings – Appearance",
+        "stepStatus": "partial",
+        "details": [
+          "User can cycle through themes & motion settings, but some options (‘Auto’ dark mode, disable glow) never register.",
+          "No global toast confirming preference saved."
+        ]
+      },
+      {
+        "title": "Install PWA",
+        "stepStatus": "fail",
+        "details": ["Tester cannot find an ‘Install App’ prompt – flow dead-ends."]
+      },
+      {
+        "title": "Logout",
+        "stepStatus": "partial",
+        "details": [
+          "Logout button clicked, redirected, but no explicit ‘You are logged out’ message."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Excited on first load → mild confusion in modal (lots of fields) → sharp frustration when ’Create Task’ button won’t respond → uncertainty due to lack of success messages → relief when tasks eventually appear → annoyance at visual clutter / mis-aligned UI → distrust when share/download features don’t work → fatigue after many retries.",
+  "qualitative_opportunities": [
+    {
+      "area": "Interaction blockers (overlays intercepting clicks)",
+      "why_it_matters": "Primary CTA (‘Create Task’) is unusable when category popover sits above it – users think the app is broken.",
+      "next_actions": [
+        "Close popover on selection or click outside.",
+        "Add z-index/ pointer-events:none to menu when modal expects submission.",
+        "Add E2E test specifically for this regression."
+      ]
+    },
+    {
+      "area": "Consistent visual system",
+      "why_it_matters": "Inconsistent typography, spacing and button styling makes the product feel unpolished and lowers trust.",
+      "next_actions": [
+        "Adopt a design-token spacing scale (e.g. 4/8/16).",
+        "Create a single Button component for all variants; replace ad-hoc buttons.",
+        "Audit font sizes/weights; set global heading & body styles."
+      ]
+    },
+    {
+      "area": "Feedback & status messaging",
+      "why_it_matters": "Users don’t know if actions succeeded (task added, category saved, logout, share link copied).",
+      "next_actions": [
+        "Emit Snackbar/Toast on all CRUD and share actions.",
+        "Display inline icon changes (filled star, checkmark) with small micro-animations.",
+        "Add empty-state and success-state copy for clarity."
+      ]
+    },
+    {
+      "area": "Discoverability of advanced actions",
+      "why_it_matters": "Three-dot menus hide important functions; testers scour UI, causing friction.",
+      "next_actions": [
+        "Add hover tooltips or labels.",
+        "Surface high-value actions (Share, Pin) as icons directly on card for desktop widths.",
+        "Introduce guided onboarding for new users."
+      ]
+    },
+    {
+      "area": "Accessibility & colour contrast",
+      "why_it_matters": "Multiple reports of low contrast and unclear colour tokens – affects readability and WCAG compliance.",
+      "next_actions": [
+        "Run automated contrast audit; adjust palette.",
+        "Ensure dark-mode variants meet 4.5:1 contrast.",
+        "Add focus outlines for keyboard nav."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix popover/overlay bug that blocks ‘Create Task’ (close on selection & adjust z-index)."
+    },
+    {
+      "rank": 2,
+      "description": "Add universal toast/snackbar component for success & error states (task created, category saved, link copied, etc.)."
+    },
+    {
+      "rank": 3,
+      "description": "Standardise Button component styling and apply across modals, dialogs and menus."
+    },
+    {
+      "rank": 4,
+      "description": "Implement spacing / padding token system to eliminate inconsistent gaps quickly."
+    },
+    {
+      "rank": 5,
+      "description": "Run quick colour-contrast pass on primary text & button states to hit WCAG AA."
+    }
+  ]
+}
