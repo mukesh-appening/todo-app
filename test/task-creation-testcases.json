@@ -1,8 +1,8 @@
 [
   {
     "url": "http://localhost:5173",
-    "description": "Verify that a user can successfully add a new task by entering a task name, description, choosing up to 3 categories, selecting an emoji, and picking a custom color.\n\nClick the \"Add New Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add today date.\nBelow \"Select Categories (max 3),\" choose any combination of up to three categories (e.g., \"Work\" and \"Coding\").\nIn the \"Color\" section, select any color (e.g., Electric Violet - #B624FF).\nClick the emoji icon near the top to open the emoji picker.\nSelect an emoji to represent your task (e.g., 📝 or 😃).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).",
-    "createdAt": 1761300951636,
+    "description": "Verify that a user can successfully add a new task by entering a task name, description, choosing up to 3 categories, selecting an emoji, and picking a custom color.\n\nClick the \"Add New Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter tomorrow's date as task deadline.\nChoose coding and work in category, and then close it by pressing escape.\nSelect the custom color 'Malibu' from the color picker, and then close it by pressing escape.\nOpen the emoji picker by clicking on the emoji button, then select the smiling emoji (😃) to represent the task\nClick \"Create Task\" buttom to submit.\nVerify that the task \"Complete Project Report\" is added.",
+    "createdAt": 1761792685910,
     "testname": "Add a New Task",
     "projectName": "Task Creation",
     "useSavedLoginState": false,
@@ -15,60 +15,52 @@
         },
         {
           "stepNumber": 2,
-          "stepDescription": "Click the Add New Task button or icon on the dashboard"
+          "stepDescription": "Click on the Add New Task button or icon available on the dashboard"
         },
         {
           "stepNumber": 3,
-          "stepDescription": "Wait for the Add New Task modal to appear"
+          "stepDescription": "In the Add New Task modal, enter 'Complete Project Report' in the Task Name field"
         },
         {
           "stepNumber": 4,
-          "stepDescription": "Enter 'Complete Project Report' in the Task Name field"
+          "stepDescription": "Optionally, enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field"
         },
         {
           "stepNumber": 5,
-          "stepDescription": "Enter 'Summarize this quarter's achievements for the management meeting' in the Task Description field"
+          "stepDescription": "Enter tomorrow's date as the task deadline"
         },
         {
           "stepNumber": 6,
-          "stepDescription": "Enter today's date in the Task Deadline field"
+          "stepDescription": "Select the 'coding' and 'work' categories and then close the category selection by pressing the escape key"
         },
         {
           "stepNumber": 7,
-          "stepDescription": "Select up to 3 categories in the Select Categories section, for example choose 'Work' and 'Coding'"
+          "stepDescription": "Select the custom color 'Malibu' from the color picker and close it by pressing the escape key"
         },
         {
           "stepNumber": 8,
-          "stepDescription": "Select a color from the Color section, such as Electric Violet (#B624FF)"
+          "stepDescription": "Open the emoji picker by clicking the emoji button and then choose the smiling emoji (😃) to represent the task"
         },
         {
           "stepNumber": 9,
-          "stepDescription": "Click the emoji icon near the top to open the emoji picker"
+          "stepDescription": "Click the Create Task button to submit the new task"
         },
         {
           "stepNumber": 10,
-          "stepDescription": "Select an emoji, for example 📝 or 😃, to represent the task"
+          "stepDescription": "Verify that the task 'Complete Project Report' is successfully added to the dashboard"
         },
         {
           "stepNumber": 11,
-          "stepDescription": "Click Create Task to submit the new task"
-        },
-        {
-          "stepNumber": 12,
-          "stepDescription": "Observe the success message or confirm the new task appears in the task list"
-        },
-        {
-          "stepNumber": 13,
-          "stepDescription": "Take a screenshot of the completed task creation as evidence of successful operation"
+          "stepDescription": "Take a screenshot of the completed dashboard to confirm the new task is added"
         }
       ],
-      "stepsSummary": "Add new task with modal inputs and validations"
+      "stepsSummary": "Add new task with detailed information"
     }
   },
   {
     "url": "http://localhost:5173/",
-    "description": "Verify that a user can successfully add a new task by entering a task name, description, choosing up to 3 categories, selecting an emoji, and picking a custom color.\n\nClick the \"Add New Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add any date.\nBelow \"Select Categories (max 1),\" choose any combination of up to one category (e.g., \"Work\" ).\nClick \"Create Task\" to submit.\nObserve the application feedback (e.g., success message or new task appears in the task list).\n\nOpen the app and ensure at least one active task is visible in the task list.\nLocate the checkbox or tick icon next to an active task (e.g., \"Project Deal\").\nClick the checkbox/tick icon to mark the task as done.\nObserve that the task status updates visually (e.g., background changes, text strikethrough, checkmark appears).\nConfirm that a notification appears stating all tasks have been completed (if it was the last open task).\nVerify that the completed task now reflects its \"done\" status and is no longer considered active.\n",
-    "createdAt": 1761553441871,
+    "description": "Verify that a user can successfully add a new task by entering a task name, description, choosing up to 3 categories, selecting an emoji, and picking a custom color.\n\nClick the \"Add New Task\" button/icon on the dashboard.\nIn the \"Add New Task\" modal, enter a value in the \"Task Name\" field (e.g., \"Complete Project Report\").\nOptionally, enter a description in the \"Task Description\" field (e.g., \"Summarize this quarter's achievements for the management meeting\").\nEnter Task Deadline for example add any date.\nBelow \"Select Categories\", choose \"work\" and then close it by pressing escape key. \nClick \"Create Task\" to submit.\nVerify that the task 'Complete Project Report' is successfully added to the dashboard\n\nOpen the app and ensure at least one active task is visible in the task list.\nLocate the checkbox or tick icon next to an active task (e.g., \"Project Deal\").\nClick the checkbox/tick icon to mark the task as done.\nObserve that the task status updates visually (e.g., background changes, text strikethrough, checkmark appears).\nConfirm that a notification appears stating all tasks have been completed (if it was the last open task).\nVerify that the completed task now reflects its \"done\" status and is no longer considered active.\n",
+    "createdAt": 1761794507687,
     "testname": "Mark Task as done",
     "projectName": "Task Creation",
     "useSavedLoginState": false,
@@ -77,66 +69,74 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open the application by navigating to http://localhost:5173/"
+          "stepDescription": "Open the browser and navigate to the application at http://localhost:5173/"
         },
         {
           "stepNumber": 2,
-          "stepDescription": "On the dashboard, locate and click the Add Task button or icon to open the task creation modal"
+          "stepDescription": "Click the 'Add New Task' button or icon on the dashboard to open the task creation modal"
         },
         {
           "stepNumber": 3,
-          "stepDescription": "In the Add New Task modal, enter 'Complete Project Report' in the Task Name field"
+          "stepDescription": "In the opened modal, enter 'Complete Project Report' in the Task Name field"
         },
         {
           "stepNumber": 4,
-          "stepDescription": "Optionally, provide 'Summarize this quarter's achievements for the management meeting' in the Task Description field"
+          "stepDescription": "Fill in the Task Description field with 'Summarize this quarter's achievements for the management meeting'"
         },
         {
           "stepNumber": 5,
-          "stepDescription": "Enter a Task Deadline by selecting an appropriate date from the available date picker"
+          "stepDescription": "Enter a valid date in the Task Deadline field"
         },
         {
           "stepNumber": 6,
-          "stepDescription": "Below the category selection area, choose a category (for example, 'Work') from the available options"
+          "stepDescription": "Select up to three categories by choosing 'work' from the categories list and then close the selection using the escape key"
         },
         {
           "stepNumber": 7,
-          "stepDescription": "Click the Create Task button to submit your new task"
+          "stepDescription": "Select an emoji to represent the task in the emoji picker"
         },
         {
           "stepNumber": 8,
-          "stepDescription": "Observe the application feedback to confirm that a success message appears or the new task is listed in the task list"
+          "stepDescription": "Pick a custom color for the task using the color selector"
         },
         {
           "stepNumber": 9,
-          "stepDescription": "Verify there is at least one active task displayed in the task list on the dashboard"
+          "stepDescription": "Click the 'Create Task' button to submit the new task"
         },
         {
           "stepNumber": 10,
-          "stepDescription": "Locate the checkbox or tick icon next to an active task (such as a task labeled 'Project Deal')"
+          "stepDescription": "Verify that the newly created task 'Complete Project Report' appears in the dashboard list"
         },
         {
           "stepNumber": 11,
-          "stepDescription": "Click the checkbox or tick icon to mark the chosen task as completed"
+          "stepDescription": "Ensure that at least one active task is visible in the task list"
         },
         {
           "stepNumber": 12,
-          "stepDescription": "Observe that the task's visual appearance updates, such as a background change, strikethrough text, or a visible checkmark indicating completion"
+          "stepDescription": "Locate an active task, such as 'Project Deal', and find its associated checkbox or tick icon"
         },
         {
           "stepNumber": 13,
-          "stepDescription": "If this is the last active task, check that a notification appears indicating that all tasks have been completed"
+          "stepDescription": "Click the Task Menu button inside the task card that contains the text 'Complete Project Report', and mark it done."
         },
         {
           "stepNumber": 14,
-          "stepDescription": "Confirm that the completed task now shows a 'done' status and is no longer listed among active tasks"
+          "stepDescription": "Observe that the task's appearance changes, for example with a background update or a strikethrough on the text, indicating completion"
         },
         {
           "stepNumber": 15,
-          "stepDescription": "Take a screenshot of the final state to verify that the test has been completed successfully"
+          "stepDescription": "Confirm that a notification appears indicating that all tasks have been completed if it was the last active task"
+        },
+        {
+          "stepNumber": 16,
+          "stepDescription": "Verify that the completed task is marked as done and is no longer considered active in the task list"
+        },
+        {
+          "stepNumber": 17,
+          "stepDescription": "Take a screenshot of the final state of the task list to confirm successful task creation and completion"
         }
       ],
-      "stepsSummary": "Add and complete a task via modal"
+      "stepsSummary": "Add and complete a task on the dashboard"
     }
   },
   {
@@ -193,7 +193,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open a web browser and navigate to http://localhost:5173."
+          "stepDescription": "Navigate to http://localhost:5173."
         },
         {
           "stepNumber": 2,
@@ -346,7 +346,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open a web browser and navigate to http://localhost:5173"
+          "stepDescription": "Navigate to http://localhost:5173"
         },
         {
           "stepNumber": 2,
@@ -397,7 +397,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open a web browser and navigate to http://localhost:5173/"
+          "stepDescription": "Navigate to http://localhost:5173/"
         },
         {
           "stepNumber": 2,
@@ -460,7 +460,7 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open a web browser and navigate to http://localhost:5173 to load the application."
+          "stepDescription": "Navigate to http://localhost:5173 to load the application."
         },
         {
           "stepNumber": 2,
