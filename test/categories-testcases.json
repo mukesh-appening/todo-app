@@ -2,7 +2,7 @@
   {
     "url": "http://localhost:5173",
     "description": "Verify that a user can successfully add a new category with a custom name and color.\n\nGo to the Categories management screen in the app.\nClick on the field to enter a new category name (e.g., \"Hobby\").\nChoose a color for the category from the color selection options.\nClick the \"Create Category\" button.\nObserve the confirmation message and check that the new category appears in the category list.\n",
-    "createdAt": 1761553848416,
+    "createdAt": 1761726564603,
     "testname": "Add New Category",
     "projectName": "Categories",
     "useSavedLoginState": true,
@@ -11,42 +11,33 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open a web browser and navigate to http://localhost:5173"
+          "stepDescription": "Navigate to http://localhost:5173"
         },
         {
           "stepNumber": 2,
-          "stepDescription": "Navigate to the Categories management screen in the application"
+          "stepDescription": "Open the sidebar menu"
         },
         {
           "stepNumber": 3,
-          "stepDescription": "Select the field designated for entering a new category name"
+          "stepDescription": "Click the 'Categories' option in the menu"
         },
         {
           "stepNumber": 4,
-          "stepDescription": "Enter 'Hobby' as the new category name in the input field"
+          "stepDescription": "Enter 'Hobby' in the category name input field"
         },
         {
           "stepNumber": 5,
-          "stepDescription": "Choose a color from the color selection options for the new category"
+          "stepDescription": "Select the color 'Hot Pink' from the color picker"
         },
         {
           "stepNumber": 6,
-          "stepDescription": "Click the 'Create Category' button to submit the new category"
+          "stepDescription": "Click the 'Create Category' button to save the new category, and verify that the success message appears."
         },
         {
           "stepNumber": 7,
-          "stepDescription": "Observe that a confirmation message is displayed indicating successful creation"
-        },
-        {
-          "stepNumber": 8,
-          "stepDescription": "Verify that the new category 'Hobby' is visible in the category list"
-        },
-        {
-          "stepNumber": 9,
-          "stepDescription": "Take a screenshot of the final category list view to confirm the process"
+          "stepDescription": "Verify that the category 'Hobby' is now visible in the categories list"
         }
       ],
-      "generatedAt": 1761553848418,
       "stepsSummary": "Add new category with custom name and color"
     }
   },
@@ -62,35 +53,43 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open your browser and navigate to the target URL http://localhost:5173."
+          "stepDescription": "Navigate to http://localhost:5173"
         },
         {
           "stepNumber": 2,
-          "stepDescription": "Navigate to the Categories management screen within the application."
+          "stepDescription": "Open the sidebar menu"
         },
         {
           "stepNumber": 3,
-          "stepDescription": "Identify a specific category that you want to mark as favourite in the categories list."
+          "stepDescription": "Click the 'Categories' option in the menu"
         },
         {
           "stepNumber": 4,
-          "stepDescription": "Click on the star icon adjacent to the chosen category name to mark it as a favourite."
+          "stepDescription": "Locate the first category in the categories list"
         },
         {
           "stepNumber": 5,
-          "stepDescription": "Observe that the star icon updates to a filled or highlighted state to indicate it is now a favourite."
+          "stepDescription": "Click the star icon next to the category name to mark it as a favourite"
         },
         {
           "stepNumber": 6,
-          "stepDescription": "Open a category selection dialog, such as when adding a new task, to view the list of categories."
+          "stepDescription": "Verify that the star icon is now filled or highlighted to indicate favourite status"
         },
         {
           "stepNumber": 7,
-          "stepDescription": "Verify that the marked favourite category appears under a dedicated 'Favourite Categories' section or is visually prioritized in the selector."
+          "stepDescription": "Navigate back to the home screen by clicking the home button or closing the sidebar"
         },
         {
           "stepNumber": 8,
-          "stepDescription": "Capture a screenshot of the completed task to confirm the visual changes in both the categories list and the selection dialog."
+          "stepDescription": "Click the 'Add Task' button to open the task creation dialog"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Click the category selector or dropdown in the add task dialog"
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Verify that the favourite category appears under a 'Favourite Categories' section or is visually prioritized"
         }
       ],
       "generatedAt": 1761553891967,
@@ -109,47 +108,43 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open the web browser and navigate to http://localhost:5173."
+          "stepDescription": "Navigate to http://localhost:5173"
         },
         {
           "stepNumber": 2,
-          "stepDescription": "Navigate to the Categories management screen within the application."
+          "stepDescription": "Open the sidebar menu"
         },
         {
           "stepNumber": 3,
-          "stepDescription": "Locate the specific category that needs to be edited."
+          "stepDescription": "Click the 'Categories' option in the menu"
         },
         {
           "stepNumber": 4,
-          "stepDescription": "Click on the pencil icon next to the chosen category to initiate editing."
+          "stepDescription": "Locate the first category in the categories list"
         },
         {
           "stepNumber": 5,
-          "stepDescription": "Wait for the edit category dialog to appear on the screen."
+          "stepDescription": "Click the pencil or edit icon next to the category to open the edit dialog"
         },
         {
           "stepNumber": 6,
-          "stepDescription": "Update the category name in the edit dialog to the new desired name."
+          "stepDescription": "Clear the existing category name and enter 'Updated Category' as the new name"
         },
         {
           "stepNumber": 7,
-          "stepDescription": "Select a new color for the category using the dialog options."
+          "stepDescription": "Select a different color for the category"
         },
         {
           "stepNumber": 8,
-          "stepDescription": "Click the Save button in the edit dialog to confirm the changes."
+          "stepDescription": "Click the 'Save' button to save the changes"
         },
         {
           "stepNumber": 9,
-          "stepDescription": "Observe and verify that the updated category appears in the list with the new name and color."
+          "stepDescription": "Verify that a success message is displayed confirming the category was updated"
         },
         {
           "stepNumber": 10,
-          "stepDescription": "Check for a success message indicating that the category was updated successfully."
-        },
-        {
-          "stepNumber": 11,
-          "stepDescription": "Capture a screenshot of the completed update to confirm the test result."
+          "stepDescription": "Verify that the updated category name 'Updated Category' is visible in the categories list"
         }
       ],
       "generatedAt": 1761554239167,
@@ -168,35 +163,39 @@
       "steps": [
         {
           "stepNumber": 1,
-          "stepDescription": "Open a web browser and navigate to http://localhost:5173/ to load the application."
+          "stepDescription": "Navigate to http://localhost:5173"
         },
         {
           "stepNumber": 2,
-          "stepDescription": "Navigate within the application to the 'Purge Tasks' screen."
+          "stepDescription": "Open the sidebar menu"
         },
         {
           "stepNumber": 3,
-          "stepDescription": "Review the displayed list of tasks, ensuring both done and not done tasks are visible."
+          "stepDescription": "Click the 'Purge Tasks' option in the menu"
         },
         {
           "stepNumber": 4,
-          "stepDescription": "Select one or more tasks by ticking their respective checkboxes."
+          "stepDescription": "Verify that the list displays both done and not done tasks"
         },
         {
           "stepNumber": 5,
-          "stepDescription": "Click the 'PURGE SELECTED' button to initiate bulk deletion of the selected tasks."
+          "stepDescription": "Click the checkbox next to one or more tasks to select them for purging"
         },
         {
           "stepNumber": 6,
-          "stepDescription": "Observe the confirmation message that indicates which tasks were purged."
+          "stepDescription": "Click the 'PURGE SELECTED' button to delete the selected tasks"
         },
         {
           "stepNumber": 7,
-          "stepDescription": "Review the main task list to verify that the selected tasks no longer appear, ensuring they were accurately removed."
+          "stepDescription": "Verify that a confirmation message is displayed showing which tasks were purged"
         },
         {
           "stepNumber": 8,
-          "stepDescription": "Take a screenshot of the final state to document successful task purging."
+          "stepDescription": "Navigate back to the home screen to check the main task list"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Verify that the purged tasks are no longer present in the task list"
         }
       ],
       "stepsSummary": "Select and purge specific tasks"
